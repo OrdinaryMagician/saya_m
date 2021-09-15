@@ -203,7 +203,7 @@ It is said that whoever controls the cookies, may one day control the universe. 
 
 *"A stimmy pack, for the small ouchies."*
 
-Each of these contains a small health stimulant. And yes, **Saya** really does call them that.
+Each of these contains a small health stimulant. And yes, **Saya** really does call them that. On a normal person, injecting several of these at once would result in an overdose, but **Saya** doesn't seem to be affected.
 
 ### Big Stimmy Pack *[Medikit]*
 
@@ -213,9 +213,9 @@ These ones contain all sorts of medical equipment to patch up wounds and treat b
 
 ### Spiritual Stimulant *[Soulsphere]*
 
-*"Glad I'm compatible with these, just like Ibuki is. Means I can jam this shit into my veins without basically blowing myself up in the process. No bullshit ultra failed heals here."*
+*"Glad I'm compatible with these, just like Ibuki is. Means I can just drink the stuff without basically blowing myself up in the process. No bullshit ultra failed heals here."*
 
-A single boost of 100 HP with each use. There is no upper cap to how much you can get out of these, although going over 200 HP will make your health drop faster and faster.
+A boost of 100 HP with each use. There is no upper cap to how much you can get out of these, although going over 200 HP will make your health drop faster and faster. Proven to be lethal for mortals if overused *(good thing you're not mortal)*.
 
 ### Armor Nugget *[Armor Bonus]*
 
@@ -237,7 +237,7 @@ Thick shielded plating for your chest and back, providing very decent protection
 
 ### Grilled Cheese Sandwich *[Megasphere]*
 
-*"I can't believe this shit actually also works on me. But now I'm afraid I'll go insane like the."*
+*"I can't believe this shit actually also works on me. But now I'm afraid I'll go insane like those two."*
 
 A full overheal, and full armor, what more could you need? Well, of course, it will also prevent you from dying, I suppose.
 

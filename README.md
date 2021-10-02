@@ -7,7 +7,7 @@
 
 Hey what if you played as **Saya** wouldn't that be really cool and fun?
 
-Now seriously, I feel like making separate mods for each **SWWM GZ** companion would result in some very interesting opportunities to experiment with other playstyles.
+Now seriously, I feel like making separate mods for certain **SWWM GZ** characters would result in some very interesting opportunities to experiment with other playstyles.
 
 So, basically the story here is simple. Everyone knows that **Saya** just sits back and watches as others do all the fighting for her, right? She's just lazy, a coward, that's what everyone says. And the words of those people, they hurt. She can't help but feel like they're right. So why not shut them all up by going out there and kicking some ass by yourself? Yeah, there's no way this will go wrong, or cause you some form of long-lasting trauma...
 
@@ -15,11 +15,11 @@ So, basically the story here is simple. Everyone knows that **Saya** just sits b
 
 ## Abilities
 
-**Saya** has inherited not just the immortal blood of two individuals who have imbibed the **Hourai Elixir**, but also their very powers themselves, and their fighting spirit. Despite being so small and frail looking, she's a natural at moving quickly, dashing and dodging. She's definitely got quite a lot of strength in those legs of her, which is also useful in close combat. Apart from the physical aspects, she's of course also proficient in spellcasting, but also being a gun nut as she is means she won't just use magic to defend herself, but also various weapons of her own choosing. Do note that unlike the very robotic **Demolitionist**, she's a human, and as such will succumb to falling from great heights, poison and drowning.
+**Saya** has inherited not just the immortal blood of two individuals who have imbibed the **Hourai Elixir**, but also their very powers themselves, and their fighting spirit. Despite being so small and frail looking, she's a natural at moving quickly, dashing and dodging. She's definitely got quite a lot of strength in those legs of her, which is also useful in close combat. Apart from the physical aspects, she's of course proficient in spellcasting, but also being a gun nut as she is means she won't just use magic to defend herself, but also various weapons of her own choosing. Do note that unlike the very robotic **Demolitionist**, she's a human, and as such will succumb to falling from great heights, poison and drowning.
 
 One must be reminded that the **Hourai Elixir** grants an individual what's basically *"divine immortality"*, that is, the ability to recover from death, even if the entire body itself is destroyed, for all of eternity. Even if demons tear your flesh to ribbons, you will return, angrier and more vengeful than before. Merely dying lets you get back up on the spot after a short while, but should you be reduced to nothing but a fine red mist, a new *"you"* will be reborn nearby, somehow **still wearing clothes** *(Yeah, that's something very peculiar about this phenomenon)*.
 
-Keep in mind, however, that if you die a horrible death and have to *"respawn"*, all your stuff will remain in the backpack you had in your previous body, so you'll need to recover it. *(Note: For the sake of gameplay sanity, keys don't get taken away)*
+Keep in mind, however, that if you die a horrible death and have to *"respawn"*, all your stuff will remain in the backpack you had in your previous body, so you'll need to recover it. This normally wouldn't happen with military-grade dedicated **Hammerspace** devices, but you're a civilian, so things won't be that convenient *(Note: For the sake of gameplay sanity, keys don't get taken away)*.
 
 Do note that you are very squishy, but you can try again and again no matter how many times you die. The game is over when **YOU** give up.
 
@@ -27,15 +27,15 @@ Do note that you are very squishy, but you can try again and again no matter how
 
 ## Weaponry
 
-As a civilian, **Saya** shouldn't be carrying any weapons, but who's going to stop her? All that time playing games, watching videos, and even toying with some guns at the range should definitely pay off in being able to wield any weapon she can find lying out there. And of course, she's also not afraid to punch and kick her way to victory, especially when the **Houraisan** blood in her makes her specifically very proficient at dealing maximum damage to a person's crotch *(🥁🥁🎸)*.
+As a civilian, **Saya** shouldn't be carrying any weapons, but who's going to stop her? All that time playing games, watching videos, and even toying with some guns at the range should definitely pay off in being able to wield any weapon she can find lying out there. And of course, she's also not afraid to punch and kick her way to victory. She may not look like much, but she can kick very hard *(something that appears to run in the family)*.
 
-The operation of all weapons is fairly simple: Primary fire shoots, secondary fire aims down the sights, and reload... reloads. **Saya** uses a civilian type Hammerspace container, so automatic mag management isn't provided, you'll have to do it yourself.
+The operation of all weapons is fairly simple: Primary fire shoots, secondary fire aims down the sights, and reload... reloads. Note that automatic mag management isn't available here, so you'll have to do it yourself if you want to consolidate your ammo properly.
 
 ### Slot 1 - Unarmed *[Fist, Chainsaw]*
 
-*"Say goodbye to your future generations, scum."*
+*"What? You think I'm some sort of weakling?"*
 
-Raise up your fists to attack the opponent. It may not be very effective, usually, but even the mightiest tree can be felled with enough perseverance. Primary fire alternates between quick jabs of each hand. Secondary fire performs a kick *(stronger if aimed at the enemy's crotch, if it has one)*.
+Raise up your fists to attack the opponent. It may not be very effective, usually, but even the mightiest tree can be felled with enough perseverance. Primary fire alternates between quick jabs of each hand. Secondary fire performs a kick, with really potent knockback, useful to make some space between you and the enemy. This kick can also be performed while using other weapons through a dedicated keybind.
 
 Note: Taking the place of the **Chainsaw** are a pair of **Brass Knuckles**, which will permanently enhance your punching damage.
 
@@ -87,7 +87,7 @@ Slightly less common than pistol mags, but they may take their place.
 
 *"Protip: Don't try to rocket jump IRL."*
 
-The **Akatsuki 44** is truly a deadly deliverer of destruction, devised mockingly after **H&M**'s blunder with their failed **IAWS** experiment. This is no mere grenade launcher, as in true **Shinigami Inc.** fashion there is a bit of their usual magic at work here. These 25mm airburst grenades are capable of intelligently detonating near hostile targets, or mere moments before impending collision with a wall. Do note that this capability does not take into account personal user safety, so try to keep your distance.
+The **Akatsuki 44** is truly a deadly deliverer of destruction, devised mockingly after **H&M**'s blunder with their failed **IAWS** experiment. This is no mere grenade launcher, as in true **Shinigami Inc.** fashion there is a bit of their usual magic at work here. These 25mm airburst grenades are capable of intelligently detonating near hostile targets, or mere moments before head-on collision with a wall *(so they can still bounce somewhat at the right angles)*. Do note that this capability does not take into account personal user safety, so try to keep your distance.
 
 The magazine holds 4 rounds. Four chances to deliver death.
 
@@ -119,13 +119,35 @@ Each "magazine" allows for 8 individual shots, as well as serving to power the e
 
 You'd be lucky to find extra ammo around, unless it's from another BFG spawn.
 
+### Slot 9 - Splatter Rifle *[???]*
+
+*"OH GOD THERE'S BLOOD EVERYWHERE!"*
+
+A rarity from **Dr. Locke**'s old repertoire, created during a time where he gave up entirely on pretending his creations were meant to be toys. This thing will make just about anything go *"pop"* in an instant. **Saya** has personally noted that it's *"literally a real life **Instagib Rifle**"*.
+
+Its ammunition is limited, so use it wisely. Has a chance to appear in secret rooms.
+
+### Splatter Core
+
+These are extremely rare, and will take the place of their weapon spawn once it's obtained.
+
+### Slot 0 - Furious Warhammer *[???]*
+
+*"Kira-sama... Thank you."*
+
+A gift from the **God of Fury** himself, who values **Saya** greatly as a friend. It is his very own weapon that he employs to defend the **Votrexxian** people. Even in the hands of a puny human, its strength will remain the same as if it were wielded by its own creator.
+
+Primary fire performs side swings, while secondary is a strong overhead attack, capable of crushing even the beefiest of enemies.
+
+Energy for this weapon is limited when not wielded by its rightful owner, and once it fully drains, the weapon is returned to **Kira**, so he may recharge it. You might get a chance to find this as a very rare spawn inside secret areas.
+
 ### Slot X - Ninnacht Jackhammer *[Blursphere]*
 
 *"This fucking thing has no right to exist."*
 
 The weapon that brought **Ninnacht Armaments** to ruin, the most disastrous thing ever conceived. Its very existence is a mistake. A fully automatic 12-gauge shotgun with a 12 shot drum magazine that requires full gun disassembly to replace. Only a couple prototypes were made. Ex-CEO **James Heinen-Bradstenfeldt** suggested at the time that should any remaining prototypes be found, they must immediately be dropped into an active volcano.
 
-**Saya** will simply throw it away after those 12 shots. If you keep it idle for a while, she'll throw it away on her own anyway because it sucks. She also refuses to put it into her inventory, so switching from it also throws it away. She will not pick it back up again afterwards, and you will never see it spawn again ever in that IWAD.
+**Saya** will simply throw it away after those 12 shots. If you keep it idle for a while, she'll throw it away on her own anyway because it sucks. She also refuses to put it into her inventory, so switching from it also throws it away. She will not pick it back up again afterwards, and you will never see it spawn ever again. Any further Blurspheres you encounter will be replaced by cookies.
 
 ## Spellcasting
 
@@ -151,7 +173,7 @@ Blows a kiss at enemies. Their hatred for you is turned into potent damage. Has 
 
 ### Spellcard: Rude Sign "Saturation Barrage"
 
-*"What? Like... Just dodge through it, it's not that hard."*
+*"What? Like... Just dodge through it? It's not that hard."*
 
 One of the spellcards that got **Saya** banned from duels. The amount of projectiles on display is said to be so dense it's practically impossible to avoid without extreme luck.
 
@@ -195,21 +217,21 @@ You can't just go out there and expect to do everything without help. And so, th
 
 ### Cookie *[Health Bonus]*
 
-*"Now this is one cookie I wouldn't put down."*
+*"I haven't played Cookie Clicker in decades. Wonder if it still even exists..."*
 
-It is said that whoever controls the cookies, may one day control the universe. Each of these heals up for 1 HP, and can push you up to 200 HP with ease.
+It is said that whoever controls the cookies, may one day control the universe. Each of these heals up for 1 HP, and can push you up to 200 HP with ease. Sometimes you might find them in bunches, healing even more.
 
 ### Stimmy Pack *[Stimpack]*
 
 *"A stimmy pack, for the small ouchies."*
 
-Each of these contains a small health stimulant. And yes, **Saya** really does call them that. On a normal person, injecting several of these at once would result in an overdose, but **Saya** doesn't seem to be affected.
+Each of these contains a small health stimulant. And yes, **Saya** really does call them that. On a normal person, injecting several of these at once would result in an overdose, but **Saya** doesn't seem to be affected. Each recovers 15 HP.
 
 ### Big Stimmy Pack *[Medikit]*
 
 *"Big stimmy, for the bigger ouchies."*
 
-These ones contain all sorts of medical equipment to patch up wounds and treat burns. Fairly useful, certainly.
+These ones contain all sorts of medical equipment to patch up wounds and treat burns. Fairly useful, certainly. Each recovers 30 HP.
 
 ### Spiritual Stimulant *[Soulsphere]*
 
@@ -235,23 +257,17 @@ Protection for your head and your joints. The usual stuff you'd wear for a bike 
 
 Thick shielded plating for your chest and back, providing very decent protection.
 
-### Grilled Cheese Sandwich *[Megasphere]*
+### Shield Orb *[Megasphere]*
 
-*"I can't believe this shit actually also works on me. But now I'm afraid I'll go insane like those two."*
+*"Ooooooooooooorb..."*
 
-A full overheal, and full armor, what more could you need? Well, of course, it will also prevent you from dying, I suppose.
+Works as an extra layer of protection on top of all your other armor. Lasts for about three minutes, although its duration will drain faster the more damage it has to absorb.
 
 ### Hammerspace Embiggener *[Backpack]*
 
 *"That nerd... Well, I do guess it's perfectly cromulent to use this."*
 
-Expands the ammo storage of your backpack. As a civilian you can only upgrade four times.
-
-### Shield Orb *[Blursphere]*
-
-*"Ooooooooooooorb..."*
-
-Works as an extra layer of protection on top of all your other armor. Lasts for about three minutes, although its duration will drain the more damage it has to absorb.
+Expands the ammo storage of your backpack. As a civilian you can only upgrade four times, but note that the expansion only affects the backpack they were used with, so make sure you recover your stuff on death or you'll lose that extra storage.
 
 ### Maximum Bepis *[Berserk]*
 
@@ -263,7 +279,7 @@ An energizing, refreshing drink. Gives off some health regen while also enhancin
 
 *"People worked hard to fill in the data in these... They have all my respect, and their sacrifice won't be in vain."*
 
-Plugged into **Saya**'s tablet, this will fill in the rough outline of the map, as well as marking the locations of exits and keys.
+Plugged into **Saya**'s tablet, this will fill in the rough outline of the map.
 
 ### Red Oni Milk *[Invulnerability]*
 
@@ -283,18 +299,20 @@ Night vision goggles that can be toggled *(hey, that rhymes)*.
 
 Allows you to harmlessly wade through hazardous liquids for a limited time. In the process, it also allows you to breathe underwater.
 
-### Safety Tether *[Chaos Device]*
+## Mag Management
 
-*"Oh, you thought your little trap would work? TOO BAD!"*
+*"Shit... I envy those two, with their fancy military Hammerspace that autoloads everything for them."*
 
-The usual device to escape from anywhere, at any time, while also blasting away everything around you in the process, to add insult to injury.
+You gotta do this manually, yup. Although it's not too complicated of a task, you gotta make sure you're in the clear before you start doing this, to avoid any nasty surprise attacks while you're deep into them mags and rounds.
 
-### Aerial Amulet *[Wings of Wrath]*
+Keyboard controls are fairly simple when you're using the mag manager:
+ - The left and right arrows select the mag.
+ - The up and down arrows shift the mag order. Keep in mind this does not wrap around.
+ - The enter and backspace arrows add and remove rounds. If the mag is empty, another press of backspace drops it.
+ - The page up and page down keys change the ammo type to manage. Note that the selection defaults to the ammo type that the currently active weapon uses, if any.
 
-*"This kind of thing... Without it I am but a mere human, but with it... Hehehe..."*
-
-Allows you to float in the air at will, boosting yourself with mere thought. In a way, it is comparable to the **Gravity Suppressor**, although its nature is rooted in magic rather than technology. It at least has the advantage of having quite long-lasting power, and allowing you to activate and deactivate its power when needed. It's got enough charge to last for an entire map (or hub in **Hexen**).
+Important note: Since energy weapons don't actually have "rounds", all you can do is swap their order and drop any mags that are empty.
 
 ---
 
-*"The memories of those days will haunt me forever. Flashing images of my own guts strewn about, of demons feeding on my bones, dying over and over again... My own stubbornness can really put me in danger."*
+*"The memories of those days will haunt me forever. Flashing images of my own guts strewn about, of demons feeding on my bones, of dying over and over again... My own stubbornness can really put me in danger."*

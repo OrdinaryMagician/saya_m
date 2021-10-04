@@ -115,23 +115,11 @@ Yet another lawsuit that **Cryptik Arms** managed to skillfully dodge, this time
 
 Each "magazine" allows for 8 individual shots, as well as serving to power the entire weapon itself.
 
-#### Caster Feed Module
+#### Caster Feed Module *[Cell Pack (rare)]*
 
 You'd be lucky to find extra ammo around, unless it's from another BFG spawn.
 
-### Slot 9 - Splatter Rifle *[???]*
-
-*"OH GOD THERE'S BLOOD EVERYWHERE!"*
-
-A rarity from **Dr. Locke**'s old repertoire, created during a time where he gave up entirely on pretending his creations were meant to be toys. This thing will make just about anything go *"pop"* in an instant. **Saya** has personally noted that it's *"literally a real life **Instagib Rifle**"*.
-
-Its ammunition is limited, so use it wisely. Has a chance to appear in secret rooms.
-
-### Splatter Core
-
-These are extremely rare, and will take the place of their weapon spawn once it's obtained.
-
-### Slot 0 - Furious Warhammer *[???]*
+### Slot 9 - Furious Warhammer *[Chainsaw]*
 
 *"Kira-sama... Thank you."*
 
@@ -139,9 +127,9 @@ A gift from the **God of Fury** himself, who values **Saya** greatly as a friend
 
 Primary fire performs side swings, while secondary is a strong overhead attack, capable of crushing even the beefiest of enemies.
 
-Energy for this weapon is limited when not wielded by its rightful owner, and once it fully drains, the weapon is returned to **Kira**, so he may recharge it. You might get a chance to find this as a very rare spawn inside secret areas.
+Energy for this weapon is limited when not wielded by its rightful owner, and once it fully drains, the weapon is returned to **Kira**, so he may recharge it. It will start replacing the **Chainsaw** once the **Brass Knuckles** have been obtained.
 
-### Slot X - Ninnacht Jackhammer *[Blursphere]*
+### Slot 0 - Ninnacht Jackhammer *[Blursphere]*
 
 *"This fucking thing has no right to exist."*
 
@@ -151,25 +139,7 @@ The weapon that brought **Ninnacht Armaments** to ruin, the most disastrous thin
 
 ## Spellcasting
 
-As someone of such an upbringing as she is, **Saya** is no stranger to magic. All spells consume mana, which regenerates over time, or can also be recovered by consuming certain items. **Spellcards** of course are also available, and although they will eat up far more of your energy than simple spells, their effects will be far more devastating. In addition, unlike spells, they have a cooldown after each use.
-
-### Pellet
-
-*"Really makes you go pichuun~."*
-
-A basic offensive spell. A steady release of seeker projectiles at a quickened interval. Can be either shot in a scattered form with primary fire, or a focused pattern with secondary fire. This spell consumes very little mana.
-
-### Phoenix Talons
-
-*"Watch out for this gal, I'm gonna slash ya."*
-
-Dancing slashes that cut through flesh. Primary fire and secondary fire merely alternate between the left and right hand. Slightly more mana consumption.
-
-### Love Heart
-
-*"Ah, the power of love, strong enough to kill evil people through sheer disgust."*
-
-Blows a kiss at enemies. Their hatred for you is turned into potent damage. Has the opposite effect on allies, healing them instead. Primary fire alternates between kisses with each hand, while secondary charges up a bigger smooch with both hands. Low mana consumption.
+As someone of such an upbringing as she is, **Saya** is no stranger to magic, and her specialty lies in so-called ***"Spellcards"***: Specialized spells with limited use but quite mighty potential. Each is selected through a dedicated key, after which you can opt for either a primary or secondary attack with it, with varying effects. Afterwards you will have to wait for your mana to replenish in order to use another one. Note that each of these requires increasingly more mana then the previous (and their altfires require even more), so the strongest attacks will take much longer to become available once again.
 
 ### Spellcard: Rude Sign "Saturation Barrage"
 
@@ -267,7 +237,7 @@ Works as an extra layer of protection on top of all your other armor. Lasts for 
 
 *"That nerd... Well, I do guess it's perfectly cromulent to use this."*
 
-Expands the ammo storage of your backpack. As a civilian you can only upgrade four times, but note that the expansion only affects the backpack they were used with, so make sure you recover your stuff on death or you'll lose that extra storage.
+Expands the ammo storage of your backpack. As a civilian, you don't get any spare ammo from this, and you can only upgrade four times. Note also that the expansion only affects the backpack they were used with, so make sure you recover your stuff on death or you'll lose that extra storage.
 
 ### Maximum Bepis *[Berserk]*
 

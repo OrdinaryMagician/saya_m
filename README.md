@@ -15,7 +15,7 @@ So, basically the story here is simple. Everyone knows that **Saya** just sits b
 
 ## Abilities
 
-**Saya** has inherited not just the immortal blood of two individuals who have imbibed the **Hourai Elixir**, but also their very powers themselves, and their fighting spirit. Despite being so small and frail looking, she's a natural at moving quickly, dashing and dodging. She's definitely got quite a lot of strength in those legs of her, which is also useful in close combat. Apart from the physical aspects, she's of course proficient in spellcasting, but also being a gun nut as she is means she won't just use magic to defend herself, but also various weapons of her own choosing. Do note that unlike the very robotic **Demolitionist**, she's a human, and as such will succumb to falling from great heights, poison and drowning.
+As descendant of **Princess Kaguya**, **Saya** is immortal through the blood of her grandparents, who imbibed the **Hourai Elixir**. But that's not all, as despite being so small and frail looking, she's a natural at moving quickly, dashing and dodging. She's definitely got quite a lot of strength in those legs of her, which is also useful in close combat. Apart from the physical aspects, she's of course proficient in spellcasting, but also being a gun nut as she is means she won't just use magic to defend herself, but also various weapons of her own choosing. Do note that unlike the very robotic **Demolitionist**, she's a human, and as such will succumb to falling from great heights, poison and drowning.
 
 One must be reminded that the **Hourai Elixir** grants an individual what's basically *"divine immortality"*, that is, the ability to recover from death, even if the entire body itself is destroyed, for all of eternity. Even if demons tear your flesh to ribbons, you will return, angrier and more vengeful than before. Merely dying lets you get back up on the spot after a short while, but should you be reduced to nothing but a fine red mist, a new *"you"* will be reborn nearby, somehow **still wearing clothes** *(Yeah, that's something very peculiar about this phenomenon)*.
 
@@ -127,7 +127,7 @@ A gift from the **God of Fury** himself, who values **Saya** greatly as a friend
 
 Primary fire performs side swings, while secondary is a strong overhead attack, capable of crushing even the beefiest of enemies.
 
-Energy for this weapon is limited when not wielded by its rightful owner, and once it fully drains, the weapon is returned to **Kira**, so he may recharge it. It will start replacing the **Chainsaw** once the **Brass Knuckles** have been obtained.
+Energy for this weapon is limited when not wielded by its rightful owner, and once it fully drains, the weapon must be recharged by **Kira** himself. It will start replacing the **Chainsaw** once the **Brass Knuckles** have been obtained. Once obtained, any further pickups will be replaced by small shrines where you can recharge it.
 
 ### Slot 0 - Ninnacht Jackhammer *[Blursphere]*
 
@@ -282,6 +282,12 @@ Keyboard controls are fairly simple when you're using the mag manager:
  - The page up and page down keys change the ammo type to manage. Note that the selection defaults to the ammo type that the currently active weapon uses, if any.
 
 Important note: Since energy weapons don't actually have "rounds", all you can do is swap their order and drop any mags that are empty.
+
+---
+
+## Compatibility
+
+Yeah this one's also **Doom** exclusive, sorry.
 
 ---
 

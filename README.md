@@ -135,7 +135,7 @@ Energy for this weapon is limited when not wielded by its rightful owner, and on
 
 The weapon that brought **Ninnacht Armaments** to ruin, the most disastrous thing ever conceived. Its very existence is a mistake. A fully automatic 12-gauge shotgun with a 12 shot drum magazine that requires full gun disassembly to replace. Only a couple prototypes were made. Ex-CEO **James Heinen-Bradstenfeldt** suggested at the time that should any remaining prototypes be found, they must immediately be dropped into an active volcano.
 
-**Saya** will simply throw it away after those 12 shots. If you keep it idle for a while, she'll throw it away on her own anyway because it sucks. She also refuses to put it into her inventory, so switching from it also throws it away. She will not pick it back up again afterwards, and you will never see it spawn ever again. Any further Blurspheres you encounter will be replaced by cookies.
+**Saya** will simply throw it away after those 12 shots. If you keep it idle for a while, she'll throw it away on her own anyway because it sucks. She also refuses to put it into her inventory, so switching from it also throws it away. She will not pick it back up again afterwards, and you will never see it spawn ever again. Any further Blurspheres you encounter will be replaced by grenades.
 
 ## Spellcasting
 
@@ -239,6 +239,14 @@ Works as an extra layer of protection on top of all your other armor. Lasts for 
 
 Expands the ammo storage of your backpack. As a civilian, you don't get any spare ammo from this, and you can only upgrade four times. Note also that the expansion only affects the backpack they were used with, so make sure you recover your stuff on death or you'll lose that extra storage.
 
+### Zar Bomb *[Blursphere]*
+
+*"Jesus fucking christ, Misa... This is too hardcore."*
+
+A potent magic grenade for adventurers. Very useful in a pinch, just make sure to not get too close. If it looks familiar, that's because this is the design **Saya** copied for the **Safety Tether**. As a matter of fact, they have a lot more in common than you might expect.
+
+These aren't really a usable item so much as something accessed through a **"Quick Grenade"** button, though.
+
 ### Maximum Bepis *[Berserk]*
 
 *"Good god, you can really TASTE the bepis."*
@@ -287,7 +295,7 @@ Important note: Since energy weapons don't actually have "rounds", all you can d
 
 ## Compatibility
 
-Yeah this one's also **Doom** exclusive, sorry.
+Yeah this one's also **Doom** exclusive, sorry. That's really what the plot expects. Obviously, the same notes are here about the vanilla campaigns not being canon.
 
 ---
 

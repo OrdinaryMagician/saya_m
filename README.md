@@ -29,7 +29,7 @@ Do note that you are very squishy, but you can try again and again no matter how
 
 As a civilian, **Saya** shouldn't be carrying any weapons, but who's going to stop her? All that time playing games, watching videos, and even toying with some guns at the range should definitely pay off in being able to wield any weapon she can find lying out there. And of course, she's also not afraid to punch and kick her way to victory. She may not look like much, but she can kick very hard *(something that appears to run in the family)*.
 
-The operation of all weapons is fairly simple: Primary fire shoots, secondary fire aims down the sights, and reload... reloads. Note that automatic mag management isn't available here, so you'll have to do it yourself if you want to consolidate your ammo properly.
+The operation of all weapons is fairly simple: Primary fire shoots, secondary fire aims down the sights, and reload... reloads. **Saya** managed to strike a special deal in the last second to have an autoloader in her hammerspace *(which is normally exclusive to military models)*, so don't worry, no manual mag management will be involved here either.
 
 ### Slot 1 - Unarmed *[Fist, Chainsaw]*
 
@@ -276,20 +276,6 @@ Night vision goggles that can be toggled *(hey, that rhymes)*.
 *"Well, if it works for them, it should work for me."*
 
 Allows you to harmlessly wade through hazardous liquids for a limited time. In the process, it also allows you to breathe underwater.
-
-## Mag Management
-
-*"Shit... I envy those two, with their fancy military Hammerspace that autoloads everything for them."*
-
-You gotta do this manually, yup. Although it's not too complicated of a task, you gotta make sure you're in the clear before you start doing this, to avoid any nasty surprise attacks while you're deep into them mags and rounds.
-
-Keyboard controls are fairly simple when you're using the mag manager:
- - The left and right arrows select the mag.
- - The up and down arrows shift the mag order. Keep in mind this does not wrap around.
- - The enter and backspace arrows add and remove rounds. If the mag is empty, another press of backspace drops it.
- - The page up and page down keys change the ammo type to manage. Note that the selection defaults to the ammo type that the currently active weapon uses, if any.
-
-Important note: Since energy weapons don't actually have "rounds", all you can do is swap their order and drop any mags that are empty.
 
 ---
 

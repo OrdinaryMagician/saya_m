@@ -15,9 +15,9 @@ So, basically the story here is simple. Everyone knows that **Saya** just sits b
 
 ## Abilities
 
-As descendant of **Princess Kaguya**, **Saya** is immortal through the blood of her grandparents, who imbibed the **Hourai Elixir**. But that's not all, as despite being so small and frail looking, she's a natural at moving quickly, dashing and dodging. She's definitely got quite a lot of strength in those legs of her, which is also useful in close combat. Apart from the physical aspects, she's of course proficient in spellcasting, but also being a gun nut as she is means she won't just use magic to defend herself, but also various weapons of her own choosing. Do note that unlike the very robotic **Demolitionist**, she's a human, and as such will succumb to falling from great heights, poison and drowning.
+As descendant of **Princess Kaguya**, **Saya** is immortal through the blood of her grandparents, who imbibed the **Hourai Elixir**. But that's not all, as despite being so small and frail looking, she's a natural at moving quickly, dashing and dodging. She's definitely got quite a lot of strength in those legs of her, which is also useful in close combat. Apart from the physical aspects, she's of course proficient in spellcasting, but also being a gun nut as she is means she won't just use magic to defend herself, but also various weapons of her own choosing. Do note that unlike the very robotic **Demolitionist**, she's a human, and as such will succumb to falling from great heights and have great vulnerability to elemental damages and poison. You however can't drown, because **Saya** isn't an idiot and she brought along a rebreather that feeds air directly from hammerspace.
 
-One must be reminded that the **Hourai Elixir** grants an individual what's basically *"divine immortality"*, that is, the ability to recover from death, even if the entire body itself is destroyed, for all of eternity. Even if demons tear your flesh to ribbons, you will return, angrier and more vengeful than before. Merely dying lets you get back up on the spot after a short while, but should you be reduced to nothing but a fine red mist, a new *"you"* will be reborn nearby, somehow **still wearing clothes** *(Yeah, that's something very peculiar about this phenomenon)*.
+One must be reminded that the **Hourai Elixir** grants an individual what's basically *"divine immortality"*, that is, the ability to recover from death, even if the entire body itself is destroyed, for all of eternity. Even if demons tear your flesh to ribbons, you will return, angrier and more vengeful than before. Merely dying lets you get back up on the spot after a short while, but should you be reduced to nothing but a fine red mist or melt away in lava/slime, a new *"you"* will be reborn nearby, somehow **still wearing clothes** *(Yeah, that's something very peculiar about this phenomenon)*.
 
 Keep in mind, however, that if you die a horrible death and have to *"respawn"*, all your stuff will remain in the backpack you had in your previous body, so you'll need to recover it. This normally wouldn't happen with military-grade dedicated **Hammerspace** devices, but you're a civilian, so things won't be that convenient *(Note: For the sake of gameplay sanity, keys don't get taken away)*.
 
@@ -27,7 +27,7 @@ Do note that you are very squishy, but you can try again and again no matter how
 
 ## Weaponry
 
-As a civilian, **Saya** shouldn't be carrying any weapons, but who's going to stop her? All that time playing games, watching videos, and even toying with some guns at the range should definitely pay off in being able to wield any weapon she can find lying out there. And of course, she's also not afraid to punch and kick her way to victory. She may not look like much, but she can kick very hard *(something that appears to run in the family)*.
+As a civilian, **Saya** shouldn't be carrying any weapons, but who's going to stop her when there's still demons out there left to kill? All that time playing games, watching videos, and even toying with some guns at the range should definitely pay off in being able to wield any weapon she can find lying out there. And of course, she's also not afraid to punch and kick her way to victory. She may not look like much, but she can kick very hard *(something that appears to run in the family)*.
 
 The operation of all weapons is fairly simple: Primary fire shoots, secondary fire aims down the sights, and reload... reloads. **Saya** managed to strike a special deal in the last second to have an autoloader in her hammerspace *(which is normally exclusive to military models)*, so don't worry, no manual mag management will be involved here either.
 
@@ -207,7 +207,7 @@ These ones contain all sorts of medical equipment to patch up wounds and treat b
 
 *"Glad I'm compatible with these, just like Ibuki is. Means I can just drink the stuff without basically blowing myself up in the process. No bullshit ultra failed heals here."*
 
-A boost of 100 HP with each use. There is no upper cap to how much you can get out of these, although going over 200 HP will make your health drop faster and faster. Proven to be lethal for mortals if overused *(good thing you're not mortal)*.
+A boost of 100 HP with each use. There is no upper cap to how much you can get out of these, although going over 200 HP will make your health drop faster and faster. Proven to be lethal for mortals if overused *(good thing you're not mortal)*. Automatically used on pickup if you're below 200 HP.
 
 ### Armor Nugget *[Armor Bonus]*
 
@@ -231,7 +231,7 @@ Thick shielded plating for your chest and back, providing very decent protection
 
 *"Ooooooooooooorb..."*
 
-Works as an extra layer of protection on top of all your other armor. Lasts for about three minutes, although its duration will drain faster the more damage it has to absorb.
+Works as an extra layer of protection on top of all your other armor. Lasts for about three minutes, although its duration will drain faster the more damage it has to absorb. Always spawns with a **Spiritual Stimulant** next to it.
 
 ### Hammerspace Embiggener *[Backpack]*
 
@@ -275,7 +275,7 @@ Night vision goggles that can be toggled *(hey, that rhymes)*.
 
 *"Well, if it works for them, it should work for me."*
 
-Allows you to harmlessly wade through hazardous liquids for a limited time. In the process, it also allows you to breathe underwater.
+Allows you to harmlessly wade through hazardous liquids for a limited time.
 
 ---
 

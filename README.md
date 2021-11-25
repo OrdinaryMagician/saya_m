@@ -65,7 +65,7 @@ Pretty much strewn about the place, like everything else. You can start to tell 
 
 Chambered for .45LV, this *"relic"* has been in **Saya**'s private collection since the early days. She likes taking it to the range and attempting to cycle it *"the cool way"* while she pretends to shoot down *"goat servants"* or something. Well, now she can definitely shoot some goats with it, for sure.
 
-Can hold 4 rounds plus one in the chamber. Fairly useful for stopping hell nobles in their tracks.
+Can hold 4 rounds plus one in the chamber. Fairly useful for stopping hell nobles in their tracks. **Saya** will spin it when hip-firing.
 
 #### .45LV Rounds *[Shells, Shell Box]*
 
@@ -119,7 +119,7 @@ Each "magazine" allows for 8 individual shots, as well as serving to power the e
 
 You'd be lucky to find extra ammo around, unless it's from another BFG spawn.
 
-### Slot 9 - Furious Warhammer *[Chainsaw]*
+### Slot 1 - Furious Warhammer *[Chainsaw]*
 
 *"Kira-sama... Thank you."*
 
@@ -129,7 +129,7 @@ Primary fire performs side swings, while secondary is a strong overhead attack, 
 
 Energy for this weapon is limited when not wielded by its rightful owner, and once it fully drains, the weapon must be recharged by **Kira** himself. It will start replacing the **Chainsaw** once the **Brass Knuckles** have been obtained. Once obtained, any further pickups will be replaced by small shrines where you can recharge it.
 
-### Slot 0 - Ninnacht Jackhammer *[Blursphere]*
+### Slot X - Ninnacht Jackhammer *[Blursphere]*
 
 *"This fucking thing has no right to exist."*
 
@@ -140,16 +140,6 @@ The weapon that brought **Ninnacht Armaments** to ruin, the most disastrous thin
 ## Spellcasting
 
 As someone of such an upbringing as she is, **Saya** is no stranger to magic, and her specialty lies in so-called ***"Spellcards"***: Specialized spells with limited use but quite mighty potential. Each is selected through a dedicated key, after which you can opt for either a primary or secondary attack with it, with varying effects. Afterwards you will have to wait for your mana to replenish in order to use another one. Note that each of these requires increasingly more mana then the previous (and their altfires require even more), so the strongest attacks will take much longer to become available once again.
-
-### Spellcard: Rude Sign "Saturation Barrage"
-
-*"What? Like... Just dodge through it? It's not that hard."*
-
-One of the spellcards that got **Saya** banned from duels. The amount of projectiles on display is said to be so dense it's practically impossible to avoid without extreme luck.
-
-Primary fire directs the barrage towards everything in front of you, while secondary fire, will instead cause the barrage to swirl in every direction.
-
-It really is just too much, no wonder people refuse to duel her.
 
 ### Spellcard: Reviled Sign "Igneous Lexicon"
 
@@ -171,6 +161,16 @@ Primary fire shoots them out at a slower pace, while secondary fire does it much
 
 The beams appear to make motorbike revving noises as they travel.
 
+### Spellcard: Rude Sign "Saturation Barrage"
+
+*"What? Like... Just dodge through it? It's not that hard."*
+
+One of the spellcards that got **Saya** banned from duels. The amount of projectiles on display is said to be so dense it's practically impossible to avoid without extreme luck.
+
+Primary fire directs the barrage towards everything in front of you, while secondary fire, will instead cause the barrage to swirl in every direction.
+
+It really is just too much, no wonder people refuse to duel her.
+
 ### Spellcard: Radiant Sign "Aureous Flare"
 
 *"Hey, check out how hard I can pee!"*
@@ -189,7 +189,7 @@ You can't just go out there and expect to do everything without help. And so, th
 
 *"I haven't played Cookie Clicker in decades. Wonder if it still even exists..."*
 
-It is said that whoever controls the cookies, may one day control the universe. Each of these heals up for 1 HP, and can push you up to 200 HP with ease. Sometimes you might find them in bunches, healing even more.
+It is said that whoever controls the cookies, may one day control the universe. Each of these heals up for 1 HP. Sometimes you might find them in bunches, healing even more.
 
 ### Stimmy Pack *[Stimpack]*
 
@@ -207,25 +207,25 @@ These ones contain all sorts of medical equipment to patch up wounds and treat b
 
 *"Glad I'm compatible with these, just like Ibuki is. Means I can just drink the stuff without basically blowing myself up in the process. No bullshit ultra failed heals here."*
 
-A boost of 100 HP with each use. There is no upper cap to how much you can get out of these, although going over 200 HP will make your health drop faster and faster. Proven to be lethal for mortals if overused *(good thing you're not mortal)*. Automatically used on pickup if you're below 200 HP.
+A boost of 100 HP with each use. There is no upper cap to how much you can get out of these, although going over 100 HP will make your health drop faster and faster. Proven to be lethal for mortals if overused *(good thing you're not mortal)*. Automatically used on pickup unless you're above 100 HP.
 
 ### Armor Nugget *[Armor Bonus]*
 
 *"Got these from Tach-Engine. They work exactly as advertised."*
 
-A fine piece from the **Demolitionist** arsenal, now for **Saya** to make use of. Due to her organic body, however, these are absorbed much more efficiently, giving 5 points of armor each, and stacking up to 500%.
+A fine piece from the **Demolitionist** arsenal, now for **Saya** to make use of. Due to her organic body, however, these are absorbed much more efficiently, giving 5 points of armor each up to a 200 point cap.
 
 ### Armor Padding *[Green Armor]*
 
 *"Don't wanna have no accidents, you know..."*
 
-Protection for your head and your joints. The usual stuff you'd wear for a bike ride, basically.
+Protection for your head and your joints. The usual stuff you'd wear for a bike ride, basically. 100 points of armor, absorbing one third of all damage, plus an extra 15 points from any fall damage.
 
 ### Shielded Vest *[Blue Armor]*
 
 *"Shit's heavy, but it's worth it to play it safe."*
 
-Thick shielded plating for your chest and back, providing very decent protection.
+Thick shielded plating for your chest and back, providing very decent protection. A whopping 500 points of armor, absorbing two thirds of all damage, plus three quarters of all splash damage. Reduces your movement speed by 25% while worn.
 
 ### Shield Orb *[Megasphere]*
 

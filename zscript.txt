@@ -1,0 +1,116 @@
+version "4.7.1"
+
+/*
+   RED EYED RAMPAGE Main Codebase
+   (C)2021 Marisa Kirisame, UnSX Team
+   This copyright and the attached LICENSE.code file apply to all files
+   included from here, with the exception of any third-party libraries
+*/
+
+/// SWWM GZ Common Library
+// library constants
+const SWWMMODPREFIX = "saya";
+const SWWMMAXBACKPACK = 4;
+const SWWMHEALTHFLASH = Color(64,255,64);
+const SWWMARMORFLASH = Color(255,224,64);
+const SWWMLOGONAME = "M_REDEYE";
+const SWWMCREDITSCOL0 = Font.CR_RED;
+const SWWMCREDITSCOL1 = Font.CR_BRICK;
+const SWWMCREDITSCOL2 = Font.CR_WHITE;
+// Gutamatics
+#include "zscript/swwm_Gutamatics/Include.zsc"
+// utility code
+#include "zscript/utility/swwm_coordutil.zsc"
+#include "zscript/utility/swwm_utility.zsc"
+// base code
+#include "zscript/swwm_common.zsc"
+#include "zscript/swwm_common_fx.zsc"
+#include "zscript/swwm_handler.zsc"
+#include "zscript/swwm_statichandler.zsc"
+#include "zscript/swwm_thinkers.zsc"
+#include "zscript/swwm_player.zsc"
+#include "zscript/swwm_blod.zsc"
+// handler code
+#include "zscript/handler/swwm_handler_damage.zsc"
+#include "zscript/handler/swwm_handler_flash.zsc"
+#include "zscript/handler/swwm_handler_iwantdie.zsc"
+#include "zscript/handler/swwm_handler_process.zsc"
+#include "zscript/handler/swwm_handler_queues.zsc"
+#include "zscript/handler/swwm_handler_replacements.zsc"
+#include "zscript/handler/swwm_handler_worldload.zsc"
+#include "zscript/handler/swwm_handler_worldthings.zsc"
+// menu code
+#include "zscript/menu/swwm_help.zsc"
+#include "zscript/menu/swwm_menus.zsc"
+#include "zscript/menu/swwm_credits.zsc"
+// compat code
+#include "zscript/compat/swwm_compat.zsc"
+// hud
+#include "zscript/hud/swwm_hud.zsc"
+#include "zscript/hud/swwm_hudextra.zsc"
+// items
+#include "zscript/items/swwm_baseitem.zsc"
+#include "zscript/items/swwm_basehealth.zsc"
+#include "zscript/items/swwm_basearmor.zsc"
+#include "zscript/items/swwm_baseammo.zsc"
+#include "zscript/items/swwm_ammoextra.zsc"
+#include "zscript/items/swwm_ebarrier.zsc"
+#include "zscript/items/swwm_omnisight.zsc"
+// weapons
+#include "zscript/weapons/swwm_baseweapon.zsc"
+#include "zscript/weapons/swwm_baseweapon_fx.zsc"
+#include "zscript/weapons/swwm_baseweapon_melee.zsc"
+// monsters
+#include "zscript/swwm_monsters.zsc"
+
+/// RED EYED RAMPAGE Specific Code
+// utility code
+#include "zscript/utility/saya_utility.zsc"
+// base code
+#include "zscript/saya_player.zsc"
+#include "zscript/saya_player_fx.zsc"
+// handler code
+#include "zscript/handler/saya_handler_process.zsc"
+#include "zscript/handler/saya_handler_shaders.zsc"
+#include "zscript/handler/saya_handler_replacements.zsc"
+// menu code
+#include "zscript/menu/saya_credits.zsc"
+#include "zscript/menu/saya_inter.zsc"
+#include "zscript/menu/saya_title.zsc"
+// hud
+#include "zscript/hud/saya_hud.zsc"
+// items
+#include "zscript/items/saya_ammoitems.zsc"
+#include "zscript/items/saya_ammospawn.zsc"
+#include "zscript/items/saya_armor.zsc"
+#include "zscript/items/saya_health.zsc"
+#include "zscript/items/saya_powerups.zsc"
+// weapons
+#include "zscript/weapons/saya_unarmed.zsc"
+#include "zscript/weapons/saya_unarmed_fx.zsc"
+#include "zscript/weapons/saya_sword.zsc"
+#include "zscript/weapons/saya_sword_fx.zsc"
+#include "zscript/weapons/saya_pistol.zsc"
+#include "zscript/weapons/saya_pistol_fx.zsc"
+#include "zscript/weapons/saya_smg.zsc"
+#include "zscript/weapons/saya_smg_fx.zsc"
+#include "zscript/weapons/saya_rifle.zsc"
+#include "zscript/weapons/saya_rifle_fx.zsc"
+#include "zscript/weapons/saya_gauss.zsc"
+#include "zscript/weapons/saya_gauss_fx.zsc"
+#include "zscript/weapons/saya_rocket.zsc"
+#include "zscript/weapons/saya_rocket_fx.zsc"
+#include "zscript/weapons/saya_plasma.zsc"
+#include "zscript/weapons/saya_plasma_fx.zsc"
+#include "zscript/weapons/saya_bfg.zsc"
+#include "zscript/weapons/saya_bfg_fx.zsc"
+#include "zscript/weapons/saya_reviled.zsc"
+#include "zscript/weapons/saya_reviled_fx.zsc"
+#include "zscript/weapons/saya_retribution.zsc"
+#include "zscript/weapons/saya_retribution_fx.zsc"
+#include "zscript/weapons/saya_rude.zsc"
+#include "zscript/weapons/saya_rude_fx.zsc"
+#include "zscript/weapons/saya_radiant.zsc"
+#include "zscript/weapons/saya_radiant_fx.zsc"
+#include "zscript/weapons/saya_bomb.zsc"
+#include "zscript/weapons/saya_bomb_fx.zsc"

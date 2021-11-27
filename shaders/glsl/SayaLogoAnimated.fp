@@ -6,7 +6,7 @@ const float pi = 3.14159265358979323846;
 vec2 warpcoord( in vec2 uv )
 {
 	vec2 offset = vec2(0,0);
-	offset.x = sin(pi*2.*(uv.x*2.*TEX_AR+timer*.125))*.02;
+	offset.x = sin(pi*2.*(uv.x*4.+timer*.125))*.02;
 	offset.y += timer*.25;
 	offset.x = cos(pi*2.*(uv.y*2.+timer*.125))*.02;
 	return fract(uv+offset);
@@ -15,7 +15,7 @@ vec2 warpcoord( in vec2 uv )
 vec2 warpcoord2( in vec2 uv )
 {
 	vec2 offset = vec2(0,0);
-	offset.y = sin(pi*2.*(uv.x*4.*TEX_AR+timer*.25))*.01;
+	offset.y = sin(pi*2.*(uv.x*8.+timer*.25))*.01;
 	offset.x = cos(pi*2.*(uv.y*4.+timer*.25))*.01;
 	return fract(uv+offset);
 }
@@ -39,13 +39,13 @@ vec4 BilinearSampleNoWrap( in sampler2D tex, in vec2 pos, in vec2 size, in vec2 
 
 vec4 BilinearSample( in sampler2D tex, in vec2 pos, in vec2 size, in vec2 pxsize )
 {
-	vec2 disp = floor(pos*vec2(4.,2.))/vec2(4.,2.);
+	vec2 disp = floor(pos*vec2(2.,4.))/vec2(2.,4.);
 	vec2 f = fract(pos*size);
 	pos += (.5-f)*pxsize;
-	vec4 p0q0 = texture(tex,fract((pos*vec2(4.,2.)))/vec2(4.,2.)+disp);
-	vec4 p1q0 = texture(tex,fract((pos+vec2(pxsize.x,0))*vec2(4.,2.))/vec2(4.,2.)+disp);
-	vec4 p0q1 = texture(tex,fract((pos+vec2(0,pxsize.y))*vec2(4.,2.))/vec2(4.,2.)+disp);
-	vec4 p1q1 = texture(tex,fract((pos+vec2(pxsize.x,pxsize.y))*vec2(4.,2.))/vec2(4.,2.)+disp);
+	vec4 p0q0 = texture(tex,fract((pos*vec2(2.,4.)))/vec2(2.,4.)+disp);
+	vec4 p1q0 = texture(tex,fract((pos+vec2(pxsize.x,0))*vec2(2.,4.))/vec2(2.,4.)+disp);
+	vec4 p0q1 = texture(tex,fract((pos+vec2(0,pxsize.y))*vec2(2.,4.))/vec2(2.,4.)+disp);
+	vec4 p1q1 = texture(tex,fract((pos+vec2(pxsize.x,pxsize.y))*vec2(2.,4.))/vec2(2.,4.)+disp);
 	vec4 pInterp_q0 = mix(p0q0,p1q0,f.x);
 	vec4 pInterp_q1 = mix(p0q1,p1q1,f.x);
 	return mix(pInterp_q0,pInterp_q1,f.y);
@@ -99,6 +99,8 @@ void SetupMaterial( inout Material mat )
 	base.r = overlay(base.r,tmp.r);
 	base.g = overlay(base.g,tmp.g);
 	base.b = overlay(base.b,tmp.b);
+	// add
+	base.rgb += BilinearSampleNoWrap(LogoTex,uv*vec2(.5,.25)+vec2(.5,.75),size,pxsize).rgb;
 	// color to alpha
 	base = blacktoalpha(base);
 	// separate layer
@@ -117,8 +119,6 @@ void SetupMaterial( inout Material mat )
 	// merge down
 	base.rgb = mix(base.rgb,tmp.rgb,tmp.a);
 	base.a = min(base.a+tmp.a,1.);
-	// add
-	base.rgb += BilinearSampleNoWrap(LogoTex,uv*vec2(.5,.25)+vec2(.5,.75),size,pxsize).rgb;
 	// clamp borders
 	vec2 sz = TEX_SZ;
 	vec2 px = uv*sz;

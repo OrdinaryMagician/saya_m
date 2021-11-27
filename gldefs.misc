@@ -56,7 +56,6 @@ HardwareShader Texture "graphics/SayaLogo.png"
 {
 	Shader "shaders/glsl/SayaLogoAnimated.fp"
 	Define "TEX_SZ" = "vec2(1024.,512.)"
-	Define "TEX_AR" = "2."
 	Texture "LogoTex" "graphics/SayaLogo_Layers.png"
 }
 HardwareShader Texture "graphics/SayaLogo_Glow.png"
@@ -67,7 +66,6 @@ HardwareShader Texture "graphics/M_SAYA.png"
 {
 	Shader "shaders/glsl/SayaLogoAnimated.fp"
 	Define "TEX_SZ" = "vec2(256.,128.)"
-	Define "TEX_AR" = "2."
 	Define "NO_BILINEAR"
 	Texture "LogoTex" "graphics/M_SAYA_Layers.png"
 }

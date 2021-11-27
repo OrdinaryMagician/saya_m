@@ -1,0 +1,47 @@
+[default]
+// keybinds
+SAYA_KEYS = "RED ONI Bindings";
+SAYA_PRIMARYFIRE = "Primary Fire";
+SAYA_SECONDARYFIRE = "Aim / Secondary Fire";
+SAYA_RELOADFIRE = "Reload";
+SAYA_MELEE = "Quick Kick";
+SAYA_EXTRAFIRE = "Grenade";
+SAYA_SPELL1 = "Spellcard Slot 1";
+SAYA_SPELL2 = "Spellcard Slot 2";
+SAYA_SPELL3 = "Spellcard Slot 3";
+SAYA_SPELL4 = "Spellcard Slot 4";
+// skills
+SAYA_SKCHILL="\cvBabby Mode\c-";
+SAYA_SKEASY="\cdEasy Mode\c-";
+SAYA_SKNORMAL="\cfNormal Mode\c-";
+SAYA_SKHARD="\ciHard Mode\c-";
+SAYA_SKHARDCORE="\crHardcore Mode\c-";
+SAYA_SKHARDCORECONFIRM="\crAre you sure you want to do that?\nYou might get your ass kicked.\c-\n\n\caFast monsters\n1.5x monster health & damage\n25% extra aggressiveness\nCheats are disabled\nCoop monsters will spawn\c-\n\n(Press Y for a challenge)";
+SAYA_SKLUNATIC="\cmLunatic Mode\c-";
+SAYA_SKLUNATICCONFIRM="\cmYou've clearly got a death wish.\nChoose this skill if you dare.\c-\n\n\caAll changes from Hardcore\n+\n2x speedup for all enemy actions\nEnemy projectiles will multiply\nAdditional enemies may spawn\nEnemies react instantly\nEnemies don't flinch\nInfighting is disabled\c-\n\n(Press Y to die instantly)";
+// mod menu
+SAYA_MTITLE = "RED-EYED RAMPAGE Options";
+SAYA_MCREDS = "RED-EYED RAMPAGE Credits";
+// credits
+SAYA_CSTITLE = "UnSX Side Story: Saya";
+SAYA_CSTITLE2 = "Nerd Gremlin Proves Everyone Wrong";
+// Help menu
+SAYA_HELP_NPAGE = "6";
+SAYA_HELP_PAGE1 = "The Story So Far";
+SAYA_HELP_PAGE1_TXT =
+"TODO";
+SAYA_HELP_PAGE2 = "Who Is Saya Miyamoto";
+SAYA_HELP_PAGE2_TXT =
+"TODO";
+SAYA_HELP_PAGE3 = "Saya's Arsenal (Part 1: Weapons)";
+SAYA_HELP_PAGE3_TXT =
+"TODO";
+SAYA_HELP_PAGE4 = "Saya's Arsenal (Part 2: Items)";
+SAYA_HELP_PAGE4_TXT =
+"TODO";
+SAYA_HELP_PAGE5 = "Saya's Arsenal (Part 3: Powerups)";
+SAYA_HELP_PAGE5_TXT =
+"TODO";
+SAYA_HELP_PAGE6 = "Additional Tips";
+SAYA_HELP_PAGE6_TXT =
+"TODO";

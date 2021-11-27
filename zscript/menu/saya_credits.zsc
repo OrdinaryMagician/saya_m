@@ -5,7 +5,7 @@ Class SayaCreditsMenu : SWWMCreditsMenu
 	override void ChildInit( Menu parent )
 	{
 		cmusic.Push(new("SWWMCreditsEntry").Init("DeGenerator","Stompah"));
-		cmusic.Push(new("SWWMCreditsEntry").Init("Teque","Triangular Bells"));
+		cmusic.Push(new("SWWMCreditsEntry").Init("Teque","Underground"));
 	}
 	override String, int GetCreditsMus()
 	{

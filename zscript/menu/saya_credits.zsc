@@ -1,0 +1,14 @@
+// mod credits
+
+Class SayaCreditsMenu : SWWMCreditsMenu
+{
+	override void ChildInit( Menu parent )
+	{
+		cmusic.Push(new("SWWMCreditsEntry").Init("DeGenerator","Stompah"));
+		cmusic.Push(new("SWWMCreditsEntry").Init("Teque","Triangular Bells"));
+	}
+	override String, int GetCreditsMus()
+	{
+		return "music/saya_titlemus.ogg", 0;
+	}
+}

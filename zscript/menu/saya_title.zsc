@@ -1,0 +1,13 @@
+// Things for the titlemap
+
+Struct TitleSmoke
+{
+	int age, maxage;
+	Vector2 pos, vel;
+	double ang, angvel;
+	double scale;
+}
+
+Class SayaTitleStuff : EventHandler
+{
+}

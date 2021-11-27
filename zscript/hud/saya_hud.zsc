@@ -1,0 +1,37 @@
+// RED-EYED RAMPAGE HUD
+
+Class SayaStatusBar : SWWMStatusBar
+{
+	override void UpdateInterpolators()
+	{
+	}
+
+	override void GetMinimapColors()
+	{
+		mm_backcolor = "10 10 10";
+		mm_cdwallcolor = "50 30 30";
+		mm_efwallcolor = "a0 80 80";
+		mm_fdwallcolor = "70 50 50";
+		mm_interlevelcolor = "ff 00 60";
+		mm_intralevelcolor = "00 60 ff";
+		mm_lockedcolor = "00 90 80";
+		mm_notseencolor = "30 20 20";
+		mm_portalcolor = "40 30 20";
+		mm_secretsectorcolor = "80 00 ff";
+		mm_secretwallcolor = "60 40 80";
+		mm_specialwallcolor = "ff a0 00";
+		mm_tswallcolor = "30 20 40";
+		mm_unexploredsecretcolor = "40 00 80";
+		mm_wallcolor = "e0 c0 c0";
+		mm_yourcolor = "80 00 00";
+	}
+
+	override void DrawWeapons()
+	{
+	}
+
+	override int DrawStatus()
+	{
+		return 0;
+	}
+}

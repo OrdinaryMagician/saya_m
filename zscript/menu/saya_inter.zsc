@@ -1,0 +1,5 @@
+// intermission stat screen
+Class SayaStatScreen : StatusScreen
+{
+	// TODO replicate what Ibuki's screen does once it's fully implemented
+}

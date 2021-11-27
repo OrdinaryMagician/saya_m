@@ -1,0 +1,5 @@
+$pitchshiftrange 0
+
+title/cock	sounds/title_cock.ogg
+title/fire	sounds/title_fire.ogg
+title/thump	sounds/title_thump.ogg

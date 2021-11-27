@@ -1,0 +1,133 @@
+GameInfo
+{
+	AddEventHandlers = "SWWMStaticHandler", "SWWMHandler"
+	PlayerClasses = "SayaPlayer"
+	StatusBarClass = "SayaStatusBar"
+	StatScreen_Single = "SayaStatScreen"
+	BackpackType = "HammerspaceEmbiggener"
+	QuitSound = "misc/teleport"
+	QuitMessages = "$QUITMSG", "$QUITMSG1", "$QUITMSG2", "$QUITMSG3",
+		"$QUITMSG4", "$QUITMSG5", "$QUITMSG6", "$QUITMSG7",
+		"$QUITMSG8", "$QUITMSG9", "$QUITMSG10", "$QUITMSG11"
+	ChatSound = "misc/chat"
+	NoMergePickupMsg = true
+	CursorPic = "graphics/sayacurs.png"
+	DimColor = "Black"
+	DimAmount = 0.5
+	BlurAmount = 0
+	Endoom = "ENDSAYA"
+	PickupColor = "White"
+	MenuFontColor_Title = "Red"
+	MenuFontColor_Label = "DarkRed"
+	MenuFontColor_Value = "Red"
+	MenuFontColor_Action = "DarkRed"
+	MenuFontColor_Header = "Red"
+	MenuFontColor_Highlight = "Brick"
+	MenuFontColor_Selection = "Brick"
+	MenuSliderColor = "Red"
+	MenuSliderBackColor = "Gray"
+	MenuBackButton = "graphics/sayaback.png"
+	MessageBoxClass = "SWWMMessageBox"
+	HelpMenuClass = "SWWMHelpMenu"
+	MenuDelegateClass = "SWWMMenuDelegate"
+	PauseSign = "graphics/sayapause.png"
+	BorderFlat = "graphics/bord_flat.png"
+	Border = 2, 0, "graphics/bord_tr.png", "graphics/bord_t.png", "graphics/bord_tl.png", "graphics/bord_r.png", "graphics/bord_l.png", "graphics/bord_br.png", "graphics/bord_b.png", "graphics/bord_bl.png"
+	ForceTextInMenus = true
+	TelefogHeight = 28
+	// precache all intro sounds
+	PrecacheSounds = "title/cock", "title/fire", "title/thump"
+	// precache all intro textures, to avoid hiccups
+	PrecacheTextures = "graphics/SayaLogo.png",
+		"graphics/SayaLogo_Glow.png",
+		"graphics/SayaLogo_Layers.png",
+		"graphics/title_grad.png",
+		"graphics/title_saya.png",
+		"graphics/title_saya_dark.png",
+		"graphics/title_saya_eye.png",
+		"graphics/title_saya_smoke.png",
+		"graphics/title_smoke_0.png",
+		"graphics/title_smoke_1.png",
+		"graphics/title_smoke_2.png",
+		"graphics/title_smoke_3.png",
+		"graphics/title_smoke_4.png",
+		"graphics/title_smoke_5.png",
+		"graphics/title_smoke_6.png",
+		"graphics/title_smoke_7.png",
+		"graphics/M_SAYA.png",
+		"graphics/M_SAYA_Layers.png"
+}
+
+ClearSkills
+
+Skill chill
+{
+	AutoUseHealth
+	DamageFactor = 0.5
+	EasyBossBrain
+	SlowMonsters
+	SpawnFilter = baby
+	ACSReturn = 0
+	Name = "$SAYA_SKCHILL"
+}
+Skill easy
+{
+	DamageFactor = 0.75
+	SpawnFilter = easy
+	ACSReturn = 1
+	Name = "$SAYA_SKEASY"
+}
+Skill normal
+{
+	SpawnFilter = normal
+	ACSReturn = 2
+	Name = "$SAYA_SKNORMAL"
+	DefaultSkill
+}
+Skill hard
+{
+	DamageFactor = 1.25
+	SpawnFilter = hard
+	ACSReturn = 3
+	Name = "$SAYA_SKHARD"
+}
+Skill hardcore
+{
+	DisableCheats
+	FastMonsters
+	HealthFactor = 1.5
+	DamageFactor = 1.5
+	Aggressiveness = 0.25
+	SpawnFilter = nightmare
+	SpawnMulti
+	ACSReturn = 4
+	Name = "$SAYA_SKHARDCORE"
+	MustConfirm = "$SAYA_SKHARDCORECONFIRM"
+}
+Skill lunatic
+{
+	DisableCheats
+	HealthFactor = 2.0
+	DamageFactor = 2.0
+	Aggressiveness = 1.0
+	SpawnFilter = nightmare
+	SpawnMulti
+	TotalInfighting
+	InstantReaction
+	NoPain
+	ACSReturn = 4
+	Name = "$SAYA_SKLUNATIC"
+	MustConfirm = "$SAYA_SKLUNATICCONFIRM"
+}
+
+Map TITLEMAP "RED-EYED RAMPAGE Title Map"
+{
+	Music = ""
+	EventHandlers = "SayaTitleStuff"
+}
+
+DamageType EndLevel
+{
+	NoArmor
+	Obituary = "$O_ENDLEVEL"
+}

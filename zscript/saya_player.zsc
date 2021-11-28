@@ -12,6 +12,15 @@ Class SayaPlayer : SWWMPlayer
 		PainChance 255;
 		Health 100;
 		Player.DisplayName "$T_SAYA";
+		Player.StartItem "SayaPistol";
+		Player.StartItem "SayaPistolAmmo", 2;
+		Player.StartItem "SayaSpellRadiant";
+		Player.StartItem "SayaSpellRude";
+		Player.StartItem "SayaSpellRetribution";
+		Player.StartItem "SayaSpellReviled";
+		Player.StartItem "SayaUnarmed";
+		Player.StartItem "SayaMana", 100;
+		Player.StartItem "SayaInternalArmor";
 		Player.AttackZOffset 13;
 		Player.ViewHeight 43;
 		Player.AirCapacity 0;

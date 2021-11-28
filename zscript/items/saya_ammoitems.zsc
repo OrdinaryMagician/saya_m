@@ -1,0 +1,233 @@
+// ammo for Saya mod
+
+// Mana, it's just there
+Class SayaMana : SWWMAmmo
+{
+	Default
+	{
+		Inventory.MaxAmount 100;
+		+INVENTORY.UNDROPPABLE;
+		+INVENTORY.UNTOSSABLE;
+		+INVENTORY.UNCLEARABLE;
+		+INVENTORY.QUIET;
+	}
+}
+
+Class SayaKiraMana : SWWMAmmo
+{
+	Default
+	{
+		Inventory.MaxAmount 12;
+		+INVENTORY.UNDROPPABLE;
+		+INVENTORY.UNTOSSABLE;
+		+INVENTORY.QUIET;
+	}
+}
+
+Class SayaPistolAmmo : SWWMAmmo
+{
+	Default
+	{
+		Tag "$T_SAYAPISTOLAMMO";
+		SWWMAmmo.PickupTag "SAYAPISTOLAMMO";
+		Inventory.Amount 1;
+		Inventory.MaxAmount 5;
+		Ammo.BackpackAmount 0;
+		SWWMAmmo.EmbiggenMaxAmount1 7;
+		SWWMAmmo.EmbiggenMaxAmount2 9;
+		SWWMAmmo.EmbiggenMaxAmount3 11;
+		SWWMAmmo.EmbiggenMaxAmount4 14;
+		SWWMAmmo.MagAmmoType "SayaPistolBullet";
+		Ammo.DropAmount 1;
+	}
+}
+Class SayaPistolBullet : MagAmmo
+{
+	Default
+	{
+		Tag "$T_SAYAPISTOLBULLET";
+		MagAmmo.PickupTag "SAYAPISTOLBULLET";
+		Inventory.Amount 1;
+		Inventory.MaxAmount 12;
+		MagAmmo.ParentAmmo "SayaPistolAmmo";
+		MagAmmo.ClipSize 12;
+		MagAmmo.BackpackAmount 8;
+	}
+}
+
+Class SayaSMGAmmo : SWWMAmmo
+{
+	Default
+	{
+		Tag "$T_SAYASMGAMMO";
+		SWWMAmmo.PickupTag "SAYASMGAMMO";
+		Inventory.Amount 1;
+		Inventory.MaxAmount 3;
+		Ammo.BackpackAmount 0;
+		SWWMAmmo.EmbiggenMaxAmount1 4;
+		SWWMAmmo.EmbiggenMaxAmount2 5;
+		SWWMAmmo.EmbiggenMaxAmount3 7;
+		SWWMAmmo.EmbiggenMaxAmount4 9;
+		SWWMAmmo.MagAmmoType "SayaSMGBullet";
+		Ammo.DropAmount 1;
+	}
+}
+Class SayaSMGBullet : MagAmmo
+{
+	Default
+	{
+		Tag "$T_SAYASMGBULLET";
+		MagAmmo.PickupTag "SAYASMGBULLET";
+		Inventory.Amount 1;
+		Inventory.MaxAmount 32;
+		MagAmmo.ParentAmmo "SayaSMGAmmo";
+		MagAmmo.ClipSize 32;
+		MagAmmo.BackpackAmount 16;
+	}
+}
+
+Class SayaRifleAmmo : SWWMAmmo
+{
+	Default
+	{
+		Tag "$T_SAYARIFLEAMMO";
+		SWWMAmmo.PickupTag "SAYARIFLEAMMO";
+		Inventory.Amount 1;
+		Inventory.MaxAmount 15;
+		Ammo.BackpackAmount 4;
+		SWWMAmmo.EmbiggenMaxAmount1 20;
+		SWWMAmmo.EmbiggenMaxAmount2 25;
+		SWWMAmmo.EmbiggenMaxAmount3 40;
+		SWWMAmmo.EmbiggenMaxAmount4 50;
+		Ammo.DropAmount 2;
+	}
+}
+
+Class SayaGaussAmmo : SWWMAmmo
+{
+	Default
+	{
+		Tag "$T_SAYAGAUSSAMMO";
+		SWWMAmmo.PickupTag "SAYAGAUSSAMMO";
+		Inventory.Amount 1;
+		Inventory.MaxAmount 4;
+		Ammo.BackpackAmount 0;
+		SWWMAmmo.EmbiggenMaxAmount1 5;
+		SWWMAmmo.EmbiggenMaxAmount2 7;
+		SWWMAmmo.EmbiggenMaxAmount3 9;
+		SWWMAmmo.EmbiggenMaxAmount4 11;
+		SWWMAmmo.MagAmmoType "SayaGaussRound";
+		Ammo.DropAmount 1;
+	}
+}
+Class SayaGaussRound : MagAmmo
+{
+	Default
+	{
+		Tag "$T_SAYAGAUSSROUND";
+		MagAmmo.PickupTag "SAYAGAUSSROUND";
+		Inventory.Amount 1;
+		Inventory.MaxAmount 50;
+		MagAmmo.ParentAmmo "SayaGaussAmmo";
+		MagAmmo.ClipSize 50;
+		MagAmmo.BackpackAmount 20;
+	}
+}
+
+Class SayaGLAmmo : SWWMAmmo
+{
+	Default
+	{
+		Tag "$T_SAYAGLAMMO";
+		SWWMAmmo.PickupTag "SAYAGLAMMO";
+		Inventory.Amount 1;
+		Inventory.MaxAmount 8;
+		Ammo.BackpackAmount 1;
+		SWWMAmmo.EmbiggenMaxAmount1 10;
+		SWWMAmmo.EmbiggenMaxAmount2 12;
+		SWWMAmmo.EmbiggenMaxAmount3 16;
+		SWWMAmmo.EmbiggenMaxAmount4 24;
+		Ammo.DropAmount 1;
+	}
+}
+
+Class SayaPlasmaAmmo : SWWMAmmo
+{
+	Default
+	{
+		Tag "$T_SAYAPLASMAAMMO";
+		SWWMAmmo.PickupTag "SAYAPLASMAAMMO";
+		Inventory.Amount 1;
+		Inventory.MaxAmount 4;
+		Ammo.BackpackAmount 0;
+		SWWMAmmo.EmbiggenMaxAmount1 5;
+		SWWMAmmo.EmbiggenMaxAmount2 5;
+		SWWMAmmo.EmbiggenMaxAmount3 7;
+		SWWMAmmo.EmbiggenMaxAmount4 7;
+		SWWMAmmo.MagAmmoType "SayaPlasmaRound";
+		Ammo.DropAmount 1;
+	}
+}
+Class SayaPlasmaRound : MagAmmo
+{
+	Default
+	{
+		Inventory.Amount 1;
+		Inventory.MaxAmount 60;
+		MagAmmo.ParentAmmo "SayaPlasmaAmmo";
+		MagAmmo.ClipSize 60;
+		MagAmmo.BackpackAmount 20;
+		+INVENTORY.UNDROPPABLE;
+		+INVENTORY.UNTOSSABLE;
+		+INVENTORY.QUIET;
+	}
+}
+
+Class SayaBFGAmmo : SWWMAmmo
+{
+	Default
+	{
+		Tag "$T_SAYABFGAMMO";
+		SWWMAmmo.PickupTag "SAYABFGAMMO";
+		Inventory.Amount 1;
+		Inventory.MaxAmount 1;
+		Ammo.BackpackAmount 0;
+		SWWMAmmo.EmbiggenMaxAmount1 1;
+		SWWMAmmo.EmbiggenMaxAmount2 2;
+		SWWMAmmo.EmbiggenMaxAmount3 2;
+		SWWMAmmo.EmbiggenMaxAmount4 3;
+		SWWMAmmo.MagAmmoType "SayaBFGRound";
+		Ammo.DropAmount 1;
+	}
+}
+Class SayaBFGRound : MagAmmo
+{
+	Default
+	{
+		Inventory.Amount 1;
+		Inventory.MaxAmount 8;
+		MagAmmo.ParentAmmo "SayaBFGAmmo";
+		MagAmmo.ClipSize 8;
+		MagAmmo.BackpackAmount 1;
+		+INVENTORY.UNDROPPABLE;
+		+INVENTORY.UNTOSSABLE;
+		+INVENTORY.QUIET;
+	}
+}
+
+Class SayaBombAmmo : SWWMAmmo
+{
+	Default
+	{
+		Tag "$T_SAYAZBOMB";
+		SWWMAmmo.PickupTag "SAYAZBOMB";
+		Inventory.Amount 1;
+		Inventory.MaxAmount 4;
+		Ammo.BackpackAmount 0;
+		SWWMAmmo.EmbiggenMaxAmount1 6;
+		SWWMAmmo.EmbiggenMaxAmount2 10;
+		SWWMAmmo.EmbiggenMaxAmount3 12;
+		SWWMAmmo.EmbiggenMaxAmount4 15;
+		Ammo.DropAmount 1;
+	}
+}

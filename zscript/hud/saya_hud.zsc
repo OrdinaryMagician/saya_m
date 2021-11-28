@@ -2,16 +2,178 @@
 
 Class SayaStatusBar : SWWMStatusBar
 {
+	TextureID StatusTex[4], StatusIcon[5], InvTex, WeaponTex, AmmoBar[3], GenTex, SpellTex, SpellIcon[4], SpellBar[2];
+	int AmmoFlash[8];	// flash when new ammo is received
+	int AmmoOldAmounts[8];	// to detect when to flash
+	int StatusFlash[4];	// flash when healing or gaining armor
+	int LastStatus[4];	// to detect when to flash
+	int StatusCol[4];	// text colors for each status box, simplifies things
+	Class<SWWMAmmo> AmmoSlots[9];	// ammo type on each slot + mana
+	Class<SWWMWeapon> SpellWeapons[4];	// spell type on each spell slot
+
+	DynamicValueInterpolator StatusInter[4], AmmoInter[9];
+
+	override void FlushNotify()
+	{
+		Super.FlushNotify();
+		// flush interpolators (useful since this virtual gets called
+		// when loading saves, too)
+		StatusInter[0].Reset(CPlayer.Health);
+		StatusInter[1].Reset(CPlayer.mo.CountInv("SayaBonusArmor"));
+		StatusInter[2].Reset(CPlayer.mo.CountInv("SayaLightArmor"));
+		StatusInter[3].Reset(CPlayer.mo.CountInv("SayaHeavyArmor"));
+		for ( int i=0; i<9; i++ )
+		{
+			let a = SWWMAmmo(CPlayer.mo.FindInventory(AmmoSlots[i]));
+			int amt = 0;
+			if ( a )
+			{
+				amt = a.Amount;
+				if ( a.MagAmmoType )
+				{
+					let m = MagAmmo(CPlayer.mo.FindInventory(a.MagAmmoType));
+					if ( m )
+					{
+						amt *= m.ClipSize;
+						amt += m.Amount;
+					}
+				}
+			}
+			AmmoInter[i].Reset(amt);
+		}
+	}
 	override void UpdateInterpolators()
 	{
+		int cur[4];
+		cur[0] = CPlayer.Health;
+		cur[1] = CPlayer.mo.CountInv("SayaBonusArmor");
+		cur[2] = CPlayer.mo.CountInv("SayaLightArmor");
+		cur[3] = CPlayer.mo.CountInv("SayaHeavyArmor");
+		for ( int i=0; i<4; i++ )
+		{
+			StatusInter[i].Update(cur[i]);
+			if ( cur[i] > LastStatus[i] ) StatusFlash[i] = gametic+25;
+			LastStatus[i] = cur[i];
+		}
+		for ( int i=0; i<9; i++ )
+		{
+			let a = SWWMAmmo(CPlayer.mo.FindInventory(AmmoSlots[i]));
+			int amt = 0;
+			if ( a )
+			{
+				amt = a.Amount;
+				if ( a.MagAmmoType )
+				{
+					let m = MagAmmo(CPlayer.mo.FindInventory(a.MagAmmoType));
+					if ( m )
+					{
+						amt *= m.ClipSize;
+						amt += m.Amount;
+					}
+				}
+			}
+			AmmoInter[i].Update(amt);
+			if ( i > 7 ) break;
+			if ( amt > AmmoOldAmounts[i] ) AmmoFlash[i] = gametic+25;
+			AmmoOldAmounts[i] = amt;
+		}
 	}
 
+	// hello??? why is this function clearscope???
+	override void ReceivedWeapon( Weapon weapn )
+	{
+		Super.ReceivedWeapon(weapn);
+		int dummy, slot;
+		[dummy, slot] = players[consoleplayer].weapons.LocateWeapon(weapn.GetClass());
+		EventHandler.SendNetworkEvent("oniweaponreceive",slot);
+	}
+
+	override void Init()
+	{
+		Super.Init();
+		StatusTex[0] = TexMan.CheckForTexture("graphics/HUD/HealthBox.png",TexMan.Type_Any);
+		StatusTex[1] = TexMan.CheckForTexture("graphics/HUD/NuggetBox.png",TexMan.Type_Any);
+		StatusTex[2] = TexMan.CheckForTexture("graphics/HUD/ArmorBox.png",TexMan.Type_Any);
+		StatusTex[3] = TexMan.CheckForTexture("graphics/HUD/HelmBox.png",TexMan.Type_Any);
+		StatusIcon[0] = TexMan.CheckForTexture("graphics/HUD/HealthFlash.png",TexMan.Type_Any);
+		StatusIcon[1] = TexMan.CheckForTexture("graphics/HUD/NuggetFlash.png",TexMan.Type_Any);
+		StatusIcon[2] = TexMan.CheckForTexture("graphics/HUD/ArmorFlash.png",TexMan.Type_Any);
+		StatusIcon[3] = TexMan.CheckForTexture("graphics/HUD/HelmFlash.png",TexMan.Type_Any);
+		StatusIcon[4] = TexMan.CheckForTexture("graphics/HUD/HealthInvul.png",TexMan.Type_Any);
+		StatusCol[0] = MCR_RED;
+		StatusCol[1] = MCR_GREEN;
+		StatusCol[2] = MCR_SILVER;
+		StatusCol[3] = MCR_GOLD;
+		InvTex = TexMan.CheckForTexture("graphics/HUD/GrenadeBox.png",TexMan.Type_Any);
+		WeaponTex = TexMan.CheckForTexture("graphics/HUD/WeaponBar.png",TexMan.Type_Any);
+		AmmoBar[0] = TexMan.CheckForTexture("graphics/HUD/AmmoBar.png",TexMan.Type_Any);
+		AmmoBar[1] = TexMan.CheckForTexture("graphics/HUD/AmmoBar_Sel.png",TexMan.Type_Any);
+		AmmoBar[2] = TexMan.CheckForTexture("graphics/HUD/AmmoBar_Flash.png",TexMan.Type_Any);
+		GenTex = TexMan.CheckForTexture("graphics/HUD/GenericAmmoBox.png",TexMan.Type_Any);
+		SpellTex = TexMan.CheckForTexture("graphics/HUD/SpellcardBox.png",TexMan.Type_Any);
+		SpellIcon[0] = TexMan.CheckForTexture("graphics/HUD/SpellcardSel1.png",TexMan.Type_Any);
+		SpellIcon[1] = TexMan.CheckForTexture("graphics/HUD/SpellcardSel2.png",TexMan.Type_Any);
+		SpellIcon[2] = TexMan.CheckForTexture("graphics/HUD/SpellcardSel3.png",TexMan.Type_Any);
+		SpellIcon[3] = TexMan.CheckForTexture("graphics/HUD/SpellcardSel4.png",TexMan.Type_Any);
+		SpellBar[0] = TexMan.CheckForTexture("graphics/HUD/SpellcardBar.png",TexMan.Type_Any);
+		SpellBar[1] = TexMan.CheckForTexture("graphics/HUD/SpellcardBar_Sel.png",TexMan.Type_Any);
+		tclabel = Font.CR_BRICK;
+		tcvalue = Font.CR_WHITE;
+		tcextra = Font.CR_DARKGRAY;
+		tccompl = Font.CR_GOLD;
+		tcsucks = Font.CR_RED;
+		tclabel_s = "a";
+		tcextra_s = "u";
+		bAlwaysAboveInv = true;
+		LastStatus[0] = CPlayer?CPlayer.health:100;
+		LastStatus[1] = (CPlayer&&CPlayer.mo)?CPlayer.mo.CountInv("SayaBonusArmor"):0;
+		LastStatus[2] = (CPlayer&&CPlayer.mo)?CPlayer.mo.CountInv("SayaLightArmor"):0;
+		LastStatus[3] = (CPlayer&&CPlayer.mo)?CPlayer.mo.CountInv("SayaHeavyArmor"):0;
+		for ( int i=0; i<4; i++ ) StatusInter[i] = DynamicValueInterpolator.Create(LastStatus[i],.1,1,100);
+		AmmoSlots[0] = "SayaKiraMana";
+		AmmoSlots[1] = "SayaPistolAmmo";
+		AmmoSlots[2] = "SayaSMGAmmo";
+		AmmoSlots[3] = "SayaRifleAmmo";
+		AmmoSlots[4] = "SayaGaussAmmo";
+		AmmoSlots[5] = "SayaGLAmmo";
+		AmmoSlots[6] = "SayaPlasmaAmmo";
+		AmmoSlots[7] = "SayaBFGAmmo";
+		AmmoSlots[8] = "SayaMana";
+		for ( int i=0; i<9; i++ )
+		{
+			if ( !CPlayer || !CPlayer.mo )
+			{
+				AmmoInter[i] = DynamicValueInterpolator.Create(0,.1,1,100);
+				continue;
+			}
+			let a = SWWMAmmo((CPlayer&&CPlayer.mo)?CPlayer.mo.FindInventory(AmmoSlots[i]):null);
+			int amt = 0;
+			if ( a )
+			{
+				amt = a.Amount;
+				if ( a.MagAmmoType )
+				{
+					let m = MagAmmo(CPlayer.mo.FindInventory(a.MagAmmoType));
+					if ( m )
+					{
+						amt *= m.ClipSize;
+						amt += m.Amount;
+					}
+				}
+			}
+			AmmoInter[i] = DynamicValueInterpolator.Create(amt,.1,1,100);
+		}
+		SpellWeapons[0] = "SayaSpellReviled";
+		SpellWeapons[1] = "SayaSpellRetribution";
+		SpellWeapons[2] = "SayaSpellRude";
+		SpellWeapons[3] = "SayaSpellRadiant";
+	}
 	override void GetMinimapColors()
 	{
 		mm_backcolor = "10 10 10";
-		mm_cdwallcolor = "50 30 30";
-		mm_efwallcolor = "a0 80 80";
-		mm_fdwallcolor = "70 50 50";
+		mm_cdwallcolor = "70 30 30";
+		mm_efwallcolor = "c0 80 80";
+		mm_fdwallcolor = "90 50 50";
 		mm_interlevelcolor = "ff 00 60";
 		mm_intralevelcolor = "00 60 ff";
 		mm_lockedcolor = "00 90 80";
@@ -22,16 +184,200 @@ Class SayaStatusBar : SWWMStatusBar
 		mm_specialwallcolor = "ff a0 00";
 		mm_tswallcolor = "30 20 40";
 		mm_unexploredsecretcolor = "40 00 80";
-		mm_wallcolor = "e0 c0 c0";
-		mm_yourcolor = "80 00 00";
+		mm_wallcolor = "ff c0 c0";
+		mm_yourcolor = "ff 00 00";
 	}
 
 	override void DrawWeapons()
 	{
+		double xx = ss.x/2-250;
+		double yy = ss.y-(margin+10);
+		for ( int i=0; i<8; i++, xx+=63 )
+		{
+			int slot = i+1;
+			bool inslot = CPlayer.HasWeaponsInSlot(slot);
+			if ( !inslot && (AmmoInter[i].GetValue() <= 0) ) continue;
+			Screen.DrawTexture(WeaponTex,false,xx,yy,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
+			int ncolor = mhudfontcol[MCR_WHITE];
+			int acolor = ncolor;
+			bool selected = false, hasammo = false;
+			bool dummy;
+			int tslot;
+			Weapon w = null;
+			if ( CPlayer.PendingWeapon && (CPlayer.PendingWeapon != WP_NOCHANGE) )
+			{
+				[dummy, tslot] = CPlayer.weapons.LocateWeapon(CPlayer.PendingWeapon.GetClass());
+				if ( tslot == slot )
+				{
+					w = CPlayer.PendingWeapon;
+					selected = true;
+				}
+			}
+			else if ( (!CPlayer.PendingWeapon || (CPlayer.PendingWeapon == WP_NOCHANGE)) && CPlayer.ReadyWeapon )
+			{
+				[dummy, tslot] = CPlayer.weapons.LocateWeapon(CPlayer.ReadyWeapon.GetClass());
+				if ( tslot == slot )
+				{
+					w = CPlayer.ReadyWeapon;
+					selected = true;
+				}
+			}
+			if ( selected ) acolor = ncolor = mhudfontcol[MCR_BRASS];
+			else
+			{
+				bool hasammo = false;
+				for ( Inventory inv=CPlayer.mo.Inv; inv; inv=inv.Inv )
+				{
+					if ( inv is 'Weapon' ) [dummy, tslot] = CPlayer.weapons.LocateWeapon(Weapon(inv).GetClass());
+					else continue;
+					if ( tslot != slot ) continue;
+					// CheckAmmo can't be called from ui, so we have to improvise
+					// for SWWM weapons I made a function for this at least
+					if ( (inv is 'SWWMWeapon') && SWWMWeapon(inv).ReportHUDAmmo() )
+						hasammo = true;
+					else if ( !(inv is 'SWWMWeapon') && ((!Weapon(inv).Ammo1 || (Weapon(inv).Ammo1.Amount > 0) || Weapon(inv).bAMMO_OPTIONAL) || (Weapon(inv).Ammo2 && ((Weapon(inv).Ammo2.Amount > 0) || Weapon(inv).bALT_AMMO_OPTIONAL))) )
+						hasammo = true;
+				}
+				if ( !hasammo ) ncolor = mhudfontcol[MCR_RED];
+			}
+			if ( inslot ) Screen.DrawText(mMiniHUDFont.mFont,ncolor,xx+2,yy+2,String.Format("%d",slot),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
+			int amt = AmmoInter[i].GetValue(), maxamt = 0;
+			let a = SWWMAmmo(CPlayer.mo.FindInventory(AmmoSlots[i]));
+			if ( a )
+			{
+				maxamt = a.MaxAmount;
+				if ( a.MagAmmoType )
+				{
+					let m = MagAmmo(CPlayer.mo.FindInventory(a.MagAmmoType));
+					if ( m )
+					{
+						maxamt *= m.ClipSize;
+						maxamt += m.MaxAmount;
+					}
+				}
+			}
+			double aw = maxamt?((amt*30.)/maxamt):0;
+			if ( aw )
+			{
+				Screen.DrawTexture(AmmoBar[selected],false,xx+11,yy+3,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_WindowRightF,aw,DTA_ColorOverlay,Color(255,0,0,0));
+				Screen.DrawTexture(AmmoBar[selected],false,xx+10,yy+2,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_WindowRightF,aw);
+			}
+			if ( a ) Screen.DrawText(mMiniHUDFont.mFont,acolor,xx+45,yy+2,String.Format("%3d",amt),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
+			int f = hnd.WeaponFlash[i];
+			if ( f && (gametic < f) )
+			{
+				double alph = ((f-(gametic+FracTic))/25.)**1.5;
+				if ( inslot ) Screen.DrawText(mMiniHUDFont.mFont,mhudfontcol[MCR_FLASH],xx+2,yy+2,String.Format("%d",slot),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_Alpha,alph,DTA_LegacyRenderStyle,STYLE_Add);
+			}
+			f = AmmoFlash[i];
+			if ( f && (gametic < f) )
+			{
+				double alph = ((f-(gametic+FracTic))/25.)**1.5;
+				if ( aw ) Screen.DrawTexture(AmmoBar[2],false,xx+10,yy+2,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_WindowRightF,aw,DTA_Alpha,alph,DTA_LegacyRenderStyle,STYLE_Add);
+				if ( a ) Screen.DrawText(mMiniHUDFont.mFont,mhudfontcol[MCR_FLASH],xx+45,yy+2,String.Format("%3d",amt),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_Alpha,alph,DTA_LegacyRenderStyle,STYLE_Add);
+			}
+			// draw weapon-specific display
+			if ( !w ) continue;
+			if ( w is 'SWWMWeapon' ) SWWMWeapon(w).DrawWeapon(FracTic,xx+8,yy-2,hs,ss);
+			else
+			{
+				double gxx = xx+8;
+				// generic display
+				String str;
+				if ( w.Ammo2 && (w.Ammo2 != w.Ammo1) )
+				{
+					str = String.Format("%3d",clamp(w.Ammo2.Amount,0,999));
+					Screen.DrawTexture(GenTex,false,gxx,yy-12,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
+					Screen.DrawText(mMiniHUDFont.mFont,mhudfontcol[(w.Ammo2.Amount<=0)?MCR_RED:MCR_BRASS],gxx+2,yy-10,str,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
+					gxx += 16;
+				}
+				if ( w.Ammo1 )
+				{
+					str = String.Format("%3d",clamp(w.Ammo1.Amount,0,999));
+					Screen.DrawTexture(GenTex,false,gxx,yy-12,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
+					Screen.DrawText(mMiniHUDFont.mFont,mhudfontcol[(w.Ammo1.Amount<=0)?MCR_RED:MCR_BRASS],gxx+2,yy-10,str,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
+				}
+			}
+		}
+		// and the spell stuff
+		xx = ss.x-(margin+24);
+		yy = ss.y-(margin+56);
+		Screen.DrawTexture(SpellTex,false,xx,yy,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
+		double mh = clamp(AmmoInter[8].GetValue(),0,100)/2.;
+		bool selected = false;
+		int selslot = -1;
+		if ( CPlayer.PendingWeapon && (CPlayer.PendingWeapon != WP_NOCHANGE) )
+		{
+			for ( int i=0; i<4; i++ )
+			{
+				if ( !(CPlayer.PendingWeapon is SpellWeapons[i]) ) continue;
+				selected = true;
+				selslot = i;
+				break;
+			}
+		}
+		else if ( CPlayer.ReadyWeapon )
+		{
+			for ( int i=0; i<4; i++ )
+			{
+				if ( !(CPlayer.ReadyWeapon is SpellWeapons[i]) ) continue;
+				selected = true;
+				selslot = i;
+				break;
+			}
+		}
+		if ( mh )
+		{
+			Screen.DrawTexture(SpellBar[selected],false,xx+17,yy+54-mh,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_DestHeightF,mh,DTA_ColorOverlay,Color(255,0,0,0));
+			Screen.DrawTexture(SpellBar[selected],false,xx+16,yy+53-mh,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_DestHeightF,mh);
+		}
+		if ( selslot >= 0 ) Screen.DrawTexture(SpellIcon[selslot],false,xx+2,(yy+44)-14*selslot,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
 	}
 
 	override int DrawStatus()
 	{
-		return 0;
+		double xx = margin;
+		double yy = ss.y-(margin+10);
+		int ofs = 26;
+		for ( int i=0; i<4; i++ )
+		{
+			int st = StatusInter[i].GetValue();
+			if ( (i > 0) && (st <= 0) ) continue;
+			Screen.DrawTexture(StatusTex[i],false,xx,yy,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
+			int ncolor = StatusCol[i];
+			if ( (i == 0) && isInvulnerable() )
+			{
+				ncolor = MCR_WHITE;
+				Screen.DrawTexture(StatusIcon[4],false,xx+2,yy+2,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
+			}
+			Screen.DrawText(mMiniHUDFont.mFont,mhudfontcol[ncolor],xx+12,yy+2,String.Format("%3d",clamp(st,0,999)),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
+			int f = StatusFlash[i];
+			if ( f && (gametic < f) )
+			{
+				double alph = ((f-(gametic+FracTic))/25.)**1.5;
+				Screen.DrawTexture(StatusIcon[i],false,xx+2,yy+2,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_Alpha,alph,DTA_LegacyRenderStyle,STYLE_Add);
+				Screen.DrawText(mMiniHUDFont.mFont,mhudfontcol[MCR_FLASH],xx+12,yy+2,String.Format("%3d",clamp(st,0,999)),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_Alpha,alph,DTA_LegacyRenderStyle,STYLE_Add);
+			}
+			yy -= 10;
+			ofs += 10;
+		}
+		// grenade display
+		let gren = CPlayer.mo.FindInventory("SayaBombAmmo");
+		if ( gren && gren.Amount )
+		{
+			AboveInvOffset = 20;
+			bool sel = (CPlayer.PendingWeapon is 'SayaBomb')||(CPlayer.ReadyWeapon is 'SayaBomb');
+			if ( !CPlayer.mo.InvSel || isInventoryBarVisible() )
+			{
+				yy = ss.y-(margin+ofs-2);
+				ofs += 20;
+			}
+			else yy = ss.y-(margin+ofs+22);
+			Screen.DrawTexture(InvTex,false,xx,yy,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
+			Screen.DrawTexture(gren.Icon,false,xx+2,yy+2,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
+			Screen.DrawText(mMiniHudFont.mFont,mhudfontcol[sel?MCR_BRASS:MCR_WHITE],xx+10,yy+12,String.Format("%2d",clamp(gren.Amount,0,99)),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
+		}
+		else AboveInvOffset = 0;
+		return ofs;
 	}
 }

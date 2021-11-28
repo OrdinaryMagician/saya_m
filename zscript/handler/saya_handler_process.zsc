@@ -2,7 +2,7 @@
 
 extend Class SWWMHandler
 {
-	transient int WeaponFlash[10];
+	transient int WeaponFlash[8];
 
 	private ui void ModConsoleProcess( ConsoleEvent e )
 	{
@@ -13,7 +13,7 @@ extend Class SWWMHandler
 	{
 		if ( e.Name ~== "sayaweaponreceive" )
 		{
-			if ( (e.Args[0] < 0) || (e.Args[0] > 9) ) return;
+			if ( (e.Args[0] < 0) || (e.Args[0] > 7) ) return;
 			WeaponFlash[e.Args[0]] = gametic+25;
 		}
 	}

@@ -3,6 +3,8 @@
 extend Class SWWMHandler
 {
 	transient int WeaponFlash[8];
+	transient int spellchangetic;
+	transient ui int lastspell;
 
 	private ui void ModConsoleProcess( ConsoleEvent e )
 	{
@@ -16,5 +18,34 @@ extend Class SWWMHandler
 			if ( (e.Args[0] < 0) || (e.Args[0] > 7) ) return;
 			WeaponFlash[e.Args[0]] = gametic+25;
 		}
+		else if ( e.Name ~== "sayaspellslot" )
+		{
+			if ( (e.Args[0] < 0) || (e.Args[0] > 3) ) return;
+			let saya = SayaPlayer(players[e.player].mo);
+			if ( saya )
+			{
+				saya.SpellSel = e.Args[0];
+				if ( e.player == consoleplayer )
+					spellchangetic = gametic+1;
+			}
+		}
+	}
+
+	override void UiTick()
+	{
+		if ( gametic != spellchangetic ) return;
+		let saya = SayaPlayer(players[consoleplayer].mo);
+		if ( !saya ) return;
+		if ( saya.SpellSel != lastspell )
+		{
+			let bar = SWWMStatusBar(statusbar);
+			if ( bar )
+			{
+				bar.ntagstr = StringTable.Localize("$T_SAYASPELLCARD"..(saya.SpellSel+1));
+				bar.ntagtic = level.totaltime;
+				bar.ntagcol = nametagcolor;
+			}
+		}
+		lastspell = saya.SpellSel;
 	}
 }

@@ -93,55 +93,55 @@ SAYA_INTERPAR = "PAR TIME:";
 SAYA_INTERTOTAL = "TOTAL TIME:";
 // weapon tooltips
 TT_SAYAFIST =
-"\cg\"What? You think I'm some weakling?\"\c-"
+"\cg\"What? You think I'm some weakling?\"\c-\n"
 "\n"
 "Punch with \cgPrimary fire\c-,\n"
 "kick with \cgSecondary fire\c-.\n"
 "A kick to the nuts is guaranteed\n"
 "to stagger any enemy.";
 TT_SAYAPISTOL =
-"\cg\"The first gun girl I married.\"\c-"
+"\cg\"The first gun girl I married.\"\c-\n"
 "\n"
 "\cg.45 AVP\c-, 12+1 rounds.\n"
 "\cgFire-infused\c- bullets.\n"
 "A fairly reliable pistol.";
 TT_SAYASMG =
-"\cg\"Da nya~☆\"\c-"
+"\cg\"Da nya~☆\"\c-\n"
 "\n"
 "\cg9×19mm Parabellum\c-, 32+1 rounds.\n"
 "300 RPM, very imprecise when hip-fired.";
 TT_SAYARIFLE =
-"\cg\"OH DESIRE~!\"\c-"
+"\cg\"OH DESIRE~!\"\c-\n"
 "\n"
 "\cg.45 LV\c-, 4+1 rounds.\n"
 "Sawed-off for extra coolness.\n"
 "Very effective against goats.";
 TT_SAYAGAUSS =
-"\cg\"The term Gauss Rifle is just sci-fi mumbo jumbo.\"\c-"
+"\cg\"The term Gauss Rifle is just sci-fi mumbo jumbo.\"\c-\n"
 "\n"
 "\cg4mm Shock Bolt\c-, 50+1 rounds.\n"
 "Blazing fast 420 RPM.\n"
 "Silent, does not alert enemies.";
 TT_SAYAGL =
-"\cg\"Protip: Don't try to rocket jump in real life.\"\c-"
+"\cg\"Protip: Don't try to rocket jump in real life.\"\c-\n"
 "\n"
 "\cg25mm Airburst Grenade\c-, 4+1 rounds.\n"
 "Automatic detonation near enemies.\n"
 "Can bounce at certain angles.";
 TT_SAYAPLASMA =
-"\ca\"I cast fuck you on your sorry ass.\"\c-"
+"\cg\"I cast fuck you on your sorry ass.\"\c-\n"
 "\n"
 "\cgDyratin plasma\c-, 300mL.\n"
 "5mL per shot at 700 RPM.\n"
 "Basically a plasma hose.";
 TT_SAYABFG =
-"\cg\"Eat flaming neon death.\"\c-"
+"\cg\"Eat flaming neon death.\"\c-\n"
 "\n"
 "\cgArgon plasma\c-, 8 shots.\n"
 "Damage split between targets.\n"
 "Safe to fire at point blank.";
 TT_SAYAHAMMER =
-"\cg\"Kira-sama... Thank you.\"\c-"
+"\cg\"Kira-sama... Thank you.\"\c-\n"
 "\n"
 "Powered by \cgDivine Fury\c-.\n"
 "Enough energy for 12 side swings of \caPrimary fire\c-,\n"

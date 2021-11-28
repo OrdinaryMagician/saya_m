@@ -5,6 +5,8 @@ SAYA_PRIMARYFIRE = "Primary Fire";
 SAYA_SECONDARYFIRE = "Aim / Secondary Fire";
 SAYA_RELOADFIRE = "Reload";
 SAYA_MELEE = "Quick Kick";
+SAYA_PRIMARYCAST = "Primary Cast";
+SAYA_SECONDARYCAST = "Secondary Cast";
 SAYA_EXTRAFIRE = "Grenade";
 SAYA_SPELL1 = "Spellcard Slot 1";
 SAYA_SPELL2 = "Spellcard Slot 2";
@@ -26,22 +28,59 @@ SAYA_MCREDS = "RED-EYED RAMPAGE Credits";
 SAYA_CSTITLE = "UnSX Side Story: Saya";
 SAYA_CSTITLE2 = "Nerd Gremlin Proves Everyone Wrong";
 // Help menu
-SAYA_HELP_NPAGE = "6";
+SAYA_HELP_NPAGE = "7";
 SAYA_HELP_PAGE1 = "The Story So Far";
 SAYA_HELP_PAGE1_TXT =
-"TODO";
+"June 18th, 2148, it's been over a week since the \caDemolitionist\c- made their debut and put a stop to the \caDemon Invasion on Earth\c-. Since then, days have passed of cleanup jobs all over the world, many stragglers still left causing heaps of trouble. While the heroic robot was enjoying a well-deserved break (and some well-needed therapy, too), \caSaya Miyamoto\c-, their creator, would be bombarded on social media with all sorts of noxious comments.\n"
+"\n"
+"She would be called a coward, a weakling, a hypocrite... Among other things. Of course, \caSaya\c- isn't really a fighter, after all, and she's basically been sitting back acting as the \"mission control\" while her creations did all the work, that's a fact. Of course, she took this very personally, and thus... She decided to prove everyone wrong.\n"
+"\n"
+"Hastily negotiating the distribution of her own arsenal, she set forth to show the whole world that she's no coward, and that she, too, can slay demons with her own hands, and guns.\n"
+"\n"
+"\caAnd so, all by herself, she ran from her home. And thus began her Red-Eyed Rampage.\c-";
 SAYA_HELP_PAGE2 = "Who Is Saya Miyamoto";
 SAYA_HELP_PAGE2_TXT =
-"TODO";
+"Born in 1993, as the middle child to a \"humble\" family, \caSaya Miyamoto\c- proved to be quite the genius from a young age. Advancing quickly in her studies, she enrolled into \caMIT\c- with her older brother, at just 13 years of age, to study computer science. Upon their return, the two would set forth to build their own company: \caAkari Labs\c-.\n"
+"\n"
+"As co-founder and CTO, \caSaya\c- is a noted master of robotics, many of her creations becoming quite popular across \caJapan\c-, and some even abroad too. Following the first alien contact of 2021, she quickly befriended the \caNukuri\c- AI engineer \caZanaveth Nekuraku II\c-, and through their collaboration, the initially very simple \caMaidbot\c- project soared to new heights, being one of the very first sentient AIs in human history.\n"
+"\n"
+"Many many decades later, in the 2070s, she even had her own debut in bio-engineering and augmentation, through the famous \caRed Oni\c- supersoldier project. But really, all these things are just tales of the past. A past filled with many successes and failures. It wasn't until this very year that she effectively contributed to saving the world.\n"
+"\n"
+"But really, \caSaya\c- herself isn't all that big of a deal. She's short, sickly, not very good looking and not really strong either. Sure, she's got the brains, for sure, but you can't win fights with that, can you?";
 SAYA_HELP_PAGE3 = "Saya's Arsenal (Part 1: Weapons)";
 SAYA_HELP_PAGE3_TXT =
-"TODO";
+"Guns are important, guns are good. We all know that, yes. And \caSaya\c- has quite a collection, which is surprising considering she's just a civilian. Well, her dealings with several arms manufacturers through the \caDemolitionist\c- definitely help, I suppose.\n"
+"\n"
+"Unlike the other mods, in here guns have just one fire mode, so the complexity is definitely reduced. There's also a smaller number of weapons, too, occupying just 8 slots. This lower number is mostly due to the fact she can't use those fancy military-grade \caHammerspace\c- containers, so she's left with just the civilian version, which in addition is tied to her own backpack (more on that later).\n"
+"\n"
+"\caSaya\c- fortunately managed to have an autoloader installed, so you won't have to do any sort of manual mag management. \caEmbiggeners\c- of course still work just the same, increasing your ammo capacity, but you can only do this four times, rather than the usual eight.\n"
+"\n"
+"Do remember that at any given moment you can kick and throw grenades (if you have some on you). Don't forget to have those keys bound.";
 SAYA_HELP_PAGE4 = "Saya's Arsenal (Part 2: Items)";
 SAYA_HELP_PAGE4_TXT =
-"TODO";
+"The other little helpers to help along. Naturally, \caSaya\c- is just a normal human (except for the whole \"being immortal\" part), so she definitely needs some extra assistance to not die over and over again.\n"
+"\n"
+"Typical health and armor items are present. Armor is divided in two pieces, one light and one heavy, along with the very helpful \caArmor Nuggets\c-, which are far more efficient on a body of flesh and bone. Health comes in just normal healing supplies, with stimpacks and medical kits, which combine nicely with the rapid healing of your immortal blood, having conveniently instant effects when used.\n"
+"\n"
+"There's also cookies. Cookies replace health bonuses and give you a bit of health. You can eat all the cookies you want, they're delicious. They even replenish your mana too, so there's that.";
 SAYA_HELP_PAGE5 = "Saya's Arsenal (Part 3: Powerups)";
 SAYA_HELP_PAGE5_TXT =
-"TODO";
-SAYA_HELP_PAGE6 = "Additional Tips";
+"Of course these are around too. Like in \caIbuki\c-'s adventures, invisibility was replaced here with something else too, you'll have lots of fun with 'em.\n"
+"\n"
+"Powerup behavior is just about the same here, where they're automatically activated on pickup as long as a copy isn't already active. Oh, and \caSaya\c- can also use those super-healing stimulants too, so there's that.\n"
+"\n"
+"You can guess already that active powerups are shown in the HUD, with their remaining duration. Really, I don't have to explain this in each side-mod, I think.";
+SAYA_HELP_PAGE6 = "Saya's Arsenal (Part 4: Spellcards)";
 SAYA_HELP_PAGE6_TXT =
-"TODO";
+"As someone who has spent many holidays in \caGensokyo\c-, \caSaya\c- is no stranger to spellcard duels... Which she's banned from. Some of her own custom crafted spells are apparently too ludicrous, it seems.\n"
+"\n"
+"For this adventure, she's picked four of her best ones to make use of. Each spellcard can be selected through a dedicated key, and then cast at any moment with any weapon out. Each of the two cast buttons triggers a slightly different behavior, and once that cast begins... It won't stop until it's all done, or you run out of mana.\n"
+"\n"
+"All of these use the same ammunition: your own mana pool. Mana is just a natural energy, absorbed from the environment, so it recovers on its own. There are other ways to replenish it much faster, of course.";
+SAYA_HELP_PAGE7 = "Additional Tips";
+SAYA_HELP_PAGE7_TXT =
+"There is something about \caSaya\c- that makes her quite special: She's immortal. Yeah, she's been alive and looking young for over a century now, and she's survived many accidents (and other things that weren't accidents). Yes, if she is to ever die in the field, she can just get back up again, with some side effects. Resurrection doesn't come cheap, so every time you get back up, you'll take a hit to your maximum health capacity, and temporarily become more vulnerable to damage. The only way to get that health back is to use a spiritual stimulant, or get some rest (which happens between levels).\n"
+"\n"
+"And then there's the other problem. You are very squishy, you could be easily torn to shreds, and that's no good. If your body is destroyed beyond recognition, you will respawn instead of reviving on the spot, and lose any items you were carrying in the process. Now, of course, it would be too cruel of this mod to simply destroy everything you had, so there is one way to recover them: Returning to the spot you died at and fetching your backpack. Make sure you don't lose it in a place where you can't retrieve it later, because THEN it will all surely be gone for good.\n"
+"\n"
+"Now, you could also just load a previous save if you'd rather not go through that effort, the option is still there if you'd rather do that, of course.";

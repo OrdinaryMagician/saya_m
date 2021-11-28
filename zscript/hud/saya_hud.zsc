@@ -3,13 +3,12 @@
 Class SayaStatusBar : SWWMStatusBar
 {
 	TextureID StatusTex[4], StatusIcon[5], InvTex, WeaponTex, AmmoBar[3], GenTex, SpellTex, SpellIcon[4], SpellBar[2];
-	int AmmoFlash[8];	// flash when new ammo is received
-	int AmmoOldAmounts[8];	// to detect when to flash
+	int AmmoFlash[9];	// flash when new ammo is received
+	int AmmoOldAmounts[9];	// to detect when to flash
 	int StatusFlash[4];	// flash when healing or gaining armor
 	int LastStatus[4];	// to detect when to flash
 	int StatusCol[4];	// text colors for each status box, simplifies things
 	Class<SWWMAmmo> AmmoSlots[9];	// ammo type on each slot + mana
-	Class<SWWMWeapon> SpellWeapons[4];	// spell type on each spell slot
 
 	DynamicValueInterpolator StatusInter[4], AmmoInter[9];
 
@@ -73,7 +72,6 @@ Class SayaStatusBar : SWWMStatusBar
 				}
 			}
 			AmmoInter[i].Update(amt);
-			if ( i > 7 ) break;
 			if ( amt > AmmoOldAmounts[i] ) AmmoFlash[i] = gametic+25;
 			AmmoOldAmounts[i] = amt;
 		}
@@ -116,7 +114,7 @@ Class SayaStatusBar : SWWMStatusBar
 		SpellIcon[2] = TexMan.CheckForTexture("graphics/HUD/SpellcardSel3.png",TexMan.Type_Any);
 		SpellIcon[3] = TexMan.CheckForTexture("graphics/HUD/SpellcardSel4.png",TexMan.Type_Any);
 		SpellBar[0] = TexMan.CheckForTexture("graphics/HUD/SpellcardBar.png",TexMan.Type_Any);
-		SpellBar[1] = TexMan.CheckForTexture("graphics/HUD/SpellcardBar_Sel.png",TexMan.Type_Any);
+		SpellBar[1] = TexMan.CheckForTexture("graphics/HUD/SpellcardBarFlash.png",TexMan.Type_Any);
 		tclabel = Font.CR_BRICK;
 		tcvalue = Font.CR_WHITE;
 		tcextra = Font.CR_DARKGRAY;
@@ -163,10 +161,6 @@ Class SayaStatusBar : SWWMStatusBar
 			}
 			AmmoInter[i] = DynamicValueInterpolator.Create(amt,.1,1,100);
 		}
-		SpellWeapons[0] = "SayaSpellReviled";
-		SpellWeapons[1] = "SayaSpellRetribution";
-		SpellWeapons[2] = "SayaSpellRude";
-		SpellWeapons[3] = "SayaSpellRadiant";
 	}
 	override void GetMinimapColors()
 	{
@@ -304,34 +298,20 @@ Class SayaStatusBar : SWWMStatusBar
 		yy = ss.y-(margin+56);
 		Screen.DrawTexture(SpellTex,false,xx,yy,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
 		double mh = clamp(AmmoInter[8].GetValue(),0,100)/2.;
-		bool selected = false;
 		int selslot = -1;
-		if ( CPlayer.PendingWeapon && (CPlayer.PendingWeapon != WP_NOCHANGE) )
-		{
-			for ( int i=0; i<4; i++ )
-			{
-				if ( !(CPlayer.PendingWeapon is SpellWeapons[i]) ) continue;
-				selected = true;
-				selslot = i;
-				break;
-			}
-		}
-		else if ( CPlayer.ReadyWeapon )
-		{
-			for ( int i=0; i<4; i++ )
-			{
-				if ( !(CPlayer.ReadyWeapon is SpellWeapons[i]) ) continue;
-				selected = true;
-				selslot = i;
-				break;
-			}
-		}
+		if ( SayaPlayer(CPlayer.mo) ) selslot = SayaPlayer(CPlayer.mo).SpellSel;
 		if ( mh )
 		{
-			Screen.DrawTexture(SpellBar[selected],false,xx+17,yy+54-mh,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_DestHeightF,mh,DTA_ColorOverlay,Color(255,0,0,0));
-			Screen.DrawTexture(SpellBar[selected],false,xx+16,yy+53-mh,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_DestHeightF,mh);
+			Screen.DrawTexture(SpellBar[0],false,xx+17,yy+54-mh,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_DestHeightF,mh,DTA_ColorOverlay,Color(255,0,0,0));
+			Screen.DrawTexture(SpellBar[0],false,xx+16,yy+53-mh,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_DestHeightF,mh);
+			int f = AmmoFlash[8];
+			if ( f && (gametic < f) )
+			{
+				double alph = ((f-(gametic+FracTic))/25.)**1.5;
+				Screen.DrawTexture(SpellBar[1],false,xx+16,yy+53-mh,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_DestHeightF,mh,DTA_Alpha,alph,DTA_LegacyRenderStyle,STYLE_Add);
+			}
 		}
-		if ( selslot >= 0 ) Screen.DrawTexture(SpellIcon[selslot],false,xx+2,(yy+44)-14*selslot,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
+		if ( selslot != -1 ) Screen.DrawTexture(SpellIcon[selslot],false,xx+2,(yy+44)-14*selslot,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
 	}
 
 	override int DrawStatus()

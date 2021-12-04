@@ -1,5 +1,440 @@
 // intermission stat screen
 Class SayaStatScreen : StatusScreen
 {
-	// TODO replicate what Ibuki's screen does once it's fully implemented
+	TextureID bgtex;
+	TextureID sayatex[3];
+	TitleSmoke smk[128];
+	Shape2D smk_shape;
+	Shape2DTransform smk_tform;
+	TextureID smk_tex[8];
+	TextureID gradtex;
+	int glarestr;
+	double FracTic;
+	int sndcnt;
+
+	override void Start( wbstartstruct wbstartstruct )
+	{
+		Super.Start(wbstartstruct);
+		// support for old author text style
+		int iof = lnametexts[0].IndexOf(" - by: ");
+		if ( iof != -1 )
+		{
+			authortexts[0] = lnametexts[0].Mid(iof+7);
+			lnametexts[0].Truncate(iof);
+		}
+		iof = lnametexts[1].IndexOf(" - by: ");
+		if ( iof != -1 )
+		{
+			authortexts[1] = lnametexts[1].Mid(iof+7);
+			lnametexts[1].Truncate(iof);
+		}
+	}
+	override void StartMusic()
+	{
+		S_ChangeMusic("music/saya_intermus.ogg");
+	}
+	private void TickSmokeLayers()
+	{
+		for ( int i=0; i<128; i++ )
+		{
+			int presim = 0;
+			if ( smk[i].age >= smk[i].maxage )
+			{
+				if ( smk[i].maxage == 0 ) presim = Random[UIStuff](0,60);
+				else presim = -1;
+				smk[i].age = Random[UIStuff](-20,0);
+				smk[i].maxage = Random[UIStuff](60,120);
+				smk[i].pos = (FRandom[UIStuff](-512.,512.),FRandom[UIStuff](0.,256.));
+				smk[i].vel = (FRandom[UIStuff](-1.,3.),FRandom[UIStuff](-2.,-6.));
+				smk[i].ang = FRandom[UIStuff](0.,360.);
+				smk[i].angvel = FRandom[UIStuff](1.,4.)*RandomPick[UIStuff](-1,1);
+				smk[i].scale = FRandom[UIStuff](256.,512.);
+			}
+			for ( int j=0; j<=presim; j++ )
+			{
+				smk[i].age++;
+				if ( smk[i].age <= 0 ) continue;
+				smk[i].pos += smk[i].vel;
+				smk[i].ang += smk[i].angvel;
+			}
+		}
+	}
+	private void RenderSmokeLayer( double GameSecs, bool back, double alpha = 1., double disp = 0., bool zoomout = false )
+	{
+		if ( !smk_shape )
+		{
+			smk_shape = new("Shape2D");
+			smk_shape.PushVertex((-1,-1));
+			smk_shape.PushVertex((1,-1));
+			smk_shape.PushVertex((-1,1));
+			smk_shape.PushVertex((1,1));
+			smk_shape.PushCoord((0,0));
+			smk_shape.PushCoord((1,0));
+			smk_shape.PushCoord((0,1));
+			smk_shape.PushCoord((1,1));
+			smk_shape.PushTriangle(0,3,1);
+			smk_shape.PushTriangle(0,2,3);
+		}
+		if ( !smk_tform ) smk_tform = new("Shape2DTransform");
+		double zoomscl = Screen.GetHeight()/(zoomout?600:500.);
+		int imin = back?64:0;
+		int imax = back?128:64;
+		int base = zoomout?(back?450:750):(back?500:300);
+		for ( int i=imin; i<imax; i++ )
+		{
+			if ( !smk_tex[i%8] ) smk_tex[i%8] = TexMan.CheckForTexture("graphics/title_smoke_"..(i%8)..".png",TexMan.Type_Any);
+			smk_tform.Clear();
+			// base transforms
+			smk_tform.Scale((1,1)*smk[i].scale);
+			smk_tform.Rotate(smk[i].ang+smk[i].angvel*FracTic);
+			smk_tform.Translate(smk[i].pos+smk[i].vel*FracTic);
+			// screen transforms
+			smk_tform.Translate((0,base+disp));
+			smk_tform.Scale((1,1)*zoomscl);
+			smk_tform.Translate((Screen.GetWidth()/2,0));
+			smk_shape.SetTransform(smk_tform);
+			double alf = cos((smk[i].age/double(smk[i].maxage))*90)*alpha;
+			alf *= clamp(smk[i].age/10.,0,1);
+			Screen.DrawShape(smk_tex[i%8],false,smk_shape,DTA_Alpha,alf,DTA_LegacyRenderStyle,STYLE_AddShaded,DTA_FillColor,Color(4,16,48));
+		}
+	}
+	// heh
+	private clearscope double smerp( double a ) const
+	{
+		return (sin((a-.5)*180.)+1.)/2.;
+	}
+	private void drawSWWMBg()
+	{
+		double GameSecs = (bcnt+FracTic)/GameTicRate;
+		if ( saya_fuzz )
+		{
+			if ( !bgtex ) bgtex = TexMan.CheckForTexture("graphics/tempbg.png",TexMan.Type_Any);
+			Vector2 tsize = TexMan.GetScaledSize(bgtex);
+			double zoom = max(ceil(Screen.GetWidth()/tsize.x),ceil(Screen.GetHeight()/tsize.y));
+			Vector2 vsize = (Screen.GetWidth(),Screen.GetHeight())/zoom;
+			Screen.DrawTexture(bgtex,false,(vsize.x-tsize.x)/2,(vsize.y-tsize.y)/2,DTA_VirtualWidthF,vsize.x,DTA_VirtualHeightF,vsize.y,DTA_KeepRatio,true,DTA_ColorOverlay,Color(128,0,0,0));
+			Screen.Dim(Color(16,0,0),1.-clamp(GameSecs,.1,1.),0,0,Screen.GetWidth(),Screen.GetHeight());
+		}
+		else Screen.Dim(Color(16,0,0),1.,0,0,Screen.GetWidth(),Screen.GetHeight());
+		double texscl = Screen.GetHeight()/1500.;
+		if ( !gradtex ) gradtex = TexMan.CheckForTexture("graphics/title_grad.png",TexMan.Type_Any);
+		Screen.DrawTexture(gradtex,false,0,Screen.GetHeight(),DTA_DestWidth,Screen.GetWidth(),DTA_DestHeight,512*CleanYFac_1,DTA_LegacyRenderStyle,STYLE_AddShaded,DTA_FillColor,Color(128,0,0),DTA_TopOffset,256);
+		RenderSmokeLayer(GameSecs,true,.5,0,true);
+		if ( !sayatex[0] ) sayatex[0] = TexMan.CheckForTexture("graphics/title_saya.png",TexMan.Type_Any);
+		if ( !sayatex[1] ) sayatex[1] = TexMan.CheckForTexture("graphics/title_saya_smoke.png",TexMan.Type_Any);
+		if ( !sayatex[2] ) sayatex[2] = TexMan.CheckForTexture("graphics/title_saya_eye.png",TexMan.Type_Any);
+		double ofs;
+		if ( sp_state >= 2 ) ofs = 120;
+		else ofs = 120*smerp(clamp(GameSecs,0.,1.));
+		Screen.DrawTexture(sayatex[0],false,Screen.GetWidth()/2+ofs*CleanXFac_1,Screen.GetHeight()+700*texscl,DTA_ScaleX,texscl,DTA_ScaleY,texscl);
+		Screen.DrawTexture(sayatex[1],false,Screen.GetWidth()/2+ofs*CleanXFac_1,Screen.GetHeight()+700*texscl,DTA_ScaleX,texscl,DTA_ScaleY,texscl,DTA_LegacyRenderStyle,STYLE_Add);
+		Screen.DrawTexture(sayatex[2],false,Screen.GetWidth()/2+ofs*CleanXFac_1,Screen.GetHeight()+700*texscl,DTA_ScaleX,texscl,DTA_ScaleY,texscl,DTA_LegacyRenderStyle,STYLE_Add);
+		double alf = clamp(glarestr/20.,0.,1.)**2;
+		if ( alf > 0. ) Screen.DrawTexture(sayatex[2],false,Screen.GetWidth()/2+ofs*CleanXFac_1,Screen.GetHeight()+700*texscl,DTA_ScaleX,texscl,DTA_ScaleY,texscl,DTA_LegacyRenderStyle,STYLE_Add,DTA_Alpha,alf);
+		RenderSmokeLayer(GameSecs,false,1.,0,true);
+		Screen.DrawTexture(gradtex,false,0,Screen.GetHeight(),DTA_DestWidth,Screen.GetWidth(),DTA_DestHeight,64*CleanYFac_1,DTA_LegacyRenderStyle,STYLE_Shaded,DTA_FillColor,Color(128,0,0),DTA_TopOffset,256);
+	}
+	private void drawSWWMFg()
+	{
+		if ( glarestr > 0 ) Screen.Dim("Red",(clamp(glarestr/20.,0.,1.)**2)*.3,0,0,Screen.GetWidth(),Screen.GetHeight());
+	}
+	override int DrawLF()
+	{
+		if ( sp_state < 1 ) return 0;
+		double GameSecs = (bcnt+FracTic)/GameTicRate;
+		int th = (smallfont.GetHeight()*10+32)*CleanYFac_1; // height of the stats box + margin
+		int bh = ((authortexts[0]!="")?(smallfont2.GetHeight()+smallfont.GetHeight()*2+bigfont.GetHeight()):(smallfont.GetHeight()*2+bigfont.GetHeight()))*CleanYFac_1; // height of the "level finished" box
+		double xx = Screen.GetWidth()/2-120*CleanXFac_1;
+		double yy = (Screen.GetHeight()-th)/2;
+		yy -= bh;
+		if ( !gradtex ) gradtex = TexMan.CheckForTexture("graphics/title_grad.png",TexMan.Type_Any);
+		Screen.DrawTexture(gradtex,false,xx,yy+bh/2,DTA_DestWidth,150*CleanXFac_1,DTA_DestHeight,bh+4*CleanYFac_1,DTA_Rotate,90,DTA_LegacyRenderStyle,STYLE_Shaded,DTA_FillColor,Color(0,0,0),DTA_Alpha,.5,DTA_TopOffset,256,DTA_LeftOffset,128);
+		Screen.DrawTexture(gradtex,false,xx,yy+bh/2,DTA_DestWidth,150*CleanXFac_1,DTA_DestHeight,bh+4*CleanYFac_1,DTA_Rotate,270,DTA_LegacyRenderStyle,STYLE_Shaded,DTA_FillColor,Color(0,0,0),DTA_Alpha,.5,DTA_TopOffset,256,DTA_LeftOffset,128);
+		Screen.DrawText(smallfont,Font.CR_WHITE,xx-smallfont.StringWidth(lnametexts[0])*CleanXFac_1,yy,lnametexts[0],DTA_ScaleX,CleanXFac_1*2,DTA_ScaleY,CleanYFac_1*2);
+		yy += smallfont.GetHeight()*2*CleanYFac_1;
+		if ( authortexts[0] != "" )
+		{
+			Screen.DrawText(smallfont2,Font.CR_DARKGRAY,xx-smallfont2.StringWidth(authortexts[0])*CleanXFac_1/2,yy,authortexts[0],DTA_ScaleX,CleanXFac_1,DTA_ScaleY,CleanYFac_1);
+			yy += smallfont2.GetHeight()*CleanYFac_1;
+		}
+		String str = StringTable.Localize("$SAYA_INTERDONE");
+		Screen.DrawText(bigfont,Font.CR_RED,xx-bigfont.StringWidth(str)*CleanXFac_1/2,yy,str,DTA_ScaleX,CleanXFac_1,DTA_ScaleY,CleanYFac_1);
+		if ( (glarestr > 0) && (sp_state < 2) )
+		{
+			double alf = clamp(glarestr/20.,0.,1.)**2;
+			Screen.DrawText(bigfont,Font.FindFontColor('MiniFlash'),xx-bigfont.StringWidth(str)*CleanXFac_1/2,yy,str,DTA_ScaleX,CleanXFac_1,DTA_ScaleY,CleanYFac_1,DTA_LegacyRenderStyle,STYLE_Add,DTA_Alpha,alf);
+		}
+		return 0;
+	}
+	override void DrawEL()
+	{
+		int th = (smallfont.GetHeight()*10+32)*CleanYFac_1; // height of the stats box + margin
+		int bh = ((authortexts[1]!="")?(smallfont2.GetHeight()+smallfont.GetHeight()*2+bigfont.GetHeight()):(smallfont.GetHeight()*2+bigfont.GetHeight()))*CleanYFac_1; // height of the "level finished" box
+		double xx = Screen.GetWidth()/2-120*CleanXFac_1;
+		double yy = (Screen.GetHeight()+th)/2;
+		if ( !gradtex ) gradtex = TexMan.CheckForTexture("graphics/title_grad.png",TexMan.Type_Any);
+		Screen.DrawTexture(gradtex,false,xx,yy+bh/2,DTA_DestWidth,150*CleanXFac_1,DTA_DestHeight,bh+4*CleanYFac_1,DTA_Rotate,90,DTA_LegacyRenderStyle,STYLE_Shaded,DTA_FillColor,Color(0,0,0),DTA_Alpha,.5,DTA_TopOffset,256,DTA_LeftOffset,128);
+		Screen.DrawTexture(gradtex,false,xx,yy+bh/2,DTA_DestWidth,150*CleanXFac_1,DTA_DestHeight,bh+4*CleanYFac_1,DTA_Rotate,270,DTA_LegacyRenderStyle,STYLE_Shaded,DTA_FillColor,Color(0,0,0),DTA_Alpha,.5,DTA_TopOffset,256,DTA_LeftOffset,128);
+		String str = StringTable.Localize("$SAYA_INTERNEXT");
+		Screen.DrawText(bigfont,Font.CR_RED,xx-bigfont.StringWidth(str)*CleanXFac_1/2,yy,str,DTA_ScaleX,CleanXFac_1,DTA_ScaleY,CleanYFac_1);
+		if ( (glarestr > 0) && (sp_state >= 10) )
+		{
+			double alf = clamp(glarestr/20.,0.,1.)**2;
+			Screen.DrawText(bigfont,Font.FindFontColor('MiniFlash'),xx-bigfont.StringWidth(str)*CleanXFac_1/2,yy,str,DTA_ScaleX,CleanXFac_1,DTA_ScaleY,CleanYFac_1,DTA_LegacyRenderStyle,STYLE_Add,DTA_Alpha,alf);
+		}
+		yy += bigfont.GetHeight()*CleanYFac_1;
+		Screen.DrawText(smallfont,Font.CR_WHITE,xx-smallfont.StringWidth(lnametexts[1])*CleanXFac_1,yy,lnametexts[1],DTA_ScaleX,CleanXFac_1*2,DTA_ScaleY,CleanXFac_1*2);
+		yy += smallfont.GetHeight()*2*CleanYFac_1;
+		if ( authortexts[0] == "" ) return;
+		Screen.DrawText(smallfont2,Font.CR_DARKGRAY,xx-smallfont2.StringWidth(authortexts[1])*CleanXFac_1/2,yy,authortexts[1],DTA_ScaleX,CleanXFac_1,DTA_ScaleY,CleanYFac_1);
+	}
+	private String StatCnt( int a, int b )
+	{
+		if ( b <= 0 ) return "N/A";
+		return String.Format("%s \cu/\c- %s \cu(\c-%3d%%\cu)",SWWMUtility.ThousandsNum(max(a,0)),SWWMUtility.ThousandsNum(b),GetPct(a,b));
+	}
+	override void drawStats( void )
+	{
+		if ( sp_state < 2 ) return;
+		int ne = (sp_state>=8)?10:(sp_state>=6)?6:(sp_state>=4)?4:2;
+		int th = (smallfont.GetHeight()*ne)*CleanYFac_1; // height of the stats box
+		double xx = Screen.GetWidth()/2-120*CleanXFac_1;
+		double yy = (Screen.GetHeight()-th)/2;
+		if ( !gradtex ) gradtex = TexMan.CheckForTexture("graphics/title_grad.png",TexMan.Type_Any);
+		Screen.DrawTexture(gradtex,false,xx,yy+th/2,DTA_DestWidth,150*CleanXFac_1,DTA_DestHeight,th+4*CleanYFac_1,DTA_Rotate,90,DTA_LegacyRenderStyle,STYLE_Shaded,DTA_FillColor,Color(0,0,0),DTA_Alpha,.5,DTA_TopOffset,256,DTA_LeftOffset,128);
+		Screen.DrawTexture(gradtex,false,xx,yy+th/2,DTA_DestWidth,150*CleanXFac_1,DTA_DestHeight,th+4*CleanYFac_1,DTA_Rotate,270,DTA_LegacyRenderStyle,STYLE_Shaded,DTA_FillColor,Color(0,0,0),DTA_Alpha,.5,DTA_TopOffset,256,DTA_LeftOffset,128);
+		String str = StringTable.Localize("$SAYA_INTERKILLS");
+		Screen.DrawText(smallfont,Font.CR_RED,xx-80*CleanXFac_1,yy,str,DTA_ScaleX,CleanXFac_1,DTA_ScaleY,CleanYFac_1);
+		yy += smallfont.GetHeight()*CleanYFac_1;
+		str = StatCnt(cnt_kills[0],wbs.maxkills);
+		Screen.DrawText(smallfont,((wbs.maxkills>0)&&(cnt_kills[0]>=wbs.maxkills))?Font.CR_GOLD:Font.CR_WHITE,xx+80*CleanXFac_1-smallfont.StringWidth(str)*CleanXFac_1,yy,str,DTA_ScaleX,CleanXFac_1,DTA_ScaleY,CleanYFac_1);
+		if ( sp_state < 4 ) return;
+		yy += smallfont.GetHeight()*CleanYFac_1;
+		str = StringTable.Localize("$SAYA_INTERITEMS");
+		Screen.DrawText(smallfont,Font.CR_RED,xx-80*CleanXFac_1,yy,str,DTA_ScaleX,CleanXFac_1,DTA_ScaleY,CleanYFac_1);
+		yy += smallfont.GetHeight()*CleanYFac_1;
+		str = StatCnt(cnt_items[0],wbs.maxitems);
+		Screen.DrawText(smallfont,((wbs.maxitems>0)&&(cnt_items[0]>=wbs.maxitems))?Font.CR_GOLD:Font.CR_WHITE,xx+80*CleanXFac_1-smallfont.StringWidth(str)*CleanXFac_1,yy,str,DTA_ScaleX,CleanXFac_1,DTA_ScaleY,CleanYFac_1);
+		if ( sp_state < 6 ) return;
+		yy += smallfont.GetHeight()*CleanYFac_1;
+		str = StringTable.Localize("$SAYA_INTERSECRETS");
+		Screen.DrawText(smallfont,Font.CR_RED,xx-80*CleanXFac_1,yy,str,DTA_ScaleX,CleanXFac_1,DTA_ScaleY,CleanYFac_1);
+		yy += smallfont.GetHeight()*CleanYFac_1;
+		str = StatCnt(cnt_secret[0],wbs.maxsecret);
+		Screen.DrawText(smallfont,((wbs.maxsecret>0)&&(cnt_secret[0]>=wbs.maxsecret))?Font.CR_GOLD:Font.CR_WHITE,xx+80*CleanXFac_1-smallfont.StringWidth(str)*CleanXFac_1,yy,str,DTA_ScaleX,CleanXFac_1,DTA_ScaleY,CleanYFac_1);
+		if ( sp_state < 8 ) return;
+		yy += smallfont.GetHeight()*CleanYFac_1;
+		str = "┈┈┄┄╌╌────╌╌┄┄┈┈";
+		Screen.DrawText(smallfont,Font.CR_RED,xx-smallfont.StringWidth(str)*CleanXFac_1/2,yy,str,DTA_ScaleX,CleanXFac_1,DTA_ScaleY,CleanYFac_1);
+		yy += smallfont.GetHeight()*CleanYFac_1;
+		str = StringTable.Localize("$SAYA_INTERTIME");
+		Screen.DrawText(smallfont,Font.CR_RED,xx-80*CleanXFac_1,yy,str,DTA_ScaleX,CleanXFac_1,DTA_ScaleY,CleanYFac_1);
+		str = TimeStr(max(cnt_time,0));
+		Screen.DrawText(smallfont,(wbs.partime&&(cnt_time<=(wbs.partime/GameTicRate)))?Font.CR_GOLD:((wbs.sucktime>0)&&(cnt_time>(wbs.sucktime*3600)))?Font.CR_DARKRED:Font.CR_WHITE,xx+80*CleanXFac_1-smallfont.StringWidth(str)*CleanXFac_1,yy,str,DTA_ScaleX,CleanXFac_1,DTA_ScaleY,CleanYFac_1);
+		yy += smallfont.GetHeight()*CleanYFac_1;
+		if ( wbs.partime )
+		{
+			str = StringTable.Localize("$SAYA_INTERPAR");
+			Screen.DrawText(smallfont,Font.CR_RED,xx-80*CleanXFac_1,yy,str,DTA_ScaleX,CleanXFac_1,DTA_ScaleY,CleanYFac_1);
+			str = TimeStr(max(cnt_par,0));
+			Screen.DrawText(smallfont,Font.CR_WHITE,xx+80*CleanXFac_1-smallfont.StringWidth(str)*CleanXFac_1,yy,str,DTA_ScaleX,CleanXFac_1,DTA_ScaleY,CleanYFac_1);
+		}
+		if ( wbs.totaltime == Plrs[me].stime ) return;
+		yy += smallfont.GetHeight()*CleanYFac_1;
+		str = StringTable.Localize("$SAYA_INTERTOTAL");
+		Screen.DrawText(smallfont,Font.CR_RED,xx-80*CleanXFac_1,yy,str,DTA_ScaleX,CleanXFac_1,DTA_ScaleY,CleanYFac_1);
+		str = TimeStr(max(cnt_total_time,0));
+		Screen.DrawText(smallfont,Font.CR_WHITE,xx+80*CleanXFac_1-smallfont.StringWidth(str)*CleanXFac_1,yy,str,DTA_ScaleX,CleanXFac_1,DTA_ScaleY,CleanYFac_1);
+	}
+	override void Drawer( void )
+	{
+		FracTic = System.GetTimeFrac();
+		switch ( CurState )
+		{
+		case StatCount:
+			drawSWWMBg();
+			drawLF();
+			drawStats();
+			drawSWWMFg();
+			break;
+		case ShowNextLoc:
+		case LeavingIntermission:
+		case NoState:
+			drawSWWMBg();
+			drawLF();
+			drawStats();
+			drawEL();
+			drawSWWMFg();
+			break;
+		}
+	}
+	override void Ticker( void )
+	{
+		bcnt++;
+		if ( bcnt == 1 )
+		{
+			StartMusic();
+		}
+		TickSmokeLayers();
+		glarestr = max(glarestr-1,0);
+		checkForAccelerate();
+		switch (CurState)
+		{
+		case StatCount:
+			updateStats();
+			break;
+		case ShowNextLoc:
+			updateShowNextLoc();
+			break;
+		case NoState:
+			updateNoState();
+			break;
+		case LeavingIntermission:
+			// sorry nothing
+			break;
+		}
+	}
+	protected String TimeStr( int secs )
+	{
+		secs = max(secs,0);
+		int h = secs/3600;
+		int m = (secs/60)%60;
+		int s = secs%60;
+		if ( h ) return String.Format("%d\cu:\c-%02d\cu:\c-%02d",h,m,s);
+		if ( m ) return String.Format("%d\cu:\c-%02d",m,s);
+		return String.Format("%d",s);
+	}
+	protected int GetPct( int a, int b )
+	{
+		if ( a < 0 ) return 0;
+		if ( b <= 0 ) return 100;	// for "missed" percentage
+		return (a*100)/b;
+	}
+
+	override void initStats()
+	{
+		CurState = StatCount;
+		acceleratestage = 0;
+		sp_state = 0;
+		cnt_kills[0] = cnt_items[0] = cnt_secret[0] = -1;
+		cnt_time = cnt_par = -1;
+		cnt_pause = GameTicRate*2;
+		cnt_total_time = -1;
+	}
+	override void updateStats()
+	{
+		if ( sp_state == 0 )
+		{
+			if ( bcnt > GameTicRate )
+			{
+				S_StartSound("title/fire",CHAN_WEAPON,CHANF_OVERLAP|CHANF_UI,1.,0.);
+				acceleratestage = 0;
+				glarestr = 20;
+				sp_state++;
+			}
+			return;
+		}
+		if ( acceleratestage && (sp_state != 10) )
+		{
+			acceleratestage = 0;
+			sp_state = 10;
+			S_StartSound("misc/ricochet",CHAN_VOICE,CHANF_OVERLAP|CHANF_UI,1.,0.);
+			glarestr = 10;
+			cnt_kills[0] = Plrs[me].skills;
+			cnt_items[0] = Plrs[me].sitems;
+			cnt_secret[0] = Plrs[me].ssecret;
+			cnt_time = Thinker.Tics2Seconds(Plrs[me].stime);
+			cnt_par = wbs.partime/GameTicRate;
+			cnt_total_time = Thinker.Tics2Seconds(wbs.totaltime);
+		}
+		if ( sp_state == 2 )
+		{
+			cnt_kills[0] += max((Plrs[me].skills-cnt_kills[0])/GameTicRate,1);
+			if ( !((sndcnt++)%4) )
+			{
+				S_StartSound("misc/ricochet",CHAN_VOICE,CHANF_OVERLAP|CHANF_UI,1.,0.);
+				glarestr = 5;
+			}
+			if ( cnt_kills[0] >= Plrs[me].skills )
+			{
+				cnt_kills[0] = Plrs[me].skills;
+				glarestr = 10;
+				sp_state++;
+			}
+		}
+		else if ( sp_state == 4 )
+		{
+			cnt_items[0] += max((Plrs[me].sitems-cnt_items[0])/GameTicRate,1);
+			if ( !((sndcnt++)%4) )
+			{
+				S_StartSound("misc/ricochet",CHAN_VOICE,CHANF_OVERLAP|CHANF_UI,1.,0.);
+				glarestr = 5;
+			}
+			if ( cnt_items[0] >= Plrs[me].sitems )
+			{
+				cnt_items[0] = Plrs[me].sitems;
+				glarestr = 10;
+				sp_state++;
+			}
+		}
+		else if ( sp_state == 6 )
+		{
+			cnt_secret[0] += max((Plrs[me].ssecret-cnt_secret[0])/GameTicRate,1);
+			if ( !((sndcnt++)%4) )
+			{
+				S_StartSound("misc/ricochet",CHAN_VOICE,CHANF_OVERLAP|CHANF_UI,1.,0.);
+				glarestr = 5;
+			}
+			if ( cnt_secret[0] >= Plrs[me].ssecret )
+			{
+				cnt_secret[0] = Plrs[me].ssecret;
+				glarestr = 10;
+				sp_state++;
+			}
+		}
+		else if ( sp_state == 8 )
+		{
+			int sec = Thinker.Tics2Seconds(Plrs[me].stime);
+			int tsec = Thinker.Tics2Seconds(wbs.totaltime);
+			int psec = wbs.partime/GameTicRate;
+			if ( !((sndcnt++)%4) )
+			{
+				S_StartSound("misc/ricochet",CHAN_VOICE,CHANF_OVERLAP|CHANF_UI,1.,0.);
+				glarestr = 5;
+			}
+			cnt_time += max((sec-cnt_time)/GameTicRate,1);
+			cnt_par += max((psec-cnt_par)/GameTicRate,1);
+			cnt_total_time += max((tsec-cnt_total_time)/GameTicRate,1);
+			if ( cnt_time >= sec ) cnt_time = sec;
+			if ( cnt_total_time >= tsec ) cnt_total_time = tsec;
+			if ( cnt_par >= psec )
+			{
+				cnt_par = psec;
+				if ( cnt_time >= sec )
+				{
+					cnt_total_time = tsec;
+					glarestr = 10;
+					sp_state++;
+				}
+			}
+		}
+		else if ( sp_state == 10 )
+		{
+			if ( acceleratestage )
+			{
+				S_StartSound("title/cock",CHAN_WEAPON,CHANF_OVERLAP|CHANF_UI,1.,0.);
+				glarestr = 20;
+				initShowNextLoc();
+			}
+		}
+		else if ( sp_state&1 )
+		{
+			if ( !--cnt_pause )
+			{
+				sp_state++;
+				cnt_pause = GameTicRate;
+				sndcnt = 0;
+			}
+		}
+	}
 }

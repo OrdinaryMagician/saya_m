@@ -55,8 +55,12 @@ HardwareShader Texture "graphics/title_smoke_7.png"
 HardwareShader Texture "graphics/SayaLogo.png"
 {
 	Shader "shaders/glsl/SayaLogoAnimated.fp"
-	Define "TEX_SZ" = "vec2(1024.,512.)"
-	Texture "LogoTex" "graphics/SayaLogo_Layers.png"
+	// what no 2d arrays does to a mf
+	Texture "Layer1" "graphics/SayaLogo_Layer1.png"
+	Texture "Layer2" "graphics/SayaLogo_Layer2.png"
+	Texture "Layer3" "graphics/SayaLogo_Layer3.png"
+	Texture "Layer4" "graphics/SayaLogo_Layer4.png"
+	Texture "Layer5" "graphics/SayaLogo_Layer5.png"
 }
 HardwareShader Texture "graphics/SayaLogo_Glow.png"
 {
@@ -65,7 +69,11 @@ HardwareShader Texture "graphics/SayaLogo_Glow.png"
 HardwareShader Texture "graphics/M_SAYA.png"
 {
 	Shader "shaders/glsl/SayaLogoAnimated.fp"
-	Define "TEX_SZ" = "vec2(256.,128.)"
+	// what no 2d arrays does to a mf
+	Texture "Layer1" "graphics/M_SAYA_Layer1.png"
+	Texture "Layer2" "graphics/M_SAYA_Layer2.png"
+	Texture "Layer3" "graphics/M_SAYA_Layer3.png"
+	Texture "Layer4" "graphics/M_SAYA_Layer4.png"
+	Texture "Layer5" "graphics/M_SAYA_Layer5.png"
 	Define "NO_BILINEAR"
-	Texture "LogoTex" "graphics/M_SAYA_Layers.png"
 }

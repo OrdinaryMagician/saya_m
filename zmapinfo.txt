@@ -40,7 +40,11 @@ GameInfo
 	// precache all intro textures, to avoid hiccups
 	PrecacheTextures = "graphics/SayaLogo.png",
 		"graphics/SayaLogo_Glow.png",
-		"graphics/SayaLogo_Layers.png",
+		"graphics/SayaLogo_Layer1.png",
+		"graphics/SayaLogo_Layer2.png",
+		"graphics/SayaLogo_Layer3.png",
+		"graphics/SayaLogo_Layer4.png",
+		"graphics/SayaLogo_Layer5.png",
 		"graphics/title_grad.png",
 		"graphics/title_saya.png",
 		"graphics/title_saya_dark.png",
@@ -55,7 +59,11 @@ GameInfo
 		"graphics/title_smoke_6.png",
 		"graphics/title_smoke_7.png",
 		"graphics/M_SAYA.png",
-		"graphics/M_SAYA_Layers.png"
+		"graphics/M_SAYA_Layer1.png",
+		"graphics/M_SAYA_Layer2.png",
+		"graphics/M_SAYA_Layer3.png",
+		"graphics/M_SAYA_Layer4.png",
+		"graphics/M_SAYA_Layer5.png"
 }
 
 ClearSkills

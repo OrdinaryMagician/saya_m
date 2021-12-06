@@ -1,0 +1,143 @@
+[es]
+// tags, pickups
+T_SAYAFIST = "Mano a Mano";
+T_SAYAKNUCKS = "Puño Americano";
+I_SAYAPISTOL = "Pistola Semiautomática Shinigami \"Neko23\"";
+I_SAYASMG = "Subfusil Ninnacht \"IDW\"";
+I_SAYARIFLE = "Rifle de Palanca Siesta \"Goldsmith\"";
+I_SAYAGAUSS = "Rifle Gauss Akari \"Hyperion\"";
+I_SAYAGL = "Lanzagranadas Shinigami \"Akatsuki 44\"";
+I_SAYAPLASMA = "Rifle de Plasma Nekuratek \"Nabikuni\"";
+I_SAYABFG = "Lanzador de Plasma Cryptik \"Malefactor\"";
+T_SAYAHAMMER = "Martillo de Guerra Furioso";
+I_SAYAPOS = "Escopeta Revólver Ninnacht \"Jackhammer\"";
+T_SAYASPELLCARD1 = "Signo de Injuria";
+T_SAYASPELLCARD2 = "Signo de Retribución";
+T_SAYASPELLCARD3 = "Signo de Rudeza";
+T_SAYASPELLCARD4 = "Signo de Brillantez";
+T_SAYAPISTOLAMMO = "Cargador de NK23";
+T_SAYAPISTOLAMMOS = "Cargadores de NK23";
+T_SAYAPISTOLBULLET = "Bala de .45 AVP";
+T_SAYAPISTOLBULLETS = "Balas de .45 AVP";
+T_SAYASMGAMMO = "Cargador de IDW";
+T_SAYASMGAMMOS = "Cargadores de IDW";
+T_SAYASMGBULLET = "Bala de 9mm";
+T_SAYASMGBULLETS = "Balas de 9mm";
+T_SAYARIFLEAMMO = "Bala de .45 LV;
+T_SAYARIFLEAMMOS = "Balas de .45 LV";
+T_SAYAGAUSSAMMO = "Cargador de Hyperion";
+T_SAYAGAUSSAMMOS = "Cargadores Hyperion";
+T_SAYAGAUSSROUND = "Proyectil de Choque de 4mm";
+T_SAYAGAUSSROUNDS = "Proyectiles de Choque de 4mm";
+T_SAYAGLAMMO = "Granada de 25mm";
+T_SAYAGLAMMOS = "Granadas de 25mm";
+T_SAYAPLASMAAMMO = "Célula de Dyratin";
+T_SAYAPLASMAAMMOS = "Células de Dyratin";
+T_SAYABFGAMMO = "Módulo de Alimentación de Lanzador";
+T_SAYABFGAMMOS = "Módulos de Alimentación de Lanzador";
+T_SAYAZBOMB = "Bomba Zar";
+T_SAYAZBOMBS = "Bombas Zar";
+T_SAYACOOKIE = "Galleta";
+T_SAYACOOKIES = "Galletas";
+T_SAYASTIM = "Pack de Estímulo";
+T_SAYABSTIM = "Gran Pack de Estímulo";
+T_SAYASPIRIT = "Estimulante Espiritual";
+T_SAYANUGGET = "Pepita de Armadura";
+T_SAYAPADS = "Armadura Acolchada";
+T_SAYAVEST = "Chaleco Protector";
+T_SAYAORB = "Orbe Escudo";
+T_SAYAMILK = "Leche Oni Rojo";
+T_SAYAVISOR = "Visor Luminoso";
+// quit messages
+QUITMSG = "¡Pero no te vayas ya,\nque la lucha aun no ha acabado!";
+QUITMSG1 = "Claro, tómate un descanso.\nPero más vale que vuelvas...";
+QUITMSG2 = "Aun no se ha acabado, sabes.\nQueda mucho más por ver.";
+QUITMSG3 = "¿Ya te marchas?\nPues nos vemos luego, supongo.";
+QUITMSG4 = "Eso, tú márchate ya.\nQue tengo animes que ver.";
+QUITMSG5 = "Si me disculpas, las tetas\nde Ibuki necesitan que las soben.";
+QUITMSG6 = "¿Alguna vez te ha dado tanta\nvergüenza ajena que hasta duele?";
+QUITMSG7 = "El arma es buena.\nEl pene es... bueno también.";
+QUITMSG8 = "¿Queeeee? ¡No huelo mal!";
+QUITMSG9 = "Si quieres acción EXTREMA,\npuedes jugar al mod de Demo-chan.";
+QUITMSG10 = "¿Que pasa, gamers?\nAquí Saya Miyamoto comentando.";
+QUITMSG11 = "Deja de mirarme así,\nsolo me estaba rascando.";
+// misc
+D_SAYABEPIS = "El efecto energizante de la Bepis ha dejado tu cuerpo.";
+D_SAYAMILK = "Los efectos de la leche de Ibuki se han desvanecido.";
+D_SAYAVISOR = "El Visor Luminoso se ha quedado sin batería.";
+SAYA_TITLEPRESENTSB = "presenta";
+SAYA_TITLEMODBYA = "un mod de";
+SAYA_TITLEINTROA = "\"Palabras odiosas, acusaciones de cobardía, las escuchó todas.\"";
+SAYA_TITLEINTROB = "\"Oh, como deseaba hacerlos callar a todos, demostrar que se equivocaban.\"";
+SAYA_TITLEINTROC = "\"Y así, se fue de casa, para mostrar a los demonios el verdadero temor.\"";
+SAYA_TITLEINTROD = "\"Ya que todos serán víctimas de su \cgMATANZA DE OJOS ROJOS\c-.\"";
+SAYA_INTERDONE = "DESPEJADO";
+SAYA_INTERNEXT = "SIGUIENTE";
+SAYA_INTERKILLS = "PLAGAS ELIMINADAS:";
+SAYA_INTERITEMS = "COSITAS PILLADAS:";
+SAYA_INTERSECRETS = "SECRETOS ENCONTRADOS:";
+SAYA_INTERTIME = "TU TIEMPO:";
+SAYA_INTERPAR = "TIEMPO PAR:";
+SAYA_INTERTOTAL = "TIEMPO TOTAL:";
+// weapon tooltips
+TT_SAYAFIST =
+"\cg\"¿Que? ¿Crees que soy una debilucha?\"\c-\n"
+"\n"
+"Golpea con \cgFuego primario\c-,\n"
+"patea con \cgFuego secundario\c-.\n"
+"Una patada en los bajos garantiza\n"
+"aturdir cualquier enemigo.";
+TT_SAYAPISTOL =
+"\cg\"La primera chica pistola con la que me casé.\"\c-\n"
+"\n"
+"\cg.45 AVP\c-, 12+1 balas.\n"
+"Balas con \cgInfusión de Fuego\c-.\n"
+"Una pistola bastante fiable.";
+TT_SAYASMG =
+"\cg\"Da nya~☆\"\c-\n"
+"\n"
+"\cg9×19mm Parabellum\c-, 32+1 balas.\n"
+"300 RPM, imprecisa en disparo de cadera.";
+TT_SAYARIFLE =
+"\cg\"OH DESIRE~!\"\c-\n"
+"\n"
+"\cg.45 LV\c-, 4+1 balas.\n"
+"Recortada para molar más.\n"
+"Muy efectiva contra cabras.";
+TT_SAYAGAUSS =
+"\cg\"El término Rifle Gauss es solo jerga de ciencia ficción.\"\c-\n"
+"\n"
+"\cgProyectíl de Choque de 4mm\c-, 50+1 balas.\n"
+"Unos humeantes 420 RPM.\n"
+"Silencioso, no alerta enemigos.";
+TT_SAYAGL =
+"\cg\"Consejo: No intentes saltar con cohetes en la vida real.\"\c-\n"
+"\n"
+"\cgGranadas de 25mm\c-, 4+1 granadas.\n"
+"Detonación automática por proximidad.\n"
+"Puede rebotar en ciertos ángulos.";
+TT_SAYAPLASMA =
+"\cg\"Invoco el hechizo que te den bien por culo.\"\c-\n"
+"\n"
+"\cgPlasma de Dyratin\c-, 300mL.\n"
+"5mL por disparo a 700 RPM.\n"
+"Básicamente una manguera de plasma.";
+TT_SAYABFG =
+"\cg\"Traga muerte de neón ardiente.\"\c-\n"
+"\n"
+"\cgPlasma de Argón\c-, 8 disparos.\n"
+"Daño repartido entre objetivos.\n"
+"Seguro de disparar a bocajarro.";
+TT_SAYAHAMMER =
+"\cg\"Kira-sama... Gracias.\"\c-\n"
+"\n"
+"Potenciado por \cgFuria Divina\c-.\n"
+"Suficiente energía para 12 ataques de \cgFuego primario\c-,\n"
+"o para 4 ataques del \caFuego secundario\c-.\n"
+"Recargable al encontrar otros spawns de arma.";
+TT_SAYAPOS =
+"\cg\"Este arma no tiene derecho a existir.\"\c-"
+"\n"
+"12 cartuchos, y ya está.\n"
+"Requiere desensamblado para recargar.\n"
+"Tú tírala a la basura, apesta.";

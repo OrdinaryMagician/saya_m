@@ -1,0 +1,82 @@
+[es]
+// keybinds
+SAYA_KEYS = "Teclas de RED-EYED RAMPAGE";
+SAYA_PRIMARYFIRE = "Fuego Primario";
+SAYA_SECONDARYFIRE = "Apuntar / Fuego Secundario";
+SAYA_RELOADFIRE = "Recargar";
+SAYA_MELEE = "Patada Rápida";
+SAYA_PRIMARYCAST = "Hechizo Primario";
+SAYA_SECONDARYCAST = "Hechizo Secundario";
+SAYA_EXTRAFIRE = "Granada";
+SAYA_SPELL1 = "Ranura de Hechizo 1";
+SAYA_SPELL2 = "Ranura de Hechizo 2";
+SAYA_SPELL3 = "Ranura de Hechizo 3";
+SAYA_SPELL4 = "Ranura de Hechizo 4";
+// skills
+SAYA_SKCHILL="\cvModo Relajado\c-";
+SAYA_SKEASY="\cdModo Fácil\c-";
+SAYA_SKNORMAL="\cfModo Normal\c-";
+SAYA_SKHARD="\ciModo Difícil\c-";
+SAYA_SKHARDCORE="\crModo Hardcore\c-";
+SAYA_SKHARDCORECONFIRM="\cr¿Seguro que quieres hacer eso?\nPuede que te pateen el culo.\c-\n\n\caMonstruos rápidos\n1.5x salud y daño de monstruos\n25% de agresividad extra\nTrucos deshabilitados\nMonstruos de cooperativo\c-\n\n(Pulsa Y para un desafío)";
+SAYA_SKLUNATIC="\cmModo Lunático\c-";
+SAYA_SKLUNATICCONFIRM="\cmCiertamente deseas morir.\nElige esta dificultad si te atreves.\c-\n\n\caTodos los cambios de Hardcore\n+\nDoble velocidad de enemigos\nProyectiles enemigos duplicados\nPueden aparecer enemigos extra\nReflejos instantáneos de enemigo\nLos enemigos no se estremecen\nLos enemigos no pelean entre si\c-\n\n(Pulsa Y para morir al instante)";
+// mod menu
+SAYA_MTITLE = "Opciones de RED-EYED RAMPAGE";
+SAYA_MCREDS = "Créditos de RED-EYED RAMPAGE";
+// Help menu
+SAYA_HELP_PAGE1 = "La Historia Hasta Ahora";
+SAYA_HELP_PAGE1_TXT =
+"18 de Junio de 2148, hace una semana desde que la \caDemolicionista\c- hizo su debut y puso fin a la \caInvasión Demoníaca de la Tierra\c-. Desde entonces, los días han pasado con trabajos de limpieza por todo el mundo, muchos demonios aun quedan rezagados causando problemas por doquier. Mientras la heroica robot disfrutaba de un bien merecido descanso (y una bien merecida terapia, también), \caSaya Miyamoto\c-, su creadora, se vería bombardeada en redes sociales con toda clase de comentarios nocivos.\n"
+"\n"
+"La llamaron cobarde, débil, hipócrita... Entre otras cosas. Por supuesto, \caSaya\c- no es realmente una luchadora, después de todo, así que básicamente se ha quedado sentada actuando como \"control de misiones\" mientras sus creaciones hacían todo el trabajo, eso es un hecho. Por supuesto, se tomó esto muy a pecho, y así... Decidió demostrar a todos que se equivocaban.\n"
+"\n"
+"Negociando la distribución de su arsenal a toda prisa, se echó a la aventura para mostrar a todo el mundo que no es una cobarde, y que ella también puede matar demonios con sus propias manos, y armas.\n"
+"\n"
+"\caY entonces, ella sola, se fue de su casa. Y así comenzó su Matanza de Ojos Rojos.\c-";
+SAYA_HELP_PAGE2 = "Quien Es Saya Miyamoto";
+SAYA_HELP_PAGE2_TXT =
+"Nacida en 1993, como hija mediana de una familia \"humilde\", \caSaya Miyamoto\c- demostró ser un genio a una edad temprana. Avanzando rápidamente en sus estudios, se matriculó en el \caMIT\c- con su hermano mayor, con solo 13 años, para estudiar informática. Al regresar, los dos se podrían manos a la obra creando su propia empresa: \caAkari Labs\c-.\n"
+"\n"
+"Como cofundadora y CTO, \caSaya\c- es una conocida maestra de la robótica, muchas de sus creaciones ganando una gran popularidad por todo \caJapón\c-, y algunas incluso en el extranjero. Tras el primer contacto extraterrestre de 2021, se hizo rápidamente amiga de la ingeniera \caNukuri\c- de IA \caZanaveth Nekuraku II\c-, y por medio de su colaboración, el inicialmente simple proyecto \caMaidbot\c- alcanzó una nueva cima, siendo uno de los primeros AI conscientes en la historia de la humanidad.\n"
+"\n"
+"Muchas, muchas décadas después, en los años 2070, tuvo incluso su debut en bioingeniería y aumentos, por medio del famoso proyecto de supersoldado \caOni Rojo\c-. Pero realmente, todas estas cosas son simplemente relatos del pasado. Un pasado lleno de muchos éxitos y fallos. No fue hasta este mismo año que efectivamente contribuyó a salvar el mundo.\n"
+"\n"
+"Pero, realmente, la propia \caSaya\c- tampoco es mucha cosa. Es bajita, enclenque, no muy agraciada ni tampoco fuerte. Cierto, posee un gran intelecto, eso está claro, pero no puedes ganar peleas con eso, ¿verdad?";
+SAYA_HELP_PAGE3 = "Arsenal de Saya (Parte 1: Armas)";
+SAYA_HELP_PAGE3_TXT =
+"Las armas son importantes, las  armas son buenas. Todos lo sabemos, sí. Y \caSaya\c- tiene toda una colección, lo cual sorprende considerando que es solo una civil. Bueno, sus tratos con fabricantes de armas por medio de la \caDemolicionista\c- definitivamente ayudan, supongo.\n"
+"\n"
+"A diferencia de otros mods, aquí las armas solo tienen un modo de disparo, así que la complejidad está definitivamente reducida. Hay también un número menor de armas, ocupando solo 8 ranuras. Este número es menor dado principalmente al hecho de que no puede usar esos contenedores de \caHammerspace\c- militares tan buenos, así que solo puede usar la versión para civiles, la cual está adicionalmente enlazada a su mochila (más sobre esto luego).\n"
+"\n"
+"Por suerte \caSaya\c- consiguió que le instalaran un cargador automático, así que no tendrás que ponerte a manejar cargadores a mano. Los \caEnsanchecedores\c- por supuesto siguen funcionando igual, incrementando la capacidad de munición, pero solo puedes hacer esto cuatro veces, en lugar de las ocho normales.\n"
+"\n"
+"Recuerda que en cualquier momento puedes dar patadas o lanzar granadas (si las llevas encima). No te olvides de asignar esas teclas.";
+SAYA_HELP_PAGE4 = "Arsenal de Saya (Parte 2: Ítems)";
+SAYA_HELP_PAGE4_TXT =
+"Y más cositas para ir ayudando. Naturalmente, \caSaya\c- es una humana normal y corriente (excepto por eso de \"ser inmortal\"), así que definitivamente necesita ayuda extra para no morir una y otra vez.\n"
+"\n"
+"Los típicos ítems de salud y armadura están presentes. La armadura se divide en dos piezas, una ligera y una pesada, junto con las muy útiles \caPepitas de Armadura\c-, las cuales son mucho más eficientes en un cuerpo de carne y hueso. La salud viene en simples botiquines y kits médicos, los cuales combinan bien con la curación rápida de tu sangre inmortal, teniendo convenientemente efectos instantáneos al usarse.\n"
+"\n"
+"También hay galletas. Las galletas reemplazan los bonus de salud y te dan un poco de salud. Puedes comer todas las galletas que quieras, son deliciosas. Incluso recuperan tu maná también, pues mira.";
+SAYA_HELP_PAGE5 = "Arsenal de Saya (Parte 3: Potenciadores)";
+SAYA_HELP_PAGE5_TXT =
+"Por supuesto estos también andan por ahí. Como en las aventuras de \caIbuki\c-, la invisibilidad  ha sido reemplazada con algo también, te vas a divertir cantidad.\n"
+"\n"
+"El comportamiento de los potenciadores es básicamente el mismo, se usan automáticamente al recoger siempre que no haya una copia activa. Oh, y \caSaya\c- también puede usar esos estimulantes de súper-salud, mira que bien.\n"
+"\n"
+"Creo que ya sabes que los potenciadores activos se muestran en el HUD, con su duración restante. En serio, no creo que necesite explicar esto en cada mod.";
+SAYA_HELP_PAGE6 = "Arsenal de Saya (Parte 4: Hechizos)";
+SAYA_HELP_PAGE6_TXT =
+"Siendo alguien que ha tenido muchas vacaciones en \caGensokyo\c-, \caSaya\c- está acostumbrada a los duelos de hechizos... De los cuales ha sido expulsada. Algunos de sus hechizos personalizados son aparentemente excesivos, según parece.\n"
+"\n"
+"Para esta aventura, ha elegido cuatro de sus mejores para usar. Cada hechizo puede seleccionarse por medio de una tecla dedicada, y luego ser invocado en cualquier momento con cualquier otra arma. Cada uno de los dos botones de invocación causa un comportamiento distinto, y una vez comience la invocación... No parará hasta que acabe, o te quedes sin maná.\n"
+"\n"
+"Todos ellos usan la misma munición: tu propia reserva de maná. El maná es simplemente energía natural, absorbida del entorno, así que se recupera por su cuenta. Hay otras formas de recargar más rápidamente, por supuesto.";
+SAYA_HELP_PAGE7 = "Consejos Adicionales";
+SAYA_HELP_PAGE7_TXT =
+"Hay algo de \caSaya\c- que la hace muy especial: Es inmortal. Sí, se ha mantenido viva y joven durante más de un siglo ya, y ha sobrevivido varios accidentes (y otras cosas que no fueron accidentes). Así es, que si llegara a morir en el cambo de batalla, puede levantarse de nuevo, con algunos efectos secundarios. La resurrección no sale barata, así que cada vez que te vuelvas a levantar, caerá tu salud máxima, y serás temporalmente más vulnerable al daño. La única forma de recuperar tu salud máxima es usar un estimulante espiritual, o descansar (lo cual ocurre entre niveles).\n"
+"\n"
+"Y luego hay otro problema. Eres muy blandita, te podrían hacer pedazos fácilmente, y eso no es bueno. Si tu cuerpo acaba destrozado por completo, reaparecerás en vez de resucitar donde moriste, y perderás todos los ítems que llevabas en el proceso. Ahora, por supuesto, sería demasiado cruel para este mod que todo lo que tuvieras simplemente fuese destruido, así que hay una forma de recuperarlo todo: Regresar al punto en el que moriste y recuperar tu mochila. Intenta no perderla en un lugar al que no puedas acceder luego, porque ENTONCES si que se echará todo a perder.\n"
+"\n"
+"Bueno, también podrías simplemente cargar una partida anterior si no quieres liarte, la opción está ahí si lo prefieres, por supuesto.";

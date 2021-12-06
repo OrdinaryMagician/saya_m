@@ -1,6 +1,6 @@
 [default]
 // keybinds
-SAYA_KEYS = "RED ONI Bindings";
+SAYA_KEYS = "RED-EYED RAMPAGE Bindings";
 SAYA_PRIMARYFIRE = "Primary Fire";
 SAYA_SECONDARYFIRE = "Aim / Secondary Fire";
 SAYA_RELOADFIRE = "Reload";
@@ -13,7 +13,7 @@ SAYA_SPELL2 = "Spellcard Slot 2";
 SAYA_SPELL3 = "Spellcard Slot 3";
 SAYA_SPELL4 = "Spellcard Slot 4";
 // skills
-SAYA_SKCHILL="\cvBabby Mode\c-";
+SAYA_SKCHILL="\cvChill Mode\c-";
 SAYA_SKEASY="\cdEasy Mode\c-";
 SAYA_SKNORMAL="\cfNormal Mode\c-";
 SAYA_SKHARD="\ciHard Mode\c-";

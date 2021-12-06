@@ -144,8 +144,8 @@ TT_SAYAHAMMER =
 "\cg\"Kira-sama... Thank you.\"\c-\n"
 "\n"
 "Powered by \cgDivine Fury\c-.\n"
-"Enough energy for 12 side swings of \caPrimary fire\c-,\n"
-"or for 4 overhead swings of \caSecondary fire\c-.\n"
+"Enough energy for 12 side swings of \cgPrimary fire\c-,\n"
+"or for 4 overhead swings of \cgSecondary fire\c-.\n"
 "Rechargeable by finding other weapon spawns.";
 TT_SAYAPOS =
 "\cg\"This weapon has no right to exist.\"\c-"

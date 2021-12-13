@@ -28,6 +28,7 @@ Class SayaPlayer : SWWMPlayer
 		Player.SoundClass "saya";
 		DamageFactor "Drowning", 0.;
 		+DONTMORPH;
+		SWWMPlayer.ResurrectType RT_RESPAWN;
 	}
 
 	override void Tick()

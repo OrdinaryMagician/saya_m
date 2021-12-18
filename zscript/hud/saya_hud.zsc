@@ -2,7 +2,7 @@
 
 Class SayaStatusBar : SWWMStatusBar
 {
-	TextureID StatusTex[4], StatusIcon[5], InvTex, WeaponTex, AmmoBar[3], GenTex, SpellTex, SpellIcon[4], SpellBar[2];
+	TextureID StatusTex[4], StatusIcon[5], InvTex, WeaponTex, MeleeTex, AmmoBar[3], GenTex, SpellTex, SpellIcon[4], SpellBar[2];
 	int AmmoFlash[9];	// flash when new ammo is received
 	int AmmoOldAmounts[9];	// to detect when to flash
 	int StatusFlash[4];	// flash when healing or gaining armor
@@ -80,10 +80,11 @@ Class SayaStatusBar : SWWMStatusBar
 	// hello??? why is this function clearscope???
 	override void ReceivedWeapon( Weapon weapn )
 	{
+		if ( weapn is 'SayaUnarmed' ) return;	// ignore this one, in case it's "auto-given" by scripts
 		Super.ReceivedWeapon(weapn);
 		int dummy, slot;
 		[dummy, slot] = players[consoleplayer].weapons.LocateWeapon(weapn.GetClass());
-		EventHandler.SendNetworkEvent("oniweaponreceive",slot);
+		EventHandler.SendNetworkEvent("sayaweaponreceive",slot);
 	}
 
 	override void Init()
@@ -104,6 +105,7 @@ Class SayaStatusBar : SWWMStatusBar
 		StatusCol[3] = MCR_GOLD;
 		InvTex = TexMan.CheckForTexture("graphics/HUD/GrenadeBox.png",TexMan.Type_Any);
 		WeaponTex = TexMan.CheckForTexture("graphics/HUD/WeaponBar.png",TexMan.Type_Any);
+		MeleeTex = TexMan.CheckForTexture("graphics/HUD/MeleeSlot.png",TexMan.Type_Any);
 		AmmoBar[0] = TexMan.CheckForTexture("graphics/HUD/AmmoBar.png",TexMan.Type_Any);
 		AmmoBar[1] = TexMan.CheckForTexture("graphics/HUD/AmmoBar_Sel.png",TexMan.Type_Any);
 		AmmoBar[2] = TexMan.CheckForTexture("graphics/HUD/AmmoBar_Flash.png",TexMan.Type_Any);
@@ -128,7 +130,7 @@ Class SayaStatusBar : SWWMStatusBar
 		LastStatus[2] = (CPlayer&&CPlayer.mo)?CPlayer.mo.CountInv("SayaLightArmor"):0;
 		LastStatus[3] = (CPlayer&&CPlayer.mo)?CPlayer.mo.CountInv("SayaHeavyArmor"):0;
 		for ( int i=0; i<4; i++ ) StatusInter[i] = DynamicValueInterpolator.Create(LastStatus[i],.1,1,100);
-		AmmoSlots[0] = "SayaKiraMana";
+		AmmoSlots[0] = "SayaMana";
 		AmmoSlots[1] = "SayaPistolAmmo";
 		AmmoSlots[2] = "SayaSMGAmmo";
 		AmmoSlots[3] = "SayaRifleAmmo";
@@ -136,7 +138,7 @@ Class SayaStatusBar : SWWMStatusBar
 		AmmoSlots[5] = "SayaGLAmmo";
 		AmmoSlots[6] = "SayaPlasmaAmmo";
 		AmmoSlots[7] = "SayaBFGAmmo";
-		AmmoSlots[8] = "SayaMana";
+		AmmoSlots[8] = "SayaKiraMana";
 		for ( int i=0; i<9; i++ )
 		{
 			if ( !CPlayer || !CPlayer.mo )
@@ -184,11 +186,36 @@ Class SayaStatusBar : SWWMStatusBar
 
 	override void DrawWeapons()
 	{
-		double xx = ss.x/2-250;
+		double xx = ss.x/2-256;
 		double yy = ss.y-(margin+10);
-		for ( int i=0; i<8; i++, xx+=63 )
+		// special: slot 1 is always there even if you don't "own" the weapon (because it's auto-given if you don't)
 		{
-			int slot = i+1;
+			Screen.DrawTexture(MeleeTex,false,xx,yy,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
+			bool selected = false;
+			bool dummy;
+			int tslot;
+			if ( CPlayer.PendingWeapon && (CPlayer.PendingWeapon != WP_NOCHANGE) )
+			{
+				[dummy, tslot] = CPlayer.weapons.LocateWeapon(CPlayer.PendingWeapon.GetClass());
+				if ( tslot == 1 ) selected = true;
+			}
+			else if ( (!CPlayer.PendingWeapon || (CPlayer.PendingWeapon == WP_NOCHANGE)) && CPlayer.ReadyWeapon )
+			{
+				[dummy, tslot] = CPlayer.weapons.LocateWeapon(CPlayer.ReadyWeapon.GetClass());
+				if ( tslot == 1 ) selected = true;
+			}
+			Screen.DrawText(MiniHUDFont,mhudfontcol[selected?MCR_BRASS:MCR_WHITE],xx+2,yy+2,"1",DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
+			int f = hnd.WeaponFlash[1];
+			if ( f && (gametic < f) )
+			{
+				double alph = ((f-(gametic+FracTic))/25.)**1.5;
+				Screen.DrawText(MiniHUDFont,mhudfontcol[MCR_FLASH],xx+2,yy+2,"1",DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_Alpha,alph,DTA_LegacyRenderStyle,STYLE_Add);
+			}
+			xx += 12;
+		}
+		for ( int i=1; i<9; i++, xx+=63 )
+		{
+			int slot = (i+1)%10;
 			bool inslot = CPlayer.HasWeaponsInSlot(slot);
 			if ( !inslot && (AmmoInter[i].GetValue() <= 0) ) continue;
 			Screen.DrawTexture(WeaponTex,false,xx,yy,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
@@ -257,7 +284,7 @@ Class SayaStatusBar : SWWMStatusBar
 				Screen.DrawTexture(AmmoBar[selected],false,xx+10,yy+2,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_WindowRightF,aw);
 			}
 			if ( a ) Screen.DrawText(MiniHUDFont,acolor,xx+45,yy+2,String.Format("%3d",amt),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
-			int f = hnd.WeaponFlash[i];
+			int f = hnd.WeaponFlash[slot];
 			if ( f && (gametic < f) )
 			{
 				double alph = ((f-(gametic+FracTic))/25.)**1.5;
@@ -297,7 +324,7 @@ Class SayaStatusBar : SWWMStatusBar
 		xx = ss.x-(margin+24);
 		yy = ss.y-(margin+56);
 		Screen.DrawTexture(SpellTex,false,xx,yy,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
-		double mh = clamp(AmmoInter[8].GetValue(),0,100)/2.;
+		double mh = clamp(AmmoInter[0].GetValue(),0,100)/2.;
 		int selslot = -1;
 		if ( SayaPlayer(CPlayer.mo) ) selslot = SayaPlayer(CPlayer.mo).SpellSel;
 		if ( mh )

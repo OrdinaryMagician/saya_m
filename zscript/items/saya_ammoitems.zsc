@@ -17,7 +17,7 @@ Class SayaKiraMana : SWWMAmmo
 {
 	Default
 	{
-		Inventory.MaxAmount 12;
+		Inventory.MaxAmount 120;
 		+INVENTORY.UNDROPPABLE;
 		+INVENTORY.UNTOSSABLE;
 		+INVENTORY.QUIET;

@@ -75,6 +75,8 @@ QUITMSG11 = "Stop looking at me like that,\nI was just scratching myself.";
 D_SAYABEPIS = "The energizing effects of Bepis have left your body.";
 D_SAYAMILK = "The effects of Ibuki's milk have worn off.";
 D_SAYAVISOR = "The Glow Visor ran out of battery.";
+D_SAYAKIRA1 = "\"My gift, my hammer, for you.\"";
+D_SAYAKIRA2 = "\"Take my strength, keep fighting.\"";
 SAYA_TITLEPRESENTSA = "UnSX Team";
 SAYA_TITLEPRESENTSB = "presents";
 SAYA_TITLEMODBYA = "a mod by";
@@ -144,9 +146,10 @@ TT_SAYAHAMMER =
 "\cg\"Kira-sama... Thank you.\"\c-\n"
 "\n"
 "Powered by \cgDivine Fury\c-.\n"
-"Enough energy for 12 side swings of \cgPrimary fire\c-,\n"
-"or for 4 overhead swings of \cgSecondary fire\c-.\n"
-"Rechargeable by finding other weapon spawns.";
+"Side swings with \cgPrimary fire\c-,\n"
+"overhead swings with \cgSecondary fire\c-.\n"
+"Consumes energy to deal extra damage,\n"
+"rechargeable by finding other weapon spawns.";
 TT_SAYAPOS =
 "\cg\"This weapon has no right to exist.\"\c-"
 "\n"

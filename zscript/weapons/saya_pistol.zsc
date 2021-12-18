@@ -1,0 +1,5 @@
+// Nyan Gun
+
+Class SayaPistol : SWWMWeapon
+{
+}

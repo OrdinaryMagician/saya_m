@@ -119,7 +119,7 @@ Each "magazine" allows for 8 individual shots, as well as serving to power the e
 
 You'd be lucky to find extra ammo around, unless it's from another BFG spawn.
 
-### Slot 1 - Furious Warhammer *[Chainsaw]*
+### Slot 9 - Furious Warhammer *[Chainsaw]*
 
 *"Kira-sama... Thank you."*
 
@@ -129,7 +129,7 @@ Primary fire performs side swings, while secondary is a strong overhead attack, 
 
 Energy for this weapon is limited when not wielded by its rightful owner, and once it fully drains, the weapon must be recharged by **Kira** himself. It will start replacing the **Chainsaw** once the **Brass Knuckles** have been obtained. Once obtained, any further pickups will be replaced by small shrines where you can recharge it.
 
-### Slot X - Ninnacht Jackhammer *[Blursphere]*
+### Ninnacht Jackhammer *[Blursphere]*
 
 *"This fucking thing has no right to exist."*
 

@@ -2,7 +2,7 @@
 
 extend Class SWWMHandler
 {
-	transient int WeaponFlash[8];
+	transient int WeaponFlash[10];
 	transient int spellchangetic;
 	transient ui int lastspell;
 
@@ -15,16 +15,17 @@ extend Class SWWMHandler
 	{
 		if ( e.Name ~== "sayaweaponreceive" )
 		{
-			if ( (e.Args[0] < 0) || (e.Args[0] > 7) ) return;
+			if ( (e.Args[0] < 0) || (e.Args[0] > 9) ) return;
 			WeaponFlash[e.Args[0]] = gametic+25;
 		}
 		else if ( e.Name ~== "sayaspellslot" )
 		{
-			if ( (e.Args[0] < 0) || (e.Args[0] > 3) ) return;
+			if ( (e.Args[0] < -1) || (e.Args[0] > 3) ) return;
 			let saya = SayaPlayer(players[e.player].mo);
 			if ( saya )
 			{
-				saya.SpellSel = e.Args[0];
+				if ( e.Args[0] == -1 ) saya.SpellSel = (saya.SpellSel+1)%4;
+				else saya.SpellSel = e.Args[0];
 				if ( e.player == consoleplayer )
 					spellchangetic = gametic+1;
 			}

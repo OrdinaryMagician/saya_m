@@ -65,6 +65,8 @@ QUITMSG11 = "Deja de mirarme así,\nsolo me estaba rascando.";
 D_SAYABEPIS = "El efecto energizante de la Bepis ha dejado tu cuerpo.";
 D_SAYAMILK = "Los efectos de la leche de Ibuki se han desvanecido.";
 D_SAYAVISOR = "El Visor Luminoso se ha quedado sin batería.";
+D_SAYAKIRA1 = "\"Mi regalo, mi martillo, para ti.\"";
+D_SAYAKIRA2 = "\"Toma mi fuerza, sigue luchando.\"";
 SAYA_TITLEPRESENTSB = "presenta";
 SAYA_TITLEMODBYA = "un mod de";
 SAYA_TITLEINTROA = "\"Palabras odiosas, acusaciones de cobardía, las escuchó todas.\"";
@@ -132,9 +134,10 @@ TT_SAYAHAMMER =
 "\cg\"Kira-sama... Gracias.\"\c-\n"
 "\n"
 "Potenciado por \cgFuria Divina\c-.\n"
-"Suficiente energía para 12 ataques de \cgFuego primario\c-,\n"
-"o para 4 ataques del \caFuego secundario\c-.\n"
-"Recargable al encontrar otros spawns de arma.";
+"Ataques laterales con \cgFuego primario\c-,\n"
+"ataques verticales con \caFuego secundario\c-.\n"
+"Consume energía para causar daño extra,\n"
+"recargable al encontrar otros spawns de arma.";
 TT_SAYAPOS =
 "\cg\"Este arma no tiene derecho a existir.\"\c-"
 "\n"

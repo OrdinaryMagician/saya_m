@@ -2,6 +2,7 @@
 nosave float saya_flashstrength = 1.0;
 user float saya_bumpstrength = 1.0;
 nosave int saya_hudmargin = 10;
+nosave bool saya_hudscale = false;
 nosave int saya_maxshown = 4;
 nosave int saya_maxshownbig = 10;
 nosave int saya_maxpickup = 5;
@@ -20,7 +21,6 @@ server bool saya_shadows = true;
 nosave int saya_shadowdist = 2000;
 nosave int saya_forcestats = 1;
 server int saya_drlaskill = 3;
-server bool saya_singlefirst = false;
 server int saya_ps_fullreset = 0;
 server int saya_ps_resetammo = 0;
 server int saya_ps_resetitems = 0;

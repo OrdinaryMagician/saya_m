@@ -27,6 +27,11 @@ OptionValue "SWWMPistolStart"
 	1, "$SWWM_PISTOLSTART_MAP"
 	2, "$SWWM_PISTOLSTART_CLUSTER"
 }
+OptionValue "SWWMHUDScale"
+{
+	0, "$SWWM_TFITSCALE"
+	1, "$SWWM_LFITSCALE"
+}
 OptionMenu "SayaOptionMenu"
 {
 	Class "SWWMOptionMenu"
@@ -45,6 +50,7 @@ OptionMenu "SayaOptionMenu"
 	Option "$SWWM_MM_ENABLE", "saya_mm_enable", "YesNo"
 	Option "$SWWM_FORCESTATS", "saya_forcestats", "SWWMForceStats"
 	Slider "$SWWM_HUDMARGIN", "saya_hudmargin", 0, 40, 1, 0
+	Option "$SWWM_HUDSCALE", "saya_hudscale", "SWWMHudScale"
 	Slider "$SWWM_MAXMSG", "saya_maxshown", 1, 10, 1, 0
 	Slider "$SWWM_MAXMSGBIG", "saya_maxshownbig", 1, 20, 1, 0
 	Slider "$SWWM_MAXPICK", "saya_maxpickup", 1, 10, 1, 0
@@ -71,14 +77,11 @@ OptionMenu "SayaOptionMenu"
 	Option "$SWWM_ENEMYDROPS", "saya_enemydrops", "SWWMEnemyDropType"
 	StaticText " "
 	StaticText "$SWWM_ITITLE", "Red"
-	Option "$SWWM_SINGLEFIRST", "saya_singlefirst", "YesNo"
 	Option "$SWWM_WEAPONTOOLTIPS", "saya_weapontooltips", "YesNo"
 	SafeCommand "$SWWM_RESETTOOLTIPS", "event swwmresettooltips"
 	StaticText " "
 	StaticText "$SWWM_MCTITLE", "Red"
 	Option "$SWWM_DRLASKILL", "saya_drlaskill", "SWWMDRLASkill"
-	StaticText " "
-	StaticText " "
 
 }
 AddOptionMenu "OptionsMenu"

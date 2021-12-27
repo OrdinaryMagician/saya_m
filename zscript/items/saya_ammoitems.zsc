@@ -208,7 +208,7 @@ Class SayaBFGRound : MagAmmo
 		Inventory.MaxAmount 8;
 		MagAmmo.ParentAmmo "SayaBFGAmmo";
 		MagAmmo.ClipSize 8;
-		MagAmmo.BackpackAmount 1;
+		MagAmmo.BackpackAmount 0;
 		+INVENTORY.UNDROPPABLE;
 		+INVENTORY.UNTOSSABLE;
 		+INVENTORY.QUIET;

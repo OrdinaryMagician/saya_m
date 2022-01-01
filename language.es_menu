@@ -63,7 +63,7 @@ SAYA_HELP_PAGE5 = "Arsenal de Saya (Parte 3: Potenciadores)";
 SAYA_HELP_PAGE5_TXT =
 "Por supuesto estos también andan por ahí. Como en las aventuras de \caIbuki\c-, la invisibilidad  ha sido reemplazada con algo también, te vas a divertir cantidad.\n"
 "\n"
-"El comportamiento de los potenciadores es básicamente el mismo, se usan automáticamente al recoger siempre que no haya una copia activa. Oh, y \caSaya\c- también puede usar esos estimulantes de súper-salud, mira que bien.\n"
+"El comportamiento de los potenciadores es básicamente el mismo, no se usan automáticamente al recoger y con capacidad máxima no se recogerán copias extra (pero seguirán puntuándose). Oh, y \caSaya\c- también puede usar esos estimulantes de súper-salud, mira que bien.\n"
 "\n"
 "Creo que ya sabes que los potenciadores activos se muestran en el HUD, con su duración restante. En serio, no creo que necesite explicar esto en cada mod.";
 SAYA_HELP_PAGE6 = "Arsenal de Saya (Parte 4: Hechizos)";

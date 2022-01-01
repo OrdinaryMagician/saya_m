@@ -67,7 +67,7 @@ SAYA_HELP_PAGE5 = "Saya's Arsenal (Part 3: Powerups)";
 SAYA_HELP_PAGE5_TXT =
 "Of course these are around too. Like in \caIbuki\c-'s adventures, invisibility was replaced here with something else too, you'll have lots of fun with 'em.\n"
 "\n"
-"Powerup behavior is just about the same here, where they're automatically activated on pickup as long as a copy isn't already active. Oh, and \caSaya\c- can also use those super-healing stimulants too, so there's that.\n"
+"Powerup behavior is just about the same here, where they're not auto-activated on pickup and extra copies don't get grabbed at max capacity (but still get scored). Oh, and \caSaya\c- can also use those super-healing stimulants too, so there's that.\n"
 "\n"
 "You can guess already that active powerups are shown in the HUD, with their remaining duration. Really, I don't have to explain this in each side-mod, I think.";
 SAYA_HELP_PAGE6 = "Saya's Arsenal (Part 4: Spellcards)";

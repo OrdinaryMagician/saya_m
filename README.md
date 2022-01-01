@@ -125,7 +125,7 @@ You'd be lucky to find extra ammo around, unless it's from another BFG spawn.
 
 A gift from the **God of Fury** himself, who values **Saya** greatly as a friend. It is his very own weapon that he employs to defend the **Votrexxian** people. Even in the hands of a puny human, its strength will remain the same as if it were wielded by its own creator.
 
-Primary fire performs side swings, while secondary is a strong overhead attack, capable of crushing even the beefiest of enemies.
+Primary fire performs side swings, while secondary is a strong overhead attack, capable of crushing even the beefiest of enemies. These attacks are heavily strengthened provided the weapon has energy, but even without a charge they're still fairly potent.
 
 Energy for this weapon is limited when not wielded by its rightful owner, and once it fully drains, the weapon must be recharged by **Kira** himself. It will start replacing the **Chainsaw** once the **Brass Knuckles** have been obtained. Once obtained, any further pickups will be replaced by small shrines where you can recharge it.
 
@@ -139,7 +139,7 @@ The weapon that brought **Ninnacht Armaments** to ruin, the most disastrous thin
 
 ## Spellcasting
 
-As someone of such an upbringing as she is, **Saya** is no stranger to magic, and her specialty lies in so-called ***"Spellcards"***: Specialized spells with limited use but quite mighty potential. Each is selected through a dedicated key, after which you can opt for either a primary or secondary attack with it, with varying effects. Afterwards you will have to wait for your mana to replenish in order to use another one. Note that each of these requires increasingly more mana then the previous (and their altfires require even more), so the strongest attacks will take much longer to become available once again.
+As someone of such an upbringing as she is, **Saya** is no stranger to magic, and her specialty lies in so-called ***"Spellcards"***: Specialized spells with limited use but quite mighty potential. Each is selected through a dedicated key, independent from whichever weapon you're using, after which you can opt for either a primary or secondary cast with it, with varying effects. Afterwards you will have to wait for your mana to replenish in order to use another one. Note that each of these requires increasingly more mana then the previous (and their altfires require even more), so the strongest attacks will take much longer to become available once again.
 
 ### Spellcard: Reviled Sign "Igneous Lexicon"
 
@@ -231,7 +231,7 @@ Thick shielded plating for your chest and back, providing very decent protection
 
 *"Ooooooooooooorb..."*
 
-Works as an extra layer of protection on top of all your other armor. Lasts for about three minutes, although its duration will drain faster the more damage it has to absorb. Always spawns with a **Spiritual Stimulant** next to it.
+Works as an extra layer of protection on top of all your other armor. Lasts for about three minutes, although its duration will drain faster the more damage it has to absorb. Also has the added effect of restoring you to 100% health.
 
 ### Hammerspace Embiggener *[Backpack]*
 
@@ -281,7 +281,7 @@ Allows you to harmlessly wade through hazardous liquids for a limited time.
 
 ## Compatibility
 
-Yeah this one's also **Doom** exclusive, sorry. That's really what the plot expects. Obviously, the same notes are here about the vanilla campaigns not being canon.
+Yeah this one's **Doom** exclusive, sorry. That's really what the plot expects. Obviously, the same notes are here about the vanilla campaigns not being canon.
 
 ---
 

@@ -20,6 +20,8 @@ Class SayaTitleStuff : EventHandler
 	ui TextureID gradtex;
 	ui int quakestr;
 	ui int rss;
+	int titletimer;
+	bool bFadeFromBlack;
 
 	private ui int GetUIRandom()
 	{
@@ -59,14 +61,33 @@ Class SayaTitleStuff : EventHandler
 		}
 	}
 
+	override void WorldTick()
+	{
+		titletimer++;
+	}
+
+	override void WorldLoaded( WorldEvent e )
+	{
+		titletimer = 0;
+		let shnd = SWWMStaticHandler(StaticEventHandler.Find("SWWMStaticHandler"));
+		if ( !shnd ) return;
+		if ( shnd.titlefirst )
+		{
+			titletimer = GameTicRate*40+1;	// skip to logo (also skip the fire sound)
+			bFadeFromBlack = true;	// fade from black instead of white
+			S_ChangeMusic("music/saya_titlemus_skipahead.ogg");
+		}
+		shnd.titlefirst = true;
+	}
+
 	override void UiTick()
 	{
 		quakestr = max(quakestr-1,0);
-		if ( level.maptime == 1 ) S_StartSound("title/wind",CHAN_VOICE,CHANF_OVERLAP|CHANF_UI,1.,0.);
-		else if ( level.maptime == (21*GameTicRate) ) S_ChangeMusic("music/saya_titlemus.ogg");
-		else if ( level.maptime == (39*GameTicRate) ) S_StartSound("title/cock",CHAN_WEAPON,CHANF_OVERLAP|CHANF_UI,1.,0.);
-		else if ( level.maptime == (40*GameTicRate) ) S_StartSound("title/fire",CHAN_WEAPON,CHANF_OVERLAP|CHANF_UI,1.,0.);
-		else if ( level.maptime == (42*GameTicRate) )
+		if ( titletimer == 1 ) S_StartSound("title/wind",CHAN_VOICE,CHANF_OVERLAP|CHANF_UI,1.,0.);
+		else if ( titletimer == (21*GameTicRate) ) S_ChangeMusic("music/saya_titlemus.ogg");
+		else if ( titletimer == (39*GameTicRate) ) S_StartSound("title/cock",CHAN_WEAPON,CHANF_OVERLAP|CHANF_UI,1.,0.);
+		else if ( titletimer == (40*GameTicRate) ) S_StartSound("title/fire",CHAN_WEAPON,CHANF_OVERLAP|CHANF_UI,1.,0.);
+		else if ( titletimer == (42*GameTicRate) )
 		{
 			quakestr += 30;
 			S_StartSound("title/thump",CHAN_BODY,CHANF_OVERLAP|CHANF_UI,1.,0.);
@@ -129,7 +150,14 @@ Class SayaTitleStuff : EventHandler
 
 	override void RenderUnderlay( RenderEvent e )
 	{
-		double GameSecs = (level.maptime+e.FracTic)/GameTicRate;
+		if ( !sayatex[0] ) sayatex[0] = TexMan.CheckForTexture("graphics/title_saya_dark.png",TexMan.Type_Any);
+		if ( !sayatex[1] ) sayatex[1] = TexMan.CheckForTexture("graphics/title_saya_eye.png",TexMan.Type_Any);
+		if ( !sayatex[2] ) sayatex[2] = TexMan.CheckForTexture("graphics/title_saya.png",TexMan.Type_Any);
+		if ( !sayatex[3] ) sayatex[3] = TexMan.CheckForTexture("graphics/title_saya_smoke.png",TexMan.Type_Any);
+		if ( !logotex[0] ) logotex[0] = TexMan.CheckForTexture("graphics/SayaLogo.png",TexMan.Type_Any);
+		if ( !logotex[1] ) logotex[1] = TexMan.CheckForTexture("graphics/SayaLogo_Glow.png",TexMan.Type_Any);
+		if ( !gradtex ) gradtex = TexMan.CheckForTexture("graphics/title_grad.png",TexMan.Type_Any);
+		double GameSecs = (titletimer+e.FracTic)/GameTicRate;
 		if ( saya_fuzz )
 		{
 			if ( !bgtex ) bgtex = TexMan.CheckForTexture("graphics/tempbg.png",TexMan.Type_Any);
@@ -146,16 +174,14 @@ Class SayaTitleStuff : EventHandler
 		double texscl = Screen.GetHeight()/2200.;
 		double logoscl = Screen.GetHeight()/1024.;
 		// intro texts
-		if ( level.maptime < (38*GameTicRate) )
+		if ( titletimer < (38*GameTicRate) )
 		{
-			if ( !sayatex[0] ) sayatex[0] = TexMan.CheckForTexture("graphics/title_saya_dark.png",TexMan.Type_Any);
 			alf = clamp(GameSecs/20.,.2,1.);
 			double disp = smerp(clamp((GameSecs-20)/18,0.,1.));
 			RenderSmokeLayer(e,GameSecs,true,clamp(alf*2.,.2,1.),200.*disp);
 			Screen.DrawTexture(sayatex[0],false,Screen.GetWidth()/2-80*zoomscl,Screen.GetHeight()+zoomscl*1600.*disp,DTA_ScaleX,zoomscl,DTA_ScaleY,zoomscl,DTA_ColorOverlay,Color(255-int(alf*255),0,0,0));
 			Screen.Dim("Black",1.-clamp((GameSecs-22)/4.,0.,1),0,0,Screen.GetWidth(),Screen.GetHeight());
 			RenderSmokeLayer(e,GameSecs,false,clamp(alf*2.,.2,1.)*.5,600.*disp);
-			if ( !gradtex ) gradtex = TexMan.CheckForTexture("graphics/title_grad.png",TexMan.Type_Any);
 			Screen.DrawTexture(gradtex,false,0,Screen.GetHeight()+1200*zoomscl*disp,DTA_DestWidth,Screen.GetWidth(),DTA_DestHeightF,1200*zoomscl,DTA_LegacyRenderStyle,STYLE_Shaded,DTA_FillColor,Color(0,0,0),DTA_TopOffset,256);
 			alf = clamp(GameSecs-1,0.,1.);
 			alf *= 1.-clamp(GameSecs-6,0.,1.);
@@ -195,12 +221,11 @@ Class SayaTitleStuff : EventHandler
 			Screen.DrawText(smallfont,Font.CR_WHITE,(Screen.GetWidth()-smallfont.StringWidth(str)*CleanXFac)/2,(Screen.GetHeight()*.75)-(smallfont.GetHeight()*CleanYFac)/2,str,DTA_CleanNoMove,true,DTA_Alpha,alf);
 		}
 		// 38 seconds in: eye glow
-		else if ( level.maptime < (40*GameTicRate) )
+		else if ( titletimer < (40*GameTicRate) )
 		{
 			RenderSmokeLayer(e,GameSecs,true,1.,200.);
 			Screen.DrawTexture(sayatex[0],false,Screen.GetWidth()/2-zoomscl*80,Screen.GetHeight()+zoomscl*1600,DTA_ScaleX,zoomscl,DTA_ScaleY,zoomscl);
 			RenderSmokeLayer(e,GameSecs,false,.5,600.);
-			if ( !sayatex[1] ) sayatex[1] = TexMan.CheckForTexture("graphics/title_saya_eye.png",TexMan.Type_Any);
 			alf = clamp((GameSecs-39)*4.,0.,1.);
 			Screen.DrawTexture(sayatex[1],false,Screen.GetWidth()/2-zoomscl*80,Screen.GetHeight()+zoomscl*1600,DTA_ScaleX,zoomscl,DTA_ScaleY,zoomscl,DTA_Alpha,alf,DTA_LegacyRenderStyle,STYLE_Add);
 			alf *= 1.-clamp((GameSecs-39),0.,1.);
@@ -211,8 +236,6 @@ Class SayaTitleStuff : EventHandler
 		{
 			Screen.DrawTexture(gradtex,false,0,Screen.GetHeight(),DTA_DestWidth,Screen.GetWidth(),DTA_DestHeight,512*CleanYFac_1,DTA_LegacyRenderStyle,STYLE_AddShaded,DTA_FillColor,Color(128,0,0),DTA_TopOffset,256);
 			RenderSmokeLayer(e,GameSecs,true,.5,0,true);
-			if ( !sayatex[2] ) sayatex[2] = TexMan.CheckForTexture("graphics/title_saya.png",TexMan.Type_Any);
-			if ( !sayatex[3] ) sayatex[3] = TexMan.CheckForTexture("graphics/title_saya_smoke.png",TexMan.Type_Any);
 			alf = clamp((GameSecs-40.5)*1.5,0.,1.);
 			rss = int(MSTime()/GameTicRate);
 			Vector2 ofs = (RandomShiver(),RandomShiver())*quakestr*texscl;
@@ -228,18 +251,16 @@ Class SayaTitleStuff : EventHandler
 			Screen.DrawTexture(gradtex,false,0,Screen.GetHeight(),DTA_DestWidth,Screen.GetWidth(),DTA_DestHeightF,1200*texscl,DTA_LegacyRenderStyle,STYLE_Shaded,DTA_FillColor,Color(0,0,0),DTA_TopOffset,256);
 			RenderSmokeLayer(e,GameSecs,false,1.,0,true);
 			Screen.DrawTexture(gradtex,false,0,Screen.GetHeight(),DTA_DestWidth,Screen.GetWidth(),DTA_DestHeight,64*CleanYFac_1,DTA_LegacyRenderStyle,STYLE_Shaded,DTA_FillColor,Color(64,0,0),DTA_TopOffset,256);
-			if ( level.maptime > 42*GameTicRate )
+			if ( titletimer > 42*GameTicRate )
 			{
-				if ( !logotex[0] ) logotex[0] = TexMan.CheckForTexture("graphics/SayaLogo.png",TexMan.Type_Any);
-				if ( !logotex[1] ) logotex[1] = TexMan.CheckForTexture("graphics/SayaLogo_Glow.png",TexMan.Type_Any);
 				Screen.DrawTexture(logotex[0],false,Screen.GetWidth()/2,Screen.GetHeight()-420*logoscl,DTA_ScaleX,logoscl,DTA_ScaleY,logoscl,DTA_LeftOffset,512);
-				if ( level.maptime < 44*GameTicRate )
+				if ( titletimer < 44*GameTicRate )
 					Screen.DrawTexture(logotex[1],false,Screen.GetWidth()/2,Screen.GetHeight()-420*logoscl,DTA_ScaleX,logoscl,DTA_ScaleY,logoscl,DTA_LeftOffset,512,DTA_LegacyRenderStyle,STYLE_Add,DTA_Alpha,1.-clamp(GameSecs-42,0.,1.));
 			}
-			if ( level.maptime < (41*GameTicRate) )
+			if ( titletimer < (41*GameTicRate) )
 			{
 				alf = 1.-clamp((GameSecs-40),0.,1.);
-				Screen.Dim("White",alf,0,0,Screen.GetWidth(),Screen.GetHeight());
+				Screen.Dim(bFadeFromBlack?"Black":"White",alf,0,0,Screen.GetWidth(),Screen.GetHeight());
 			}
 			if ( quakestr > 0. )
 			{
@@ -248,7 +269,7 @@ Class SayaTitleStuff : EventHandler
 			}
 		}
 		// global fade in from back
-		if ( level.maptime < (1*GameTicRate) )
+		if ( titletimer < (1*GameTicRate) )
 			Screen.Dim("Black",1.-clamp(GameSecs,0.,1.),0,0,Screen.GetWidth(),Screen.GetHeight());
 	}
 }

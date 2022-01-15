@@ -1,4 +1,3 @@
-# SWWM GZ Side Story ~ Red-Eyed Rampage
 ![](docimg/SayaLogo.png)
 
 ---
@@ -7,7 +6,7 @@
 
 Hey what if you played as **Saya** wouldn't that be really cool and fun?
 
-Now seriously, I feel like making separate mods for certain **SWWM GZ** characters would result in some very interesting opportunities to experiment with other playstyles.
+Now seriously, I feel like making separate mods for certain **Codename: Demolitionist** side characters would result in some very interesting opportunities to experiment with other playstyles.
 
 So, basically the story here is simple. Everyone knows that **Saya** just sits back and watches as others do all the fighting for her, right? She's just lazy, a coward, that's what everyone says. And the words of those people, they hurt. She can't help but feel like they're right. So why not shut them all up by going out there and kicking some ass by yourself? Yeah, there's no way this will go wrong, or cause you some form of long-lasting trauma...
 

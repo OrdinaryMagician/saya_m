@@ -17,6 +17,7 @@ const SWWMLOGONAME = "M_SAYA";
 const SWWMCREDITSCOL0 = Font.CR_RED;
 const SWWMCREDITSCOL1 = Font.CR_BRICK;
 const SWWMCREDITSCOL2 = Font.CR_WHITE;
+const SWWMMAXAMOUNT = 1;
 // Gutamatics
 #include "zscript/swwm_Gutamatics/Include.zsc"
 // utility code

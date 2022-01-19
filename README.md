@@ -206,25 +206,25 @@ These ones contain all sorts of medical equipment to patch up wounds and treat b
 
 *"Glad I'm compatible with these, just like Ibuki is. Means I can just drink the stuff without basically blowing myself up in the process. No bullshit ultra failed heals here."*
 
-A boost of 100 HP with each use. There is no upper cap to how much you can get out of these, although going over 100 HP will make your health drop faster and faster. Proven to be lethal for mortals if overused *(good thing you're not mortal)*. Automatically used on pickup unless you're above 100 HP.
+A boost of 100 HP with each use. There is no upper cap to how much you can get out of these, although going over 100 HP will make your health drop faster and faster. Proven to be lethal for mortals if overused *(good thing you're not mortal)*. Always automatically used on pickup.
 
 ### Armor Nugget *[Armor Bonus]*
 
 *"Got these from Tach-Engine. They work exactly as advertised."*
 
-A fine piece from the **Demolitionist** arsenal, now for **Saya** to make use of. Due to her organic body, however, these are absorbed much more efficiently, giving 5 points of armor each up to a 200 point cap.
+A fine piece from the **Demolitionist** arsenal, now for **Saya** to make use of. Due to her organic body, however, these are absorbed much more efficiently, giving 5 points of armor each up to a 200 point cap. Note that you can't hold spares.
 
 ### Armor Padding *[Green Armor]*
 
 *"Don't wanna have no accidents, you know..."*
 
-Protection for your head and your joints. The usual stuff you'd wear for a bike ride, basically. 100 points of armor, absorbing one third of all damage, plus an extra 15 points from any fall damage.
+Protection for your head and your joints. The usual stuff you'd wear for a bike ride, basically. 100 points of armor, absorbing one third of all damage, plus an extra 15 points from any fall damage. Can only hold one spare.
 
 ### Shielded Vest *[Blue Armor]*
 
 *"Shit's heavy, but it's worth it to play it safe."*
 
-Thick shielded plating for your chest and back, providing very decent protection. A whopping 500 points of armor, absorbing two thirds of all damage, plus three quarters of all splash damage. Reduces your movement speed by 25% while worn.
+Thick shielded plating for your chest and back, providing very decent protection. A whopping 500 points of armor, absorbing two thirds of all damage, plus three quarters of all splash damage. Reduces your movement speed by 25% while worn. Likewise, you can only hold one spare of it, too.
 
 ### Shield Orb *[Megasphere]*
 

@@ -21,3 +21,6 @@ sounds/HAHAHA.ogg
 zscript/items/swwm_safetytether.zsc
 gldefs.safety
 modeldef.safety
+models/Heretic*Key*
+gldefs.heretickeys
+modeldef.heretickeys

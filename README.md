@@ -30,6 +30,8 @@ As a civilian, **Saya** shouldn't be carrying any weapons, but who's going to st
 
 The operation of all weapons is fairly simple: Primary fire shoots, secondary fire aims down the sights, and reload... reloads. **Saya** managed to strike a special deal in the last second to have an autoloader in her hammerspace *(which is normally exclusive to military models)*, so don't worry, no manual mag management will be involved here either.
 
+Of course, having a smaller hammerspace also means she can't hold as many weapons as she'd like, so you'll notice a bit of a size reduction in the available arsenal.
+
 ### Slot 1 - Unarmed *[Fist, Chainsaw]*
 
 *"What? You think I'm some sort of weakling?"*
@@ -38,27 +40,13 @@ Raise up your fists to attack the opponent. It may not be very effective, usuall
 
 Note: Taking the place of the **Chainsaw** are a pair of **Brass Knuckles**, which will permanently enhance your punching damage.
 
-### Slot 2 - Shinigami NK23 *[Pistol]*
+### Slot 2 - Akari Mag Pulsor *[Pistol]*
 
-*"Ah, the **Nyan23**, one of the first gun girls I married."*
+*"Hey, it's for self-defense, you know..."*
 
-Based loosely on **Heckler & Mok**'s **USP** family of firearms, the .45 AVP **Neko23** offers a lot of opportunities to deal some damage. Each bullet that comes out of this kitty will be imbued with fiery passion, dealing some extra burn. You've got 12 bullets in the mag, more than enough to efficiently eliminate hellish vermin.
+A simple self-defense weapon that releases potent, disrupting electromagnetic pulses. The potency of the pulse can be increased by holding down the trigger for a longer time. The specific model that **Saya** uses can be loaded with 4mm bolts to further increase the lethality of its shots by actually having a solid payload. These are not
 
-#### .45 AVP Mags *[Clip, Bullet Box]*
-
-Just scattered around, sometimes in bunches.
-
-### Slot 3 - Ninnacht IDW *[Shotgun]*
-
-*"Why does everyone hate the cute cat? ... Da nya~☆"*
-
-A promising little gun that was lucky enough to be saved from disaster when **Ninnacht Armaments** managed to buy all rights to its design and development. Light, fast, and very catty. 9mm Parabellum, 32 rounds, and a steady fire rate of 300 RPM. A fairly decent choice for a small girl like **Saya**.
-
-#### 9mm Parabellum Mags *[Shells, Shell Box]*
-
-Pretty much strewn about the place, like everything else. You can start to tell by now that **Cyrus** didn't put as much effort into carefully deploying equipment as he used to during the **Demolitionist** missions.
-
-### Slot 4 - Siesta "Goldsmith" Sawed off *[Super Shotgun]*
+### Slot 3 - Siesta "Goldsmith" Sawed off *[Shotgun, Super Shotgun]*
 
 *"闇を切り裂く、ＯＨ　ＤＥＳＩＲＥ〜！"*
 
@@ -70,7 +58,7 @@ Can hold 4 rounds plus one in the chamber. Fairly useful for stopping hell noble
 
 Will pop up either scattered around or in packs.
 
-### Slot 5 - Akari "Hyperion" Gauss Rifle *[Chaingun]*
+### Slot 4 - Akari "Hyperion" Gauss Rifle *[Chaingun]*
 
 *"The future is in electromagnetic weapons, not that caseless bullshit from **Volt**."*
 
@@ -80,9 +68,9 @@ Each mag holds 50 rounds, allowing you to spend a whole seven seconds of firing 
 
 #### 4mm EC Shock-Tip Bolts *[Clip, Bullet Box]*
 
-Slightly less common than pistol mags, but they may take their place.
+Found as either full mags or handfuls of bolts.
 
-### Slot 6 - Shinigami AT44 *[Rocket Launcher]*
+### Slot 5 - Shinigami AT44 *[Rocket Launcher]*
 
 *"Protip: Don't try to rocket jump IRL."*
 
@@ -94,7 +82,7 @@ The magazine holds 4 rounds. Four chances to deliver death.
 
 You'll either find single rounds or small packs of five.
 
-### Slot 7 - Nekuratek "Nabikuni" *[Plasma Rifle]*
+### Slot 6 - Nekuratek "Nabikuni" *[Plasma Rifle]*
 
 *"I cast fuck you on your sorry ass."*
 
@@ -106,7 +94,7 @@ Rather than *"rounds"*, the magazine holds 300mL of pressurized Dyratin. 5mL are
 
 A handful of plasma, in a can. Or several cans.
 
-### Slot 8 - Cryptik "Malefactor" Plasma Caster *[BFG9000]*
+### Slot 7 - Cryptik "Malefactor" Plasma Caster *[BFG9000]*
 
 *"Eat flaming neon death."*
 
@@ -118,7 +106,7 @@ Each "magazine" allows for 8 individual shots, as well as serving to power the e
 
 You'd be lucky to find extra ammo around, unless it's from another BFG spawn.
 
-### Slot 9 - Furious Warhammer *[Chainsaw]*
+### Slot 8 - Furious Warhammer *[Chainsaw]*
 
 *"Kira-sama... Thank you."*
 
@@ -184,7 +172,7 @@ The main difference between fire modes is that with secondary fire, you can rele
 
 You can't just go out there and expect to do everything without help. And so, the many items come to play.
 
-### Cookie *[Health Bonus]*
+### Cookie *[Health/Armor Bonus]*
 
 *"I haven't played Cookie Clicker in decades. Wonder if it still even exists..."*
 
@@ -207,12 +195,6 @@ These ones contain all sorts of medical equipment to patch up wounds and treat b
 *"Glad I'm compatible with these, just like Ibuki is. Means I can just drink the stuff without basically blowing myself up in the process. No bullshit ultra failed heals here."*
 
 A boost of 100 HP with each use. There is no upper cap to how much you can get out of these, although going over 100 HP will make your health drop faster and faster. Proven to be lethal for mortals if overused *(good thing you're not mortal)*. Always automatically used on pickup.
-
-### Armor Nugget *[Armor Bonus]*
-
-*"Got these from Tach-Engine. They work exactly as advertised."*
-
-A fine piece from the **Demolitionist** arsenal, now for **Saya** to make use of. Due to her organic body, however, these are absorbed much more efficiently, giving 5 points of armor each up to a 200 point cap. Note that you can't hold spares.
 
 ### Armor Padding *[Green Armor]*
 

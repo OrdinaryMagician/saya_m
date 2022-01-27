@@ -2,15 +2,15 @@
 
 Class SayaStatusBar : SWWMStatusBar
 {
-	TextureID StatusTex[4], StatusIcon[5], InvTex, WeaponTex, MeleeTex, AmmoBar[3], GenTex, SpellTex, SpellIcon[4], SpellBar[2];
-	int AmmoFlash[9];	// flash when new ammo is received
-	int AmmoOldAmounts[9];	// to detect when to flash
-	int StatusFlash[4];	// flash when healing or gaining armor
-	int LastStatus[4];	// to detect when to flash
-	int StatusCol[4];	// text colors for each status box, simplifies things
-	Class<SWWMAmmo> AmmoSlots[9];	// ammo type on each slot + mana
+	TextureID StatusTex[3], StatusIcon[4], InvTex, WeaponTex, MeleeTex, AmmoBar[3], GenTex, SpellTex, SpellIcon[4], SpellBar[2];
+	int AmmoFlash[8];	// flash when new ammo is received
+	int AmmoOldAmounts[8];	// to detect when to flash
+	int StatusFlash[3];	// flash when healing or gaining armor
+	int LastStatus[3];	// to detect when to flash
+	int StatusCol[3];	// text colors for each status box, simplifies things
+	Class<SWWMAmmo> AmmoSlots[8];	// ammo type on each slot + mana
 
-	DynamicValueInterpolator StatusInter[4], AmmoInter[9];
+	DynamicValueInterpolator StatusInter[3], AmmoInter[8];
 
 	override void FlushNotify()
 	{
@@ -18,10 +18,9 @@ Class SayaStatusBar : SWWMStatusBar
 		// flush interpolators (useful since this virtual gets called
 		// when loading saves, too)
 		StatusInter[0].Reset(CPlayer.Health);
-		StatusInter[1].Reset(CPlayer.mo.CountInv("SayaBonusArmor"));
-		StatusInter[2].Reset(CPlayer.mo.CountInv("SayaLightArmor"));
-		StatusInter[3].Reset(CPlayer.mo.CountInv("SayaHeavyArmor"));
-		for ( int i=0; i<9; i++ )
+		StatusInter[1].Reset(CPlayer.mo.CountInv("SayaLightArmor"));
+		StatusInter[2].Reset(CPlayer.mo.CountInv("SayaHeavyArmor"));
+		for ( int i=0; i<8; i++ )
 		{
 			let a = SWWMAmmo(CPlayer.mo.FindInventory(AmmoSlots[i]));
 			int amt = 0;
@@ -43,18 +42,17 @@ Class SayaStatusBar : SWWMStatusBar
 	}
 	override void UpdateInterpolators()
 	{
-		int cur[4];
+		int cur[3];
 		cur[0] = CPlayer.Health;
-		cur[1] = CPlayer.mo.CountInv("SayaBonusArmor");
-		cur[2] = CPlayer.mo.CountInv("SayaLightArmor");
-		cur[3] = CPlayer.mo.CountInv("SayaHeavyArmor");
-		for ( int i=0; i<4; i++ )
+		cur[1] = CPlayer.mo.CountInv("SayaLightArmor");
+		cur[2] = CPlayer.mo.CountInv("SayaHeavyArmor");
+		for ( int i=0; i<3; i++ )
 		{
 			StatusInter[i].Update(cur[i]);
 			if ( cur[i] > LastStatus[i] ) StatusFlash[i] = gametic+25;
 			LastStatus[i] = cur[i];
 		}
-		for ( int i=0; i<9; i++ )
+		for ( int i=0; i<8; i++ )
 		{
 			let a = SWWMAmmo(CPlayer.mo.FindInventory(AmmoSlots[i]));
 			int amt = 0;
@@ -91,18 +89,15 @@ Class SayaStatusBar : SWWMStatusBar
 	{
 		Super.Init();
 		StatusTex[0] = TexMan.CheckForTexture("graphics/HUD/HealthBox.png",TexMan.Type_Any);
-		StatusTex[1] = TexMan.CheckForTexture("graphics/HUD/NuggetBox.png",TexMan.Type_Any);
-		StatusTex[2] = TexMan.CheckForTexture("graphics/HUD/ArmorBox.png",TexMan.Type_Any);
-		StatusTex[3] = TexMan.CheckForTexture("graphics/HUD/HelmBox.png",TexMan.Type_Any);
+		StatusTex[1] = TexMan.CheckForTexture("graphics/HUD/ArmorBox.png",TexMan.Type_Any);
+		StatusTex[2] = TexMan.CheckForTexture("graphics/HUD/HelmBox.png",TexMan.Type_Any);
 		StatusIcon[0] = TexMan.CheckForTexture("graphics/HUD/HealthFlash.png",TexMan.Type_Any);
-		StatusIcon[1] = TexMan.CheckForTexture("graphics/HUD/NuggetFlash.png",TexMan.Type_Any);
-		StatusIcon[2] = TexMan.CheckForTexture("graphics/HUD/ArmorFlash.png",TexMan.Type_Any);
-		StatusIcon[3] = TexMan.CheckForTexture("graphics/HUD/HelmFlash.png",TexMan.Type_Any);
-		StatusIcon[4] = TexMan.CheckForTexture("graphics/HUD/HealthInvul.png",TexMan.Type_Any);
+		StatusIcon[1] = TexMan.CheckForTexture("graphics/HUD/ArmorFlash.png",TexMan.Type_Any);
+		StatusIcon[2] = TexMan.CheckForTexture("graphics/HUD/HelmFlash.png",TexMan.Type_Any);
+		StatusIcon[3] = TexMan.CheckForTexture("graphics/HUD/HealthInvul.png",TexMan.Type_Any);
 		StatusCol[0] = MCR_RED;
-		StatusCol[1] = MCR_GREEN;
-		StatusCol[2] = MCR_SILVER;
-		StatusCol[3] = MCR_GOLD;
+		StatusCol[1] = MCR_SILVER;
+		StatusCol[2] = MCR_GOLD;
 		InvTex = TexMan.CheckForTexture("graphics/HUD/GrenadeBox.png",TexMan.Type_Any);
 		WeaponTex = TexMan.CheckForTexture("graphics/HUD/WeaponBar.png",TexMan.Type_Any);
 		MeleeTex = TexMan.CheckForTexture("graphics/HUD/MeleeSlot.png",TexMan.Type_Any);
@@ -126,20 +121,18 @@ Class SayaStatusBar : SWWMStatusBar
 		tcextra_s = "u";
 		bAlwaysAboveInv = true;
 		LastStatus[0] = CPlayer?CPlayer.health:100;
-		LastStatus[1] = (CPlayer&&CPlayer.mo)?CPlayer.mo.CountInv("SayaBonusArmor"):0;
-		LastStatus[2] = (CPlayer&&CPlayer.mo)?CPlayer.mo.CountInv("SayaLightArmor"):0;
-		LastStatus[3] = (CPlayer&&CPlayer.mo)?CPlayer.mo.CountInv("SayaHeavyArmor"):0;
-		for ( int i=0; i<4; i++ ) StatusInter[i] = DynamicValueInterpolator.Create(LastStatus[i],.1,1,100);
+		LastStatus[1] = (CPlayer&&CPlayer.mo)?CPlayer.mo.CountInv("SayaLightArmor"):0;
+		LastStatus[2] = (CPlayer&&CPlayer.mo)?CPlayer.mo.CountInv("SayaHeavyArmor"):0;
+		for ( int i=0; i<3; i++ ) StatusInter[i] = DynamicValueInterpolator.Create(LastStatus[i],.1,1,100);
 		AmmoSlots[0] = "SayaMana";
 		AmmoSlots[1] = "SayaPistolAmmo";
-		AmmoSlots[2] = "SayaSMGAmmo";
-		AmmoSlots[3] = "SayaRifleAmmo";
-		AmmoSlots[4] = "SayaGaussAmmo";
-		AmmoSlots[5] = "SayaGLAmmo";
-		AmmoSlots[6] = "SayaPlasmaAmmo";
-		AmmoSlots[7] = "SayaBFGAmmo";
-		AmmoSlots[8] = "SayaKiraMana";
-		for ( int i=0; i<9; i++ )
+		AmmoSlots[2] = "SayaRifleAmmo";
+		AmmoSlots[3] = "SayaGaussAmmo";
+		AmmoSlots[4] = "SayaGLAmmo";
+		AmmoSlots[5] = "SayaPlasmaAmmo";
+		AmmoSlots[6] = "SayaBFGAmmo";
+		AmmoSlots[7] = "SayaKiraMana";
+		for ( int i=0; i<8; i++ )
 		{
 			if ( !CPlayer || !CPlayer.mo )
 			{
@@ -186,7 +179,7 @@ Class SayaStatusBar : SWWMStatusBar
 
 	override void DrawWeapons()
 	{
-		double xx = ss.x/2-256;
+		double xx = ss.x/2-242;
 		double yy = ss.y-(margin+10);
 		// special: slot 1 is always there even if you don't "own" the weapon (because it's auto-given if you don't)
 		{
@@ -213,11 +206,11 @@ Class SayaStatusBar : SWWMStatusBar
 			}
 			xx += 12;
 		}
-		for ( int i=1; i<9; i++, xx+=63 )
+		for ( int i=1; i<8; i++, xx+=68 )
 		{
 			int slot = (i+1)%10;
 			bool inslot = CPlayer.HasWeaponsInSlot(slot);
-			if ( !inslot && (AmmoInter[i].GetValue() <= 0) ) continue;
+			if ( !inslot && ((AmmoInter[i].GetValue() <= 0) || (i==1) || (i==7)) ) continue;
 			Screen.DrawTexture(WeaponTex,false,xx,yy,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
 			int ncolor = mhudfontcol[MCR_WHITE];
 			int acolor = ncolor;
@@ -264,6 +257,12 @@ Class SayaStatusBar : SWWMStatusBar
 			if ( inslot ) Screen.DrawText(MiniHUDFont,ncolor,xx+2,yy+2,String.Format("%d",slot),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
 			int amt = AmmoInter[i].GetValue(), maxamt = 0;
 			let a = SWWMAmmo(CPlayer.mo.FindInventory(AmmoSlots[i]));
+			// special: don't show these ammo types if we down own their weapon
+			if ( ((i==1) && !CPlayer.mo.FindInventory('SayaPistol')) || ((i==7) && !CPlayer.mo.FindInventory('SayaHammer')) )
+			{
+				amt = 0;
+				a = null;
+			}
 			if ( a )
 			{
 				maxamt = a.MaxAmount;
@@ -277,13 +276,13 @@ Class SayaStatusBar : SWWMStatusBar
 					}
 				}
 			}
-			double aw = maxamt?((amt*30.)/maxamt):0;
+			double aw = maxamt?((amt*35.)/maxamt):0;
 			if ( aw )
 			{
 				Screen.DrawTexture(AmmoBar[selected],false,xx+11,yy+3,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_WindowRightF,aw,DTA_ColorOverlay,Color(255,0,0,0));
 				Screen.DrawTexture(AmmoBar[selected],false,xx+10,yy+2,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_WindowRightF,aw);
 			}
-			if ( a ) Screen.DrawText(MiniHUDFont,acolor,xx+45,yy+2,String.Format("%3d",amt),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
+			if ( a ) Screen.DrawText(MiniHUDFont,acolor,xx+50,yy+2,String.Format("%3d",amt),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
 			int f = hnd.WeaponFlash[slot];
 			if ( f && (gametic < f) )
 			{
@@ -295,7 +294,7 @@ Class SayaStatusBar : SWWMStatusBar
 			{
 				double alph = ((f-(gametic+FracTic))/25.)**1.5;
 				if ( aw ) Screen.DrawTexture(AmmoBar[2],false,xx+10,yy+2,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_WindowRightF,aw,DTA_Alpha,alph,DTA_LegacyRenderStyle,STYLE_Add);
-				if ( a ) Screen.DrawText(MiniHUDFont,mhudfontcol[MCR_FLASH],xx+45,yy+2,String.Format("%3d",amt),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_Alpha,alph,DTA_LegacyRenderStyle,STYLE_Add);
+				if ( a ) Screen.DrawText(MiniHUDFont,mhudfontcol[MCR_FLASH],xx+50,yy+2,String.Format("%3d",amt),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_Alpha,alph,DTA_LegacyRenderStyle,STYLE_Add);
 			}
 			// draw weapon-specific display
 			if ( !w ) continue;
@@ -331,7 +330,7 @@ Class SayaStatusBar : SWWMStatusBar
 		{
 			Screen.DrawTexture(SpellBar[0],false,xx+17,yy+54-mh,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_DestHeightF,mh,DTA_ColorOverlay,Color(255,0,0,0));
 			Screen.DrawTexture(SpellBar[0],false,xx+16,yy+53-mh,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_DestHeightF,mh);
-			int f = AmmoFlash[8];
+			int f = AmmoFlash[0];
 			if ( f && (gametic < f) )
 			{
 				double alph = ((f-(gametic+FracTic))/25.)**1.5;
@@ -346,7 +345,7 @@ Class SayaStatusBar : SWWMStatusBar
 		double xx = margin;
 		double yy = ss.y-(margin+10);
 		int ofs = 26;
-		for ( int i=0; i<4; i++ )
+		for ( int i=0; i<3; i++ )
 		{
 			int st = StatusInter[i].GetValue();
 			if ( (i > 0) && (st <= 0) ) continue;
@@ -355,7 +354,7 @@ Class SayaStatusBar : SWWMStatusBar
 			if ( (i == 0) && isInvulnerable() )
 			{
 				ncolor = MCR_WHITE;
-				Screen.DrawTexture(StatusIcon[4],false,xx+2,yy+2,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
+				Screen.DrawTexture(StatusIcon[3],false,xx+2,yy+2,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
 			}
 			Screen.DrawText(MiniHUDFont,mhudfontcol[ncolor],xx+12,yy+2,String.Format("%3d",clamp(st,0,999)),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
 			int f = StatusFlash[i];

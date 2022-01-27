@@ -2,10 +2,8 @@
 // tags, pickups
 T_SAYAFIST = "Unarmed";
 T_SAYAKNUCKS = "Brass Knuckles";
-T_SAYAPISTOL = "NK23";
-I_SAYAPISTOL = "Shinigami \"Neko23\" Semi-Auto Pistol";
-T_SAYASMG = "IDW";
-I_SAYASMG = "Ninnacht \"IDW\" Submachine Gun";
+T_SAYAPISTOL = "Mag Pulsor";
+I_SAYAPISTOL = "Akari \"Mag Pulsor\" Self-Defense Weapon";
 T_SAYARIFLE = "Goldsmith";
 I_SAYARIFLE = "Siesta \"Goldsmith\" Lever-Action Rifle";
 T_SAYAGAUSS = "Hyperion";
@@ -23,12 +21,6 @@ T_SAYASPELLCARD1 = "Reviled Sign";
 T_SAYASPELLCARD2 = "Retribution Sign";
 T_SAYASPELLCARD3 = "Rude Sign";
 T_SAYASPELLCARD4 = "Radiant Sign";
-T_SAYAPISTOLAMMO = "NK23 Mag";
-T_SAYAPISTOLAMMOS = "NK23 Mags";
-T_SAYAPISTOLBULLET = ".45 AVP Round";
-T_SAYAPISTOLBULLETS = ".45 AVP Rounds";
-T_SAYASMGAMMO = "IDW Mag";
-T_SAYASMGAMMOS = "IDW Mags";
 T_SAYASMGBULLET = "9mm Round";
 T_SAYASMGBULLETS = "9mm Rounds";
 T_SAYARIFLEAMMO = ".45 LV Round";
@@ -50,7 +42,6 @@ T_SAYACOOKIES = "Cookies";
 T_SAYASTIM = "Stimmy Pack";
 T_SAYABSTIM = "Big Stimmy Pack";
 T_SAYASPIRIT = "Spiritual Stimulant";
-T_SAYANUGGET = "Armor Nugget";
 T_SAYAPADS = "Armor Padding";
 T_SAYAVEST = "Shielded Vest";
 T_SAYAORB = "Shield Orb";
@@ -102,16 +93,12 @@ TT_SAYAFIST =
 "A kick to the nuts is guaranteed\n"
 "to stagger any enemy.";
 TT_SAYAPISTOL =
-"\cg\"The first gun girl I married.\"\c-\n"
+"\cg\"For self-defense, of course.\"\c-\n"
 "\n"
-"\cg.45 AVP\c-, 12+1 rounds.\n"
-"\cgFire-infused\c- bullets.\n"
-"A fairly reliable pistol.";
-TT_SAYASMG =
-"\cg\"Da nya~☆\"\c-\n"
-"\n"
-"\cg9×19mm Parabellum\c-, 32+1 rounds.\n"
-"300 RPM, very imprecise when hip-fired.";
+"\cg4mm Shock Bolt\c-, 5+1 rounds.\n"
+"Can still fire without ammo.\n"
+"A simple zapper, which can be loaded\n"
+"with 4mm bolts to be more lethal.";
 TT_SAYARIFLE =
 "\cg\"OH DESIRE~!\"\c-\n"
 "\n"

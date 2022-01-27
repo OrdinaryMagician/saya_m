@@ -15,7 +15,7 @@ Class SayaPlayer : SWWMPlayer
 		Health 100;
 		Player.DisplayName "$T_SAYA";
 		Player.StartItem "SayaPistol";
-		Player.StartItem "SayaPistolAmmo", 2;
+		Player.StartItem "SayaPistolAmmo", 100;
 		Player.StartItem "SayaUnarmed";
 		Player.StartItem "SayaMana", 100;
 		Player.StartItem "SayaInternalArmor";

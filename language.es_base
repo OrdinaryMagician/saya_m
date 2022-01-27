@@ -2,8 +2,7 @@
 // tags, pickups
 T_SAYAFIST = "Mano a Mano";
 T_SAYAKNUCKS = "Puño Americano";
-I_SAYAPISTOL = "Pistola Semiautomática Shinigami \"Neko23\"";
-I_SAYASMG = "Subfusil Ninnacht \"IDW\"";
+I_SAYAPISTOL = "Arma de Defensa Personal Akari \"Mag Pulsor\"";
 I_SAYARIFLE = "Rifle de Palanca Siesta \"Goldsmith\"";
 I_SAYAGAUSS = "Rifle Gauss Akari \"Hyperion\"";
 I_SAYAGL = "Lanzagranadas Shinigami \"Akatsuki 44\"";
@@ -15,14 +14,6 @@ T_SAYASPELLCARD1 = "Signo de Injuria";
 T_SAYASPELLCARD2 = "Signo de Retribución";
 T_SAYASPELLCARD3 = "Signo de Rudeza";
 T_SAYASPELLCARD4 = "Signo de Brillantez";
-T_SAYAPISTOLAMMO = "Cargador de NK23";
-T_SAYAPISTOLAMMOS = "Cargadores de NK23";
-T_SAYAPISTOLBULLET = "Bala de .45 AVP";
-T_SAYAPISTOLBULLETS = "Balas de .45 AVP";
-T_SAYASMGAMMO = "Cargador de IDW";
-T_SAYASMGAMMOS = "Cargadores de IDW";
-T_SAYASMGBULLET = "Bala de 9mm";
-T_SAYASMGBULLETS = "Balas de 9mm";
 T_SAYARIFLEAMMO = "Bala de .45 LV";
 T_SAYARIFLEAMMOS = "Balas de .45 LV";
 T_SAYAGAUSSAMMO = "Cargador de Hyperion";
@@ -42,7 +33,6 @@ T_SAYACOOKIES = "Galletas";
 T_SAYASTIM = "Pack de Estímulo";
 T_SAYABSTIM = "Gran Pack de Estímulo";
 T_SAYASPIRIT = "Estimulante Espiritual";
-T_SAYANUGGET = "Pepita de Armadura";
 T_SAYAPADS = "Armadura Acolchada";
 T_SAYAVEST = "Chaleco Protector";
 T_SAYAORB = "Orbe Escudo";
@@ -90,16 +80,12 @@ TT_SAYAFIST =
 "Una patada en los bajos garantiza\n"
 "aturdir cualquier enemigo.";
 TT_SAYAPISTOL =
-"\cg\"La primera chica pistola con la que me casé.\"\c-\n"
+"\cg\"Para defensa personal, por supuesto.\"\c-\n"
 "\n"
-"\cg.45 AVP\c-, 12+1 balas.\n"
-"Balas con \cgInfusión de Fuego\c-.\n"
-"Una pistola bastante fiable.";
-TT_SAYASMG =
-"\cg\"Da nya~☆\"\c-\n"
-"\n"
-"\cg9×19mm Parabellum\c-, 32+1 balas.\n"
-"300 RPM, imprecisa en disparo de cadera.";
+"\cgProyectil de Choque de 4mm\c-, 5+1 balas.\n"
+"No necesita munición para disparar.\n"
+"Un simple aturdidor, el cual puede ser cargado\n"
+"con proyectiles de 4mm para volverse más letal.";
 TT_SAYARIFLE =
 "\cg\"OH DESIRE~!\"\c-\n"
 "\n"
@@ -109,7 +95,7 @@ TT_SAYARIFLE =
 TT_SAYAGAUSS =
 "\cg\"El término Rifle Gauss es solo jerga de ciencia ficción.\"\c-\n"
 "\n"
-"\cgProyectíl de Choque de 4mm\c-, 50+1 balas.\n"
+"\cgProyectil de Choque de 4mm\c-, 50+1 balas.\n"
 "Unos humeantes 420 RPM.\n"
 "Silencioso, no alerta enemigos.";
 TT_SAYAGL =

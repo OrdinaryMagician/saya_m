@@ -24,65 +24,16 @@ Class SayaKiraMana : SWWMAmmo
 	}
 }
 
+// pistol charge, it's also just there
 Class SayaPistolAmmo : SWWMAmmo
 {
 	Default
 	{
-		Tag "$T_SAYAPISTOLAMMO";
-		SWWMAmmo.PickupTag "SAYAPISTOLAMMO";
-		Inventory.Amount 1;
-		Inventory.MaxAmount 5;
-		Ammo.BackpackAmount 0;
-		SWWMAmmo.EmbiggenMaxAmount1 7;
-		SWWMAmmo.EmbiggenMaxAmount2 9;
-		SWWMAmmo.EmbiggenMaxAmount3 11;
-		SWWMAmmo.EmbiggenMaxAmount4 14;
-		SWWMAmmo.MagAmmoType "SayaPistolBullet";
-		Ammo.DropAmount 1;
-	}
-}
-Class SayaPistolBullet : MagAmmo
-{
-	Default
-	{
-		Tag "$T_SAYAPISTOLBULLET";
-		MagAmmo.PickupTag "SAYAPISTOLBULLET";
-		Inventory.Amount 1;
-		Inventory.MaxAmount 12;
-		MagAmmo.ParentAmmo "SayaPistolAmmo";
-		MagAmmo.ClipSize 12;
-		MagAmmo.BackpackAmount 8;
-	}
-}
-
-Class SayaSMGAmmo : SWWMAmmo
-{
-	Default
-	{
-		Tag "$T_SAYASMGAMMO";
-		SWWMAmmo.PickupTag "SAYASMGAMMO";
-		Inventory.Amount 1;
-		Inventory.MaxAmount 3;
-		Ammo.BackpackAmount 0;
-		SWWMAmmo.EmbiggenMaxAmount1 4;
-		SWWMAmmo.EmbiggenMaxAmount2 5;
-		SWWMAmmo.EmbiggenMaxAmount3 7;
-		SWWMAmmo.EmbiggenMaxAmount4 9;
-		SWWMAmmo.MagAmmoType "SayaSMGBullet";
-		Ammo.DropAmount 1;
-	}
-}
-Class SayaSMGBullet : MagAmmo
-{
-	Default
-	{
-		Tag "$T_SAYASMGBULLET";
-		MagAmmo.PickupTag "SAYASMGBULLET";
-		Inventory.Amount 1;
-		Inventory.MaxAmount 32;
-		MagAmmo.ParentAmmo "SayaSMGAmmo";
-		MagAmmo.ClipSize 32;
-		MagAmmo.BackpackAmount 16;
+		Inventory.MaxAmount 100;
+		+INVENTORY.UNDROPPABLE;
+		+INVENTORY.UNTOSSABLE;
+		+INVENTORY.UNCLEARABLE;
+		+INVENTORY.QUIET;
 	}
 }
 

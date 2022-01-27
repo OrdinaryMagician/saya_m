@@ -20,11 +20,12 @@ extend Class SWWMHandler
 		}
 		else if ( e.Name ~== "sayaspellslot" )
 		{
-			if ( (e.Args[0] < -1) || (e.Args[0] > 3) ) return;
+			if ( (e.Args[0] < -2) || (e.Args[0] > 3) ) return;
 			let saya = SayaPlayer(players[e.player].mo);
 			if ( saya )
 			{
-				if ( e.Args[0] == -1 ) saya.SpellSel = (saya.SpellSel+1)%4;
+				if ( e.Args[0] == -2 ) saya.SpellSel = (saya.SpellSel>0)?(saya.SpellSel-1):3;
+				else if ( e.Args[0] == -1 ) saya.SpellSel = (saya.SpellSel+1)%4;
 				else saya.SpellSel = e.Args[0];
 				if ( e.player == consoleplayer )
 					spellchangetic = gametic+1;

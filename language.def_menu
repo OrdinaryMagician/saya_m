@@ -60,14 +60,14 @@ SAYA_HELP_PAGE4 = "Saya's Arsenal (Part 2: Items)";
 SAYA_HELP_PAGE4_TXT =
 "The other little helpers to help along. Naturally, \caSaya\c- is just a normal human (except for the whole \"being immortal\" part), so she definitely needs some extra assistance to not die over and over again.\n"
 "\n"
-"Typical health and armor items are present. Armor is divided in two pieces, one light and one heavy, along with the very helpful \caArmor Nuggets\c-, which are far more efficient on a body of flesh and bone. Health comes in just normal healing supplies, with stimpacks and medical kits, which combine nicely with the rapid healing of your immortal blood, having conveniently instant effects when used.\n"
+"Typical health and armor items are present. Armor is divided in two pieces, one light and one heavy, combinable for maximum protection. Health comes in just normal healing supplies, with stimpacks and medical kits, which combine nicely with the rapid healing of your immortal blood, having conveniently instant effects when used.\n"
 "\n"
-"There's also cookies. Cookies replace health bonuses and give you a bit of health. You can eat all the cookies you want, they're delicious. They even replenish your mana too, so there's that.";
+"There's also cookies. Cookies replace health and armor bonuses and give you a bit of extra health. You can eat all the cookies you want, they're delicious. They even replenish your mana too, so there's that.";
 SAYA_HELP_PAGE5 = "Saya's Arsenal (Part 3: Powerups)";
 SAYA_HELP_PAGE5_TXT =
 "Of course these are around too. Like in \caIbuki\c-'s adventures, invisibility was replaced here with something else too, you'll have lots of fun with 'em.\n"
 "\n"
-"Powerup behavior is just about the same here, where they're not auto-activated on pickup and extra copies don't get grabbed at max capacity (but still get scored). Oh, and \caSaya\c- can also use those super-healing stimulants too, so there's that.\n"
+"Powerup behavior is just about the same here, where they're not auto-activated on pickup and extra copies don't get grabbed at max capacity (but still get scored). Oh, and \caSaya\c- can also use those super-healing stimulants too, which is pretty nifty.\n"
 "\n"
 "You can guess already that active powerups are shown in the HUD, with their remaining duration. Really, I don't have to explain this in each side-mod, I think.";
 SAYA_HELP_PAGE6 = "Saya's Arsenal (Part 4: Spellcards)";

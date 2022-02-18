@@ -56,14 +56,14 @@ SAYA_HELP_PAGE4 = "Arsenal de Saya (Parte 2: Ítems)";
 SAYA_HELP_PAGE4_TXT =
 "Y más cositas para ir ayudando. Naturalmente, \caSaya\c- es una humana normal y corriente (excepto por eso de \"ser inmortal\"), así que definitivamente necesita ayuda extra para no morir una y otra vez.\n"
 "\n"
-"Los típicos ítems de salud y armadura están presentes. La armadura se divide en dos piezas, una ligera y una pesada, junto con las muy útiles \caPepitas de Armadura\c-, las cuales son mucho más eficientes en un cuerpo de carne y hueso. La salud viene en simples botiquines y kits médicos, los cuales combinan bien con la curación rápida de tu sangre inmortal, teniendo convenientemente efectos instantáneos al usarse.\n"
+"Los típicos ítems de salud y armadura están presentes. La armadura se divide en dos piezas, una ligera y una pesada, combinables para una protección máxima. La salud viene en simples botiquines y kits médicos, los cuales combinan bien con la curación rápida de tu sangre inmortal, teniendo convenientemente efectos instantáneos al usarse.\n"
 "\n"
-"También hay galletas. Las galletas reemplazan los bonus de salud y te dan un poco de salud. Puedes comer todas las galletas que quieras, son deliciosas. Incluso recuperan tu maná también, pues mira.";
+"También hay galletas. Las galletas reemplazan los bonus de salud y armadura y te dan un poco de salud extra. Puedes comer todas las galletas que quieras, son deliciosas. Incluso recuperan tu maná también, mira que bien.";
 SAYA_HELP_PAGE5 = "Arsenal de Saya (Parte 3: Potenciadores)";
 SAYA_HELP_PAGE5_TXT =
 "Por supuesto estos también andan por ahí. Como en las aventuras de \caIbuki\c-, la invisibilidad  ha sido reemplazada con algo también, te vas a divertir cantidad.\n"
 "\n"
-"El comportamiento de los potenciadores es básicamente el mismo, no se usan automáticamente al recoger y con capacidad máxima no se recogerán copias extra (pero seguirán puntuándose). Oh, y \caSaya\c- también puede usar esos estimulantes de súper-salud, mira que bien.\n"
+"El comportamiento de los potenciadores es básicamente el mismo, no se usan automáticamente al recoger y con capacidad máxima no se recogerán copias extra (pero seguirán puntuándose). Oh, y \caSaya\c- también puede usar esos estimulantes de súper-salud, lo cual viene de perlas.\n"
 "\n"
 "Creo que ya sabes que los potenciadores activos se muestran en el HUD, con su duración restante. En serio, no creo que necesite explicar esto en cada mod.";
 SAYA_HELP_PAGE6 = "Arsenal de Saya (Parte 4: Hechizos)";

@@ -2,13 +2,14 @@
 
 Class SayaStatusBar : SWWMStatusBar
 {
-	TextureID StatusTex[3], StatusIcon[4], InvTex, WeaponTex, MeleeTex, AmmoBar[3], GenTex, SpellTex, SpellIcon[4], SpellBar[2];
+	TextureID StatusTex[3], StatusIcon[6], InvTex, WeaponTex, MeleeTex, AmmoBar[3], GenTex, SpellTex, SpellIcon[4], SpellBar[2];
 	int AmmoFlash[8];	// flash when new ammo is received
 	int AmmoOldAmounts[8];	// to detect when to flash
 	int StatusFlash[3];	// flash when healing or gaining armor
 	int LastStatus[3];	// to detect when to flash
 	int StatusCol[3];	// text colors for each status box, simplifies things
 	Class<SWWMAmmo> AmmoSlots[8];	// ammo type on each slot + mana
+	int PulsePhase;	// for health pulsing
 
 	DynamicValueInterpolator StatusInter[3], AmmoInter[8];
 
@@ -73,6 +74,16 @@ Class SayaStatusBar : SWWMStatusBar
 			if ( amt > AmmoOldAmounts[i] ) AmmoFlash[i] = gametic+25;
 			AmmoOldAmounts[i] = amt;
 		}
+		if ( cur[0] <= 0 )
+		{
+			PulsePhase = 0;
+			return;
+		}
+		if ( PulsePhase == 15 )
+			S_StartSound("misc/heartbeat",CHAN_BODY,CHANF_UI|CHANF_OVERLAP,(30-cur[0])/50.);
+		PulsePhase--;
+		if ( (PulsePhase < 0) || (PulsePhase > cur[0]*2+25) )
+			PulsePhase = cur[0]*2+25;
 	}
 
 	// hello??? why is this function clearscope???
@@ -94,7 +105,9 @@ Class SayaStatusBar : SWWMStatusBar
 		StatusIcon[0] = TexMan.CheckForTexture("graphics/HUD/HealthFlash.png",TexMan.Type_Any);
 		StatusIcon[1] = TexMan.CheckForTexture("graphics/HUD/ArmorFlash.png",TexMan.Type_Any);
 		StatusIcon[2] = TexMan.CheckForTexture("graphics/HUD/HelmFlash.png",TexMan.Type_Any);
-		StatusIcon[3] = TexMan.CheckForTexture("graphics/HUD/HealthInvul.png",TexMan.Type_Any);
+		StatusIcon[3] = TexMan.CheckForTexture("graphics/HUD/HealthPulse.png",TexMan.Type_Any);
+		StatusIcon[4] = TexMan.CheckForTexture("graphics/HUD/HealthEx.png",TexMan.Type_Any);
+		StatusIcon[5] = TexMan.CheckForTexture("graphics/HUD/HealthInvul.png",TexMan.Type_Any);
 		StatusCol[0] = MCR_RED;
 		StatusCol[1] = MCR_SILVER;
 		StatusCol[2] = MCR_GOLD;
@@ -354,9 +367,21 @@ Class SayaStatusBar : SWWMStatusBar
 			if ( (i == 0) && isInvulnerable() )
 			{
 				ncolor = MCR_WHITE;
-				Screen.DrawTexture(StatusIcon[3],false,xx+2,yy+2,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
+				Screen.DrawTexture(StatusIcon[5],false,xx+2,yy+2,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
 			}
 			Screen.DrawText(MiniHUDFont,mhudfontcol[ncolor],xx+12,yy+2,String.Format("%3d",clamp(st,0,999)),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
+			if ( (i == 0) && (ncolor != MCR_WHITE) && (st > 0) && (st <= 25) && (PulsePhase <= 15) )
+			{
+				double alph = clamp(sin((PulsePhase-FracTic)*12.),0.,1.);
+				Screen.DrawTexture(StatusIcon[3],false,xx+2,yy+2,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_Alpha,alph,DTA_LegacyRenderStyle,STYLE_Add);
+				Screen.DrawText(MiniHUDFont,mhudfontcol[MCR_REDFLASH],xx+12,yy+2,String.Format("%3d",clamp(st,0,999)),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_Alpha,alph,DTA_LegacyRenderStyle,STYLE_Add);
+			}
+			else if ( (i == 0) && (ncolor != MCR_WHITE) && (st > 100) )
+			{
+				double alph = ((st-100)/900.)**.5;
+				Screen.DrawTexture(StatusIcon[4],false,xx+2,yy+2,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_Alpha,alph);
+				Screen.DrawText(MiniHUDFont,mhudfontcol[MCR_BLUE],xx+12,yy+2,String.Format("%3d",clamp(st,0,999)),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_Alpha,alph);
+			}
 			int f = StatusFlash[i];
 			if ( f && (gametic < f) )
 			{

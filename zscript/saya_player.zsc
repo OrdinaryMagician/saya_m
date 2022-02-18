@@ -48,4 +48,12 @@ Class SayaPlayer : SWWMPlayer
 			else if ( !(level.maptime&31) && (Health > 100) ) player.Health = Health -= 1;
 		}
 	}
+
+	override Weapon PickWeapon( int slot, bool checkammo )
+	{
+		if ( slot == 9 ) EventHandler.SendNetworkEvent("sayaspellslot",-2);
+		else if ( slot == 0 ) EventHandler.SendNetworkEvent("sayaspellslot",-1);
+		else return Super.PickWeapon(slot,checkammo);
+		return player.ReadyWeapon;
+	}
 }

@@ -10,7 +10,7 @@ Class SayaPlayer : SWWMPlayer
 		Speed 1;
 		Radius 16;
 		Height 47;
-		Mass 150;
+		Mass 50;
 		PainChance 255;
 		Health 100;
 		Player.DisplayName "$T_SAYA";

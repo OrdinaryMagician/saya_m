@@ -74,7 +74,7 @@ Class SayaStatusBar : SWWMStatusBar
 			if ( amt > AmmoOldAmounts[i] ) AmmoFlash[i] = gametic+25;
 			AmmoOldAmounts[i] = amt;
 		}
-		if ( cur[0] <= 0 )
+		if ( (cur[0] <= 0) || (cur[0] > 25) )
 		{
 			PulsePhase = 0;
 			return;

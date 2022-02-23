@@ -44,7 +44,7 @@ Note: Taking the place of the **Chainsaw** are a pair of **Brass Knuckles**, whi
 
 *"Hey, it's for self-defense, you know..."*
 
-A simple self-defense weapon that releases potent, disrupting electromagnetic pulses. The potency of the pulse can be increased by holding down the trigger for a longer time. The specific model that **Saya** uses can be loaded with 4mm bolts to further increase the lethality of its shots by actually having a solid payload. These are not
+A simple self-defense weapon that releases potent, disrupting electromagnetic pulses. The potency of the pulse can be increased by holding down the trigger for a longer time. The specific model that **Saya** uses can be loaded with 4mm bolts to further increase the lethality of its shots by actually having a solid payload. Up to 6 of them fit inside the internal magazine.
 
 ### Slot 3 - Siesta "Goldsmith" Sawed off *[Shotgun, Super Shotgun]*
 
@@ -263,6 +263,60 @@ Allows you to harmlessly wade through hazardous liquids for a limited time.
 ## Compatibility
 
 Yeah this one's **Doom** exclusive, sorry. That's really what the plot expects. Obviously, the same notes are here about the vanilla campaigns not being canon.
+
+---
+
+## DLC
+
+Because four more weapons would make things a bit more interesting, the option will be given post-release to swap some guns around for alternate ones.
+
+### Slot 3 - Siesta "Moon Rabbit" Shotgun *[Shotgun, Super Shotgun]*
+
+*"I'm sorry but this thing is giving me flashbacks..."*
+
+A peculiar .410 lever-action shotgun, said to be standard issue among certain **Lunarian** armed corps. Its stock is decorated with a Nordic cross resembling that of the flag of **Iceland** *(it's unclear what this means)*. The usual woodwork of other Siesta weapons has been replaced with white polymer, while the barrel and receiver are made of titanium. Overall this seems to reduce the weapon's weight to the point where even a child could easily wield it.
+
+Takes 9+1 shells. The ammunition employed is also specially crafted for this weapon, as usual .410 buckshot tends to be *"too weak"*, and it appears to have some magical properties.
+
+#### .410 Pendragon Shell *[Shells, Shell Box]*
+
+These pop up in varied amounts, boxes tend to be rare.
+
+### Slot 4 - Ninnacht IDW *[Chaingun]*
+
+*"Why does everyone hate the cute cat? ... Da nya~☆"*
+
+A promising little gun that was lucky enough to be saved from disaster when Ninnacht Armaments managed to buy all rights to its design and development. Light, fast, and very catty. 9mm Parabellum, 32 rounds, and a steady fire rate of 300 RPM. A fairly decent choice for a small girl like Saya.
+
+#### 9mm Parabellum Mags [Clip, Bullet Box]
+
+Pretty much strewn about the place. May be found in full mags.
+
+### Slot 5 - Cryptik "Punisher" Plasma Grenade Launcher [Rocket Launcher]
+
+*"The only thing that bothers me about this is how absolutely shiny and chrome it is, seriously."*
+
+The very first plasma grenade launcher devised by **Cryptik Arms**, and it shows. It's gone through several revisions, to the point of being *"absolutely perfected"*. It seems that in the process this also has translated to being so polished you can see your own reflection on it. Nevertheless, it's a very effective weapon, capable of obliterating targets quickly. Although its splash damage potential is very restrictive, a direct hit is absolutely lethal.
+
+Magazines have 6 rounds. Do note that the weapon is open bolt, so that's absolutely as many as you can get.
+
+#### Plasma Grenades *[Rocket, Rocket Box]*
+
+As single rounds or small bunches.
+
+### Slot 6 - Akari "Selene" Beam Rifle [Plasma Rifle]
+
+*"Gotta use what you have, and I have something very nice for you all."*
+
+A deadly deliverer of death if it may be described thusly. This weapon deploys highly lethal charges of scalding hot ionized mercury, leaving a lingering trail of death on its way. A direct impact can quickly eat through armor, while the rest of the material gradually makes its way into the body and begins doing its nasty work.
+
+**Saya** allegedly based this on a weapon from an ancient videogame, and cited that *"it's a miracle that I somehow got it to work"*.
+
+Takes 7 charges in the cylinder. It is not recommended to throw away spent charges as they are highly contaminant.
+
+#### Mercury Charge *[Cell, Cell Pack]*
+
+They tend to come in pairs or quartets.
 
 ---
 

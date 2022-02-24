@@ -10,6 +10,11 @@ I_SAYAPLASMA = "Rifle de Plasma Nekuratek \"Nabikuni\"";
 I_SAYABFG = "Lanzador de Plasma Cryptik \"Malefactor\"";
 T_SAYAHAMMER = "Martillo de Guerra Furioso";
 I_SAYAPOS = "Escopeta Revólver Ninnacht \"Jackhammer\"";
+T_SAYASHOTGUN = "Moon Rabbit";
+I_SAYASHOTGUN = "Escopeta de Palanca Siesta \"Moon Rabbit\"";
+I_SAYASMG = "Subfusil Ninnacht \"IDW\"";
+I_SAYAPLASG = "Lanzagranadas de Plasma Cryptik \"Punisher\"";
+I_SAYABEAM = "Rifle de Rayos Akari \"Selene\"";
 T_SAYASPELLCARD1 = "Signo de Injuria";
 T_SAYASPELLCARD2 = "Signo de Retribución";
 T_SAYASPELLCARD3 = "Signo de Rudeza";
@@ -26,6 +31,20 @@ T_SAYAPLASMAAMMO = "Célula de Dyratin";
 T_SAYAPLASMAAMMOS = "Células de Dyratin";
 T_SAYABFGAMMO = "Módulo de Alimentación de Lanzador";
 T_SAYABFGAMMOS = "Módulos de Alimentación de Lanzador";
+T_SAYASHELLAMMO = "Cartucho .410 Pendragon";
+I_SAYASHELLAMMO = "Cartuchos .410 Pendragon";
+T_SAYASMGAMMO = "Cargador de IDW";
+T_SAYASMGAMMOS = "Cargadores de IDW";
+T_SAYASMGBULLET = "Bala de 9mm";
+T_SAYASMGBULLETS = "Balas de 9mm";
+T_SAYAPLASGAMMO = "Cargador de Punisher";
+T_SAYAPLASGAMMOS = "Cargadores de Punisher";
+T_SAYAPLASGROUND = "Granada de Punisher";
+T_SAYAPLASGROUNDS = "Granadas de Punisher";
+T_SAYABEAMAMMO = "Cilindro de Selene";
+T_SAYABEAMAMMOS = "Cilindros de Selene";
+T_SAYABEAMROUND = "Carga de Selene";
+T_SAYABEAMROUNDS = "Cargas de Selene";
 T_SAYAZBOMB = "Bomba Zar";
 T_SAYAZBOMBS = "Bombas Zar";
 T_SAYACOOKIE = "Galleta";
@@ -93,19 +112,19 @@ TT_SAYARIFLE =
 "Recortada para molar más.\n"
 "Muy efectiva contra cabras.";
 TT_SAYAGAUSS =
-"\cg\"El término Rifle Gauss es solo jerga de ciencia ficción.\"\c-\n"
+"\cg\"Rifle Gauss es jerga de ciencia ficción.\"\c-\n"
 "\n"
 "\cgProyectil de Choque de 4mm\c-, 50+1 balas.\n"
 "Unos humeantes 420 RPM.\n"
 "Silencioso, no alerta enemigos.";
 TT_SAYAGL =
-"\cg\"Consejo: No intentes saltar con cohetes en la vida real.\"\c-\n"
+"\cg\"No intentes saltar con cohetes en la vida real.\"\c-\n"
 "\n"
 "\cgGranadas de 25mm\c-, 4+1 granadas.\n"
 "Detonación automática por proximidad.\n"
 "Puede rebotar en ciertos ángulos.";
 TT_SAYAPLASMA =
-"\cg\"Invoco el hechizo que te den bien por culo.\"\c-\n"
+"\cg\"Invoco el hechizo que te den por culo.\"\c-\n"
 "\n"
 "\cgPlasma de Dyratin\c-, 300mL.\n"
 "5mL por disparo a 700 RPM.\n"
@@ -130,3 +149,59 @@ TT_SAYAPOS =
 "12 cartuchos, y ya está.\n"
 "Requiere desensamblado para recargar.\n"
 "Tú tírala a la basura, apesta.";
+TT_SAYASHOTGUN =
+"\cg\"Deja bailar este Conejo Lunar...\"\c-"
+"\n"
+"\cg.410 Pendragon\c-, 9+1 cartuchos.\n"
+"Perdigones buscadores, muy potente.\n"
+"Demasiado largo para voltear.";
+TT_SAYASMG =
+"\cg\"Da nya~☆\"\c-"
+"\n"
+"\cg9mm Parabellum\c-, 32 balas.\n"
+"Dispensado sostenido de plomo a 300 RPM.\n"
+"Poca potencia de frenado.";
+TT_SAYAPLASG =
+"\cg\"Brillante y cromado...\"\c-"
+"\n"
+"\cgGranada de plasma de 40mm\c-, 5 disparos.\n"
+"Disparo automático, 140 RPM (no es mucho).\n"
+"Daño extremo en impacto directo.";
+TT_SAYABEAM =
+"\cg\"Rayos de partículas venenosas, oh sí.\"\c-"
+"\n"
+"\cgMercurio líquido\c-, 7 disparos.\n"
+"Muy silencioso, apunta, dispara, mata.\n"
+"Envenena al impactar, puede atravesar paredes.";
+// intermission tips
+SAYA_INTERTIP = "Consejo #%d:";
+SAYA_INTERTIP1 = "Dejas tus ítems atrás al morir, así que no te olvides de recuperarlos.";
+SAYA_INTERTIP2 = "Alternar entre armas y hechizos puede ayudar a conservar munición.";
+SAYA_INTERTIP3 = "Tu regeneración de maná se acelera cuanto más tengas, así que intenta no malgastarlo.";
+SAYA_INTERTIP4 = "Patéalos donde duele. Apuntar al centro de gravedad aturdirá enemigos temporalmente.";
+SAYA_INTERTIP5 = "Puedes cargar pernos de 4mm en el Mag Pulsor para convertir un simple aturdidor en arma letal.";
+SAYA_INTERTIP6 = "Los nobles del Infierno reciben daño extra del Goldsmith, siempre que apuntes a la cabeza.";
+SAYA_INTERTIP7 = "Aunque cada disparo del Hyperion no es muy potente, su potencia de aturdimiento es recomendable.";
+SAYA_INTERTIP8 = "Cuanto más aguantes el gatillo, más potencialmente letal se vuelve el Mag Pulsor.";
+SAYA_INTERTIP9 = "Las granadas de AT44 se detonan de forma inteligente cerca de enemigos. Esquiva eso, capullo.";
+SAYA_INTERTIP10 = "El Nabikuni es perfecto para eliminar hordas con facilidad. Solo apunta, y suéltaselo todo.";
+SAYA_INTERTIP11 = "El Malefactor toma atajos en la destrucción, directamente descargando rayos de muerte.";
+SAYA_INTERTIP12 = "El martillo de Kira tiene maná limitado, pero se puede recargar en otros spawns de arma.";
+SAYA_INTERTIP13 = "Las bombas Zar exterminan todo en un radio considerable, intenta mantener la distancia.";
+SAYA_INTERTIP14 = "Se dice que quien controla las galletas, puede un día controlar el universo.";
+SAYA_INTERTIP15 = "Los Estimulantes Espirituales se acoplan indefinidamente, pero el exceso de salud se desvanece rápidamente.";
+SAYA_INTERTIP16 = "Los efectos energizantes de la Maximum Bepis te vuelven una bestia en combate cuerpo a cuerpo.";
+SAYA_INTERTIP17 = "La leche de Ibuki está muy rica, tanto que te vuelve imparable.";
+SAYA_INTERTIP18 = "La duración de los Orbes Escudo decrementa más rápido cuantos más golpes aguantes.";
+SAYA_INTERTIP19 = "El Visor Luminoso puede alternarse usando el ítem de nuevo. Ahorra esa batería.";
+SAYA_INTERTIP20 = "No llevar armadura incrementa el daño recibido un 50%. Asegúrate de protegerte.";
+SAYA_INTERTIP21 = "Los conjuros supuestamente son una \"última medida\", pero a quien le importan las reglas.";
+SAYA_INTERTIP22 = "Disparar desde la cadera reduce la puntería rápidamente, intenta apuntar con mira cuando puedas.";
+SAYA_INTERTIP23 = "Saya es muy bajita, así que puede ir por sitios angostos en los que una persona normal no cabría.";
+SAYA_INTERTIP24 = "El Puño Americano potencia bastante tu daño al pegar. Sí, tienen púas.";
+SAYA_INTERTIP25 = "La Jackhammer es el arma más sobrevalorada que existe. Ni siguiera es buena.";
+SAYA_INTERTIP26 = "El Moon Rabbit persigue enemigos, así que no te preocupes por apuntar bien.";
+SAYA_INTERTIP27 = "El IDW es bueno. Pequeño, rápido, y muy gatuno. No lo infravalores.";
+SAYA_INTERTIP28 = "El Punisher puede no tener un radio de daño amplio, pero los golpes directos DUELEN, MUCHO.";
+SAYA_INTERTIP29 = "El Selene pega fuerte, pero también envenena cualquier objetivo que se cruce en su camino.";
+SAYA_INTERTIP30 = "Solo puedes llevar un arma por ranura, así que intenta elegir lo mejor para cada situación.";

@@ -16,7 +16,7 @@ Class SayaStatScreen : SWWMStatScreen
 		statcolor0 = Font.CR_WHITE;
 		statcolor1 = Font.CR_GOLD;
 		statcolor2 = Font.CR_DARKRED;
-		tipcolor0 = Font.CR_RED;
+		tipcolor0 = Font.CR_BRICK;
 		tipcolor1 = Font.CR_WHITE;
 	}
 

@@ -17,7 +17,12 @@ Class SayaInternalArmor : SWWMArmor
 
 	override int HandleDamage( int damage, Name damageType, int flags )
 	{
-		// all damage is multiplied by 1.5x
+		// all damage is multiplied by 1.5x if we have no armor
+		for ( Inventory i=Owner.inv; i; i=i.inv )
+		{
+			if ( ((i is 'SayaLightArmor') || (i is 'SayaHeavyArmor')) && (i.Amount > 0) )
+				return 0;
+		}
 		return -damage/2;
 	}
 

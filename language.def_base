@@ -17,12 +17,18 @@ I_SAYABFG = "Cryptik \"Malefactor\" Plasma Caster";
 T_SAYAHAMMER = "Furious Warhammer";
 T_SAYAPOS = "Jackhammer";
 I_SAYAPOS = "Ninnacht \"Jackhammer\" Revolver Shotgun";
+T_SAYASHOTGUN = "Moon Rabbit";
+I_SAYASHOTGUN = "Siesta \"Moon Rabbit\" Lever-Action Shotgun";
+T_SAYASMG = "IDW";
+I_SAYASMG = "Ninnacht \"IDW\" Submachine Gun";
+T_SAYAPLASG = "Punisher";
+I_SAYAPLASG = "Cryptik \"Punisher\" Plasma Grenade Launcher";
+T_SAYABEAM = "Selene";
+I_SAYABEAM = "Akari \"Selene\" Beam Rifle";
 T_SAYASPELLCARD1 = "Reviled Sign";
 T_SAYASPELLCARD2 = "Retribution Sign";
 T_SAYASPELLCARD3 = "Rude Sign";
 T_SAYASPELLCARD4 = "Radiant Sign";
-T_SAYASMGBULLET = "9mm Round";
-T_SAYASMGBULLETS = "9mm Rounds";
 T_SAYARIFLEAMMO = ".45 LV Round";
 T_SAYARIFLEAMMOS = ".45 LV Rounds";
 T_SAYAGAUSSAMMO = "Hyperion Mag";
@@ -35,6 +41,20 @@ T_SAYAPLASMAAMMO = "Dyratin Cell";
 T_SAYAPLASMAAMMOS = "Dyratin Cells";
 T_SAYABFGAMMO = "Caster Feed Module";
 T_SAYABFGAMMOS = "Caster Feed Modules";
+T_SAYASHELLAMMO = ".410 Pendragon Shell";
+I_SAYASHELLAMMO = ".410 Pendragon Shells";
+T_SAYASMGAMMO = "IDW Mag";
+T_SAYASMGAMMOS = "IDW Mags";
+T_SAYASMGBULLET = "9mm Round";
+T_SAYASMGBULLETS = "9mm Rounds";
+T_SAYAPLASGAMMO = "Punisher Mag";
+T_SAYAPLASGAMMOS = "Punisher Mags";
+T_SAYAPLASGROUND = "Punisher Grenade";
+T_SAYAPLASGROUNDS = "Punisher Grenades";
+T_SAYABEAMAMMO = "Selene Cylinder";
+T_SAYABEAMAMMOS = "Selene Cylinders";
+T_SAYABEAMROUND = "Selene Charge";
+T_SAYABEAMROUNDS = "Selene Charges";
 T_SAYAZBOMB = "Zar Bomb";
 T_SAYAZBOMBS = "Zar Bombs";
 T_SAYACOOKIE = "Cookie";
@@ -106,13 +126,13 @@ TT_SAYARIFLE =
 "Sawed-off for extra coolness.\n"
 "Very effective against goats.";
 TT_SAYAGAUSS =
-"\cg\"The term Gauss Rifle is just sci-fi mumbo jumbo.\"\c-\n"
+"\cg\"Gauss Rifle is sci-fi mumbo jumbo.\"\c-\n"
 "\n"
 "\cg4mm Shock Bolt\c-, 50+1 rounds.\n"
 "Blazing fast 420 RPM.\n"
 "Silent, does not alert enemies.";
 TT_SAYAGL =
-"\cg\"Protip: Don't try to rocket jump in real life.\"\c-\n"
+"\cg\"Don't try to rocket jump in real life.\"\c-\n"
 "\n"
 "\cg25mm Airburst Grenade\c-, 4+1 rounds.\n"
 "Automatic detonation near enemies.\n"
@@ -143,3 +163,60 @@ TT_SAYAPOS =
 "12 rounds, and that's it.\n"
 "Requires disassembly to reload.\n"
 "Just throw it in the trash, it sucks.";
+TT_SAYASHOTGUN =
+"\cg\"Let this Moon Rabbit dance...\"\c-"
+"\n"
+"\cg.410 Pendragon\c-, 9+1 rounds.\n"
+"Homing buckshot, very potent.\n"
+"Too long to spin cycle.";
+TT_SAYASMG =
+"\cg\"Da nya~☆\"\c-"
+"\n"
+"\cg9mm Parabellum\c-, 32 rounds.\n"
+"Steady 300 RPM lead delivery.\n"
+"Not much stopping power.";
+TT_SAYAPLASG =
+"\cg\"Shiny and chrome...\"\c-"
+"\n"
+"\cg40mm plasma grenade\c-, 5 rounds.\n"
+"Fully automatic, 140 RPM (not much).\n"
+"Deals extreme damage on direct hit.";
+TT_SAYABEAM =
+"\cg\"Poisonous particle beams, oh yes.\"\c-"
+"\n"
+"\cgLiquid mercury\c-, 7 rounds.\n"
+"Very silent, aim, shoot, kill.\n"
+"Poisons on hit, can pierce walls.";
+// intermission tips
+SAYA_NINTERTIP = "25";	// don't show DLC tips for now
+SAYA_INTERTIP = "Tip #%d:";
+SAYA_INTERTIP1 = "You leave your items behind on death, so don't forget to retrieve them.";
+SAYA_INTERTIP2 = "Alternating between guns and spellcasting can help conserve ammo.";
+SAYA_INTERTIP3 = "Your mana regeneration speeds up the more you have, so try not to squander it.";
+SAYA_INTERTIP4 = "Kick 'em where it hurts. Aiming at the center of gravity will temporarily stun enemies.";
+SAYA_INTERTIP5 = "You can load 4mm bolts into the Mag Pulsor to turn a mere stun gun into a lethal weapon.";
+SAYA_INTERTIP6 = "Hell nobles will take bonus damage from the Goldsmith, as long as you aim for the head.";
+SAYA_INTERTIP7 = "While each shot from the Hyperion isn't very powerful, its stunning power is commendable.";
+SAYA_INTERTIP8 = "The longer you hold the trigger, the more potentially deadly the Mag Pulsor becomes.";
+SAYA_INTERTIP9 = "AT44 grenades detonate intelligently when near an enemy. Graze this, motherfucker.";
+SAYA_INTERTIP10 = "The Nabikuni is perfect for clearing crowds with ease. Just aim, and unload on them.";
+SAYA_INTERTIP11 = "The Malefactor cuts the middleman in destruction, directly delivering death beams.";
+SAYA_INTERTIP12 = "Kira's hammer has limited mana, but it can be recharged by finding other weapon spawns.";
+SAYA_INTERTIP13 = "Zar bombs will obliterate everything in a considerable radius, so keep your distance.";
+SAYA_INTERTIP14 = "It's said that whoever controls the cookies, may one day control the universe.";
+SAYA_INTERTIP15 = "Spiritual Stimulants stack indefinitely, but excess health will fade quickly.";
+SAYA_INTERTIP16 = "The energizing effects of Maximum Bepis can turn you into a CQC beast.";
+SAYA_INTERTIP17 = "Ibuki's milk is very tasty, it's so tasty it makes you unstoppable.";
+SAYA_INTERTIP18 = "The duration of Shield Orbs decreases faster the more hits you take.";
+SAYA_INTERTIP19 = "The Glow Visor can be toggled by using the item again. Save that battery.";
+SAYA_INTERTIP20 = "Wearing no armor increases all damage taken by 50%. Make sure to protect yourself.";
+SAYA_INTERTIP21 = "Spellcards are meant as a sort of \"last word\", but who cares about the rules.";
+SAYA_INTERTIP22 = "Hip-firing quickly reduces weapon accuracy, so try to aim down sights when needed.";
+SAYA_INTERTIP23 = "Saya is very short, so she can fit into tight spaces normal people usually couldn't.";
+SAYA_INTERTIP24 = "Brass knuckles provide a major boost to your punching damage. Yes, they're spiked.";
+SAYA_INTERTIP25 = "The Jackhammer is the most overrated gun in existence. It's not even good.";
+SAYA_INTERTIP26 = "The Moon Rabbit homes in on enemies, so don't worry about aiming straight.";
+SAYA_INTERTIP27 = "The IDW is a good gun. Small, fast, and very catty. Don't underestimate it.";
+SAYA_INTERTIP28 = "The Punisher may not have a wide damage radius, but direct hits HURT, A LOT.";
+SAYA_INTERTIP29 = "The Selene hits hard, but it'll also poison any targets it crosses on its path.";
+SAYA_INTERTIP30 = "You can only carry one weapon per slot, so try to pick what's best for each situation.";

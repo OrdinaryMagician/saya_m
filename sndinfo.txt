@@ -4,3 +4,6 @@ title/wind	sounds/title_wind.ogg
 title/cock	sounds/title_cock.ogg
 title/fire	sounds/title_fire.ogg
 title/thump	sounds/title_thump.ogg
+
+$alias misc/interstart title/fire
+$alias misc/interdone title/cock

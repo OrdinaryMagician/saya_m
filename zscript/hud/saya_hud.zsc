@@ -203,7 +203,7 @@ Class SayaStatusBar : SWWMStatusBar
 			int f = hnd.WeaponFlash[1];
 			if ( f && (gametic < f) )
 			{
-				double alph = ((f-(gametic+FracTic))/25.)**1.5;
+				double alph = max((f-(gametic+FracTic))/25.,0.)**1.5;
 				Screen.DrawText(MiniHUDFont,mhudfontcol[MCR_FLASH],xx+2,yy+2,"1",DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_Alpha,alph,DTA_LegacyRenderStyle,STYLE_Add);
 			}
 			xx += 12;
@@ -288,13 +288,13 @@ Class SayaStatusBar : SWWMStatusBar
 			int f = hnd.WeaponFlash[slot];
 			if ( f && (gametic < f) )
 			{
-				double alph = ((f-(gametic+FracTic))/25.)**1.5;
+				double alph = max((f-(gametic+FracTic))/25.,0.)**1.5;
 				if ( inslot ) Screen.DrawText(MiniHUDFont,mhudfontcol[MCR_FLASH],xx+2,yy+2,String.Format("%d",slot),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_Alpha,alph,DTA_LegacyRenderStyle,STYLE_Add);
 			}
 			f = AmmoFlash[i];
 			if ( f && (gametic < f) )
 			{
-				double alph = ((f-(gametic+FracTic))/25.)**1.5;
+				double alph = max((f-(gametic+FracTic))/25.,0.)**1.5;
 				if ( aw ) Screen.DrawTexture(AmmoBar[2],false,xx+10,yy+2,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_WindowRightF,aw,DTA_Alpha,alph,DTA_LegacyRenderStyle,STYLE_Add);
 				if ( a ) Screen.DrawText(MiniHUDFont,mhudfontcol[MCR_FLASH],xx+50,yy+2,String.Format("%3d",amt),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_Alpha,alph,DTA_LegacyRenderStyle,STYLE_Add);
 			}
@@ -335,7 +335,7 @@ Class SayaStatusBar : SWWMStatusBar
 			int f = AmmoFlash[0];
 			if ( f && (gametic < f) )
 			{
-				double alph = ((f-(gametic+FracTic))/25.)**1.5;
+				double alph = max((f-(gametic+FracTic))/25.,0.)**1.5;
 				Screen.DrawTexture(SpellBar[1],false,xx+16,yy+53-mh,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_DestHeightF,mh,DTA_Alpha,alph,DTA_LegacyRenderStyle,STYLE_Add);
 			}
 		}
@@ -363,7 +363,7 @@ Class SayaStatusBar : SWWMStatusBar
 			{
 				if ( st > 100 )
 				{
-					double alph = ((st-100)/900.)**.5;
+					double alph = max((st-100)/900.,0.)**.5;
 					Screen.DrawTexture(StatusIcon[4],false,xx+2,yy+2,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_Alpha,alph);
 					Screen.DrawText(MiniHUDFont,mhudfontcol[MCR_BLUE],xx+12,yy+2,String.Format("%3d",clamp(st,0,999)),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_Alpha,alph);
 				}
@@ -377,7 +377,7 @@ Class SayaStatusBar : SWWMStatusBar
 			int f = StatusFlash[i];
 			if ( f && (gametic < f) )
 			{
-				double alph = ((f-(gametic+FracTic))/25.)**1.5;
+				double alph = max((f-(gametic+FracTic))/25.,0.)**1.5;
 				Screen.DrawTexture(StatusIcon[i],false,xx+2,yy+2,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_Alpha,alph,DTA_LegacyRenderStyle,STYLE_Add);
 				Screen.DrawText(MiniHUDFont,mhudfontcol[MCR_FLASH],xx+12,yy+2,String.Format("%3d",clamp(st,0,999)),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_Alpha,alph,DTA_LegacyRenderStyle,STYLE_Add);
 			}

@@ -7,28 +7,26 @@ Class SayaPlayer : SWWMPlayer
 	Default
 	{
 		Tag "$T_SAYA";
-		Speed 1;
-		Radius 16;
 		Height 47;
 		Mass 50;
-		PainChance 255;
-		Health 100;
 		Player.DisplayName "$T_SAYA";
 		Player.StartItem "SayaPistol";
 		Player.StartItem "SayaPistolAmmo", 100;
 		Player.StartItem "SayaUnarmed";
 		Player.StartItem "SayaMana", 100;
 		Player.StartItem "SayaInternalArmor";
+		Player.JumpZ 10;
 		Player.AttackZOffset 13;
 		Player.ViewHeight 43;
-		Player.AirCapacity 0;
-		Player.GruntSpeed 20;
-		Player.ForwardMove 1., 1.;
-		Player.SideMove 1., 1.;
 		Player.SoundClass "saya";
-		DamageFactor "Drowning", 0.;
-		+DONTMORPH;
+		Player.ViewBob .8;
+		SWWMPlayer.MoveSpeed .4, 1.4;
+		SWWMPlayer.DodgeSpeed 20;
 		SWWMPlayer.ResurrectType RT_RESPAWN;
+		+SWWMPLAYER.CANDODGE;
+		+SWWMPLAYER.CANAIRDODGE;
+		+SWWMPLAYER.CANBUNNYHOP;
+		+SWWMPLAYER.CANLONGJUMP;
 	}
 
 	override void Tick()

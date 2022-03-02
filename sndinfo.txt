@@ -1,5 +1,100 @@
 $pitchshiftrange 0
 
+saya/death	sounds/saya/saya_death.ogg
+saya/grunt1	sounds/saya/saya_grunt1.ogg
+saya/grunt2	sounds/saya/saya_grunt2.ogg
+saya/hipain1	sounds/saya/saya_hipain1.ogg
+saya/hipain2	sounds/saya/saya_hipain2.ogg
+saya/jump1	sounds/saya/saya_jump1.ogg
+saya/jump2	sounds/saya/saya_jump2.ogg
+saya/land1	sounds/saya/saya_land1.ogg
+saya/land2	sounds/saya/saya_land2.ogg
+saya/land3	sounds/saya/saya_land3.ogg
+saya/lastword1	sounds/saya/saya_lastword1.ogg
+saya/lastword2	sounds/saya/saya_lastword2.ogg
+saya/lastword3	sounds/saya/saya_lastword3.ogg
+saya/lopain1	sounds/saya/saya_lopain1.ogg
+saya/lopain2	sounds/saya/saya_lopain2.ogg
+saya/nouse	sounds/saya/saya_nouse.ogg
+saya/pain1	sounds/saya/saya_pain1.ogg
+saya/pain2	sounds/saya/saya_pain2.ogg
+saya/puzzfail1	sounds/saya/saya_puzzfail1.ogg
+saya/puzzfail2	sounds/saya/saya_puzzfail2.ogg
+saya/puzzfail3	sounds/saya/saya_puzzfail3.ogg
+saya/run1	sounds/saya/saya_run1.ogg
+saya/run2	sounds/saya/saya_run2.ogg
+saya/run3	sounds/saya/saya_run3.ogg
+saya/run4	sounds/saya/saya_run4.ogg
+saya/run5	sounds/saya/saya_run5.ogg
+saya/run6	sounds/saya/saya_run6.ogg
+saya/walk1	sounds/saya/saya_walk1.ogg
+saya/walk2	sounds/saya/saya_walk2.ogg
+saya/walk3	sounds/saya/saya_walk3.ogg
+saya/walk4	sounds/saya/saya_walk4.ogg
+saya/walk5	sounds/saya/saya_walk5.ogg
+saya/walk6	sounds/saya/saya_walk6.ogg
+saya/wkick1	sounds/saya/saya_wkick1.ogg
+saya/wkick2	sounds/saya/saya_wkick2.ogg
+saya/wkick3	sounds/saya/saya_wkick3.ogg
+saya/wkick4	sounds/saya/saya_wkick4.ogg
+saya/wkick5	sounds/saya/saya_wkick5.ogg
+saya/wlaugh1	sounds/saya/saya_wlaugh1.ogg
+saya/wlaugh2	sounds/saya/saya_wlaugh2.ogg
+saya/wlaugh3	sounds/saya/saya_wlaugh3.ogg
+saya/wlaugh4	sounds/saya/saya_wlaugh4.ogg
+saya/wlaugh5	sounds/saya/saya_wlaugh5.ogg
+saya/wlaugh6	sounds/saya/saya_wlaugh6.ogg
+saya/wlaugh7	sounds/saya/saya_wlaugh7.ogg
+saya/wlaugh8	sounds/saya/saya_wlaugh8.ogg
+saya/wlaugh9	sounds/saya/saya_wlaugh9.ogg
+saya/wlaugh10	sounds/saya/saya_wlaugh10.ogg
+saya/wlaugh11	sounds/saya/saya_wlaugh11.ogg
+saya/wlaugh12	sounds/saya/saya_wlaugh12.ogg
+saya/xpain1	sounds/saya/saya_xpain1.ogg
+saya/xpain2	sounds/saya/saya_xpain2.ogg
+$random saya/grunt { saya/grunt1 saya/grunt2 }
+$random saya/hipain { saya/hipain1 saya/hipain2 }
+$random saya/jump { saya/jump1 saya/jump2 }
+$random saya/land { saya/land1 saya/land2 saya/land3 }
+$random saya/lastword { saya/lastword1 saya/lastword2 saya/lastword3 }
+$random saya/lopain { saya/lopain1 saya/lopain2 }
+$random saya/pain { saya/pain1 saya/pain2 }
+$random saya/puzzfail { saya/puzzfail1 saya/puzzfail2 saya/puzzfail3 }
+$random saya/run { saya/run1 saya/run2 saya/run3 saya/run4 saya/run5 saya/run6 }
+$random saya/walk { saya/walk1 saya/walk2 saya/walk3 saya/walk4 saya/walk5 saya/walk6 }
+$random saya/wkick { saya/wkick1 saya/wkick2 saya/wkick3 saya/wkick4 saya/wkick5 }
+$random saya/wlaugh { saya/wlaugh1 saya/wlaugh2 saya/wlaugh3 saya/wlaugh4 saya/wlaugh5 saya/wlaugh6 saya/wlaugh7 saya/wlaugh8 saya/wlaugh9 saya/wlaugh10 saya/wlaugh11 saya/wlaugh12 }
+$random saya/xpain { saya/xpain1 saya/xpain2 }
+
+$playeralias saya neutral *death	saya/death
+$playeralias saya neutral *xdeath	saya/death
+$playeralias saya neutral *wimpydeath	saya/death
+$playeralias saya neutral *crazydeath	saya/death
+$playeralias saya neutral *burndeath	saya/death
+$playeralias saya neutral *gibbed	saya/death
+$playeralias saya neutral *splat	saya/death
+$playeralias saya neutral *pain100	saya/lopain
+$playeralias saya neutral *pain75	saya/pain
+$playeralias saya neutral *pain50	saya/hipain
+$playeralias saya neutral *pain25	saya/xpain
+$playeralias saya neutral *grunt	saya/grunt
+$playeralias saya neutral *land		saya/land
+$playersound saya neutral *falling	DSEMPTY
+$playeralias saya neutral *jump		saya/jump
+$playersound saya neutral *fist		DSEMPTY
+$playersound saya neutral *fistgrunt	DSEMPTY
+$playeralias saya neutral *usefail	saya/nouse
+$playersound saya neutral *evillaugh	DSEMPTY
+$playeralias saya neutral *weaponlaugh	saya/wlaugh
+$playeralias saya neutral *puzzfail	saya/puzzfail	// used when picking up the jackhammer
+$playersound saya neutral *poison	DSEMPTY
+$playersound saya neutral *dive		DSEMPTY
+$playersound saya neutral *surface	DSEMPTY
+$playersound saya neutral *gasp		DSEMPTY
+$playersound saya neutral *taunt	DSEMPTY
+$playersound saya neutral *regenerate	DSEMPTY
+$playersound saya neutral *drainhealth	DSEMPTY
+
 title/wind	sounds/title_wind.ogg
 title/cock	sounds/title_cock.ogg
 title/fire	sounds/title_fire.ogg

@@ -92,13 +92,27 @@ Class SayaGLAmmo : SWWMAmmo
 		Tag "$T_SAYAGLAMMO";
 		SWWMAmmo.PickupTag "SAYAGLAMMO";
 		Inventory.Amount 1;
-		Inventory.MaxAmount 8;
-		Ammo.BackpackAmount 1;
-		SWWMAmmo.EmbiggenMaxAmount1 10;
-		SWWMAmmo.EmbiggenMaxAmount2 12;
-		SWWMAmmo.EmbiggenMaxAmount3 16;
-		SWWMAmmo.EmbiggenMaxAmount4 24;
+		Inventory.MaxAmount 2;
+		Ammo.BackpackAmount 0;
+		SWWMAmmo.EmbiggenMaxAmount1 3;
+		SWWMAmmo.EmbiggenMaxAmount2 5;
+		SWWMAmmo.EmbiggenMaxAmount3 7;
+		SWWMAmmo.EmbiggenMaxAmount4 9;
+		SWWMAmmo.MagAmmoType "SayaGLRound";
 		Ammo.DropAmount 1;
+	}
+}
+Class SayaGLRound : MagAmmo
+{
+	Default
+	{
+		Tag "$T_SAYAGLROUND";
+		MagAmmo.PickupTag "SAYAGLROUND";
+		Inventory.Amount 1;
+		Inventory.MaxAmount 5;
+		MagAmmo.ParentAmmo "SayaGLAmmo";
+		MagAmmo.ClipSize 5;
+		MagAmmo.BackpackAmount 1;
 	}
 }
 

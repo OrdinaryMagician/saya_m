@@ -30,7 +30,7 @@ As a civilian, **Saya** shouldn't be carrying any weapons, but who's going to st
 
 The operation of all weapons is fairly simple: Primary fire shoots, secondary fire aims down the sights, and reload... reloads. **Saya** managed to strike a special deal in the last second to have an autoloader in her hammerspace *(which is normally exclusive to military models)*, so don't worry, no manual mag management will be involved here either.
 
-Of course, having a smaller hammerspace also means she can't hold as many weapons as she'd like, so you'll notice a bit of a size reduction in the available arsenal.
+Of course, having a smaller hammerspace also means she can't hold as many weapons as she'd like, so you'll notice a bit of a size reduction in the available weapon slots.
 
 ### Slot 1 - Unarmed *[Fist, Chainsaw]*
 
@@ -70,17 +70,17 @@ Each mag holds 50 rounds, allowing you to spend a whole seven seconds of firing 
 
 Found as either full mags or handfuls of bolts.
 
-### Slot 5 - Shinigami AT44 *[Rocket Launcher]*
+### Slot 5 - Cryptik "Punisher" Plasma Grenade Launcher [Rocket Launcher]
 
-*"Protip: Don't try to rocket jump IRL."*
+*"The only thing that bothers me about this is how absolutely shiny and chrome it is, seriously."*
 
-The **Akatsuki 44** is truly a deadly deliverer of destruction, devised mockingly after **H&M**'s blunder with their failed **IAWS** experiment. This is no mere grenade launcher, as in true **Shinigami Inc.** fashion there is a bit of their usual magic at work here. These 25mm airburst grenades are capable of intelligently detonating near hostile targets, or mere moments before head-on collision with a wall *(so they can still bounce somewhat at the right angles)*. Do note that this capability does not take into account personal user safety, so try to keep your distance.
+The very first plasma grenade launcher devised by **Cryptik Arms**, and it shows. It's gone through several revisions, to the point of being *"absolutely perfected"*. It seems that in the process this also has translated to being so polished you can see your own reflection on it. Nevertheless, it's a very effective weapon, capable of obliterating targets quickly. Although its splash damage potential is very restrictive, a direct hit is absolutely lethal.
 
-The magazine holds 4 rounds. Four chances to deliver death.
+Magazines have 6 rounds. Do note that the weapon is open bolt, so that's absolutely as many as you can get.
 
-#### 25mm Grenades *[Rocket, Rocket Box]*
+#### 40mm Plasma Grenades *[Rocket, Rocket Box]*
 
-You'll either find single rounds or small packs of five.
+As single rounds or small bunches.
 
 ### Slot 6 - Nekuratek "Nabikuni" *[Plasma Rifle]*
 
@@ -114,7 +114,7 @@ A gift from the **God of Fury** himself, who values **Saya** greatly as a friend
 
 Primary fire performs side swings, while secondary is a strong overhead attack, capable of crushing even the beefiest of enemies. These attacks are heavily strengthened provided the weapon has energy, but even without a charge they're still fairly potent.
 
-Energy for this weapon is limited when not wielded by its rightful owner, and once it fully drains, the weapon must be recharged by **Kira** himself. It will start replacing the **Chainsaw** once the **Brass Knuckles** have been obtained. Once obtained, any further pickups will be replaced by small shrines where you can recharge it.
+Energy for this weapon is limited when not wielded by its rightful owner, and once it fully drains, the weapon must be recharged by **Kira** himself. It will start replacing the **Chainsaw** once the **Brass Knuckles** have been obtained. Once the hammer is within your grasp, any further pickups will be replaced by small shrines where you can recharge it.
 
 ### Ninnacht Jackhammer *[Blursphere]*
 
@@ -263,60 +263,6 @@ Allows you to harmlessly wade through hazardous liquids for a limited time.
 ## Compatibility
 
 Yeah this one's **Doom** exclusive, sorry. That's really what the plot expects. Obviously, the same notes are here about the vanilla campaigns not being canon.
-
----
-
-## DLC
-
-Because four more weapons would make things a bit more interesting, the option will be given post-release to swap some guns around for alternate ones.
-
-### Slot 3 - Siesta "Moon Rabbit" Shotgun *[Shotgun, Super Shotgun]*
-
-*"I'm sorry but this thing is giving me flashbacks..."*
-
-A peculiar .410 lever-action shotgun, said to be standard issue among certain **Lunarian** armed corps. Its stock is decorated with a Nordic cross resembling that of the flag of **Iceland** *(it's unclear what this means)*. The usual woodwork of other Siesta weapons has been replaced with white polymer, while the barrel and receiver are made of titanium. Overall this seems to reduce the weapon's weight to the point where even a child could easily wield it.
-
-Takes 9+1 shells. The ammunition employed is also specially crafted for this weapon, as usual .410 buckshot tends to be *"too weak"*, and it appears to have some magical properties.
-
-#### .410 Pendragon Shell *[Shells, Shell Box]*
-
-These pop up in varied amounts, boxes tend to be rare.
-
-### Slot 4 - Ninnacht IDW *[Chaingun]*
-
-*"Why does everyone hate the cute cat? ... Da nya~☆"*
-
-A promising little gun that was lucky enough to be saved from disaster when Ninnacht Armaments managed to buy all rights to its design and development. Light, fast, and very catty. 9mm Parabellum, 32 rounds, and a steady fire rate of 300 RPM. A fairly decent choice for a small girl like Saya.
-
-#### 9mm Parabellum Mags [Clip, Bullet Box]
-
-Pretty much strewn about the place. May be found in full mags.
-
-### Slot 5 - Cryptik "Punisher" Plasma Grenade Launcher [Rocket Launcher]
-
-*"The only thing that bothers me about this is how absolutely shiny and chrome it is, seriously."*
-
-The very first plasma grenade launcher devised by **Cryptik Arms**, and it shows. It's gone through several revisions, to the point of being *"absolutely perfected"*. It seems that in the process this also has translated to being so polished you can see your own reflection on it. Nevertheless, it's a very effective weapon, capable of obliterating targets quickly. Although its splash damage potential is very restrictive, a direct hit is absolutely lethal.
-
-Magazines have 6 rounds. Do note that the weapon is open bolt, so that's absolutely as many as you can get.
-
-#### Plasma Grenades *[Rocket, Rocket Box]*
-
-As single rounds or small bunches.
-
-### Slot 6 - Akari "Selene" Beam Rifle [Plasma Rifle]
-
-*"Gotta use what you have, and I have something very nice for you all."*
-
-A deadly deliverer of death if it may be described thusly. This weapon deploys highly lethal charges of scalding hot ionized mercury, leaving a lingering trail of death on its way. A direct impact can quickly eat through armor, while the rest of the material gradually makes its way into the body and begins doing its nasty work.
-
-**Saya** allegedly based this on a weapon from an ancient videogame, and cited that *"it's a miracle that I somehow got it to work"*.
-
-Takes 7 charges in the cylinder. It is not recommended to throw away spent charges as they are highly contaminant.
-
-#### Mercury Charge *[Cell, Cell Pack]*
-
-They tend to come in pairs or quartets.
 
 ---
 

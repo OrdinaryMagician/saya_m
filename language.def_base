@@ -8,8 +8,8 @@ T_SAYARIFLE = "Goldsmith";
 I_SAYARIFLE = "Siesta \"Goldsmith\" Lever-Action Rifle";
 T_SAYAGAUSS = "Hyperion";
 I_SAYAGAUSS = "Akari \"Hyperion\" Gauss Rifle";
-T_SAYAGL = "AT44";
-I_SAYAGL = "Shinigami \"Akatsuki 44\" Grenade Launcher";
+T_SAYAGL = "Punisher";
+I_SAYAGL = "Cryptik \"Punisher\" Plasma Grenade Launcher";
 T_SAYAPLASMA = "Nabikuni";
 I_SAYAPLASMA = "Nekuratek \"Nabikuni\" Plasma Rifle";
 T_SAYABFG = "Malefactor";
@@ -17,14 +17,6 @@ I_SAYABFG = "Cryptik \"Malefactor\" Plasma Caster";
 T_SAYAHAMMER = "Furious Warhammer";
 T_SAYAPOS = "Jackhammer";
 I_SAYAPOS = "Ninnacht \"Jackhammer\" Revolver Shotgun";
-T_SAYASHOTGUN = "Moon Rabbit";
-I_SAYASHOTGUN = "Siesta \"Moon Rabbit\" Lever-Action Shotgun";
-T_SAYASMG = "IDW";
-I_SAYASMG = "Ninnacht \"IDW\" Submachine Gun";
-T_SAYAPLASG = "Punisher";
-I_SAYAPLASG = "Cryptik \"Punisher\" Plasma Grenade Launcher";
-T_SAYABEAM = "Selene";
-I_SAYABEAM = "Akari \"Selene\" Beam Rifle";
 T_SAYASPELLCARD1 = "Reviled Sign";
 T_SAYASPELLCARD2 = "Retribution Sign";
 T_SAYASPELLCARD3 = "Rude Sign";
@@ -35,26 +27,14 @@ T_SAYAGAUSSAMMO = "Hyperion Mag";
 T_SAYAGAUSSAMMOS = "Hyperion Mags";
 T_SAYAGAUSSROUND = "4mm Shock Bolt";
 T_SAYAGAUSSROUNDS = "4mm Shock Bolts";
-T_SAYAGLAMMO = "25mm Grenade";
-T_SAYAGLAMMOS = "25mm Grenades";
+T_SAYAGLAMMO = "Punisher Mag";
+T_SAYAGLAMMOS = "Punisher Mags";
+T_SAYAGLROUND = "Punisher Grenade";
+T_SAYAGLROUNDS = "Punisher Grenades";
 T_SAYAPLASMAAMMO = "Dyratin Cell";
 T_SAYAPLASMAAMMOS = "Dyratin Cells";
 T_SAYABFGAMMO = "Caster Feed Module";
 T_SAYABFGAMMOS = "Caster Feed Modules";
-T_SAYASHELLAMMO = ".410 Pendragon Shell";
-I_SAYASHELLAMMO = ".410 Pendragon Shells";
-T_SAYASMGAMMO = "IDW Mag";
-T_SAYASMGAMMOS = "IDW Mags";
-T_SAYASMGBULLET = "9mm Round";
-T_SAYASMGBULLETS = "9mm Rounds";
-T_SAYAPLASGAMMO = "Punisher Mag";
-T_SAYAPLASGAMMOS = "Punisher Mags";
-T_SAYAPLASGROUND = "Punisher Grenade";
-T_SAYAPLASGROUNDS = "Punisher Grenades";
-T_SAYABEAMAMMO = "Selene Cylinder";
-T_SAYABEAMAMMOS = "Selene Cylinders";
-T_SAYABEAMROUND = "Selene Charge";
-T_SAYABEAMROUNDS = "Selene Charges";
 T_SAYAZBOMB = "Zar Bomb";
 T_SAYAZBOMBS = "Zar Bombs";
 T_SAYACOOKIE = "Cookie";
@@ -132,11 +112,11 @@ TT_SAYAGAUSS =
 "Blazing fast 420 RPM.\n"
 "Silent, does not alert enemies.";
 TT_SAYAGL =
-"\cg\"Don't try to rocket jump in real life.\"\c-\n"
+"\cg\"Shiny and chrome...\"\c-"
 "\n"
-"\cg25mm Airburst Grenade\c-, 4+1 rounds.\n"
-"Automatic detonation near enemies.\n"
-"Can bounce at certain angles.";
+"\cg40mm plasma grenade\c-, 5 rounds.\n"
+"Fully automatic, 140 RPM (not much).\n"
+"Deals extreme damage on direct hit.";
 TT_SAYAPLASMA =
 "\cg\"I cast fuck you on your sorry ass.\"\c-\n"
 "\n"
@@ -163,32 +143,8 @@ TT_SAYAPOS =
 "12 rounds, and that's it.\n"
 "Requires disassembly to reload.\n"
 "Just throw it in the trash, it sucks.";
-TT_SAYASHOTGUN =
-"\cg\"Let this Moon Rabbit dance...\"\c-"
-"\n"
-"\cg.410 Pendragon\c-, 9+1 rounds.\n"
-"Homing buckshot, very potent.\n"
-"Too long to spin cycle.";
-TT_SAYASMG =
-"\cg\"Da nya~☆\"\c-"
-"\n"
-"\cg9mm Parabellum\c-, 32 rounds.\n"
-"Steady 300 RPM lead delivery.\n"
-"Not much stopping power.";
-TT_SAYAPLASG =
-"\cg\"Shiny and chrome...\"\c-"
-"\n"
-"\cg40mm plasma grenade\c-, 5 rounds.\n"
-"Fully automatic, 140 RPM (not much).\n"
-"Deals extreme damage on direct hit.";
-TT_SAYABEAM =
-"\cg\"Poisonous particle beams, oh yes.\"\c-"
-"\n"
-"\cgLiquid mercury\c-, 7 rounds.\n"
-"Very silent, aim, shoot, kill.\n"
-"Poisons on hit, can pierce walls.";
 // intermission tips
-SAYA_NINTERTIP = "25";	// don't show DLC tips for now
+SAYA_NINTERTIP = "25";
 SAYA_INTERTIP = "Tip #%d:";
 SAYA_INTERTIP1 = "You leave your items behind on death, so don't forget to retrieve them.";
 SAYA_INTERTIP2 = "Alternating between guns and spellcasting can help conserve ammo.";
@@ -198,8 +154,8 @@ SAYA_INTERTIP5 = "You can load 4mm bolts into the Mag Pulsor to turn a mere stun
 SAYA_INTERTIP6 = "Hell nobles will take bonus damage from the Goldsmith, as long as you aim for the head.";
 SAYA_INTERTIP7 = "While each shot from the Hyperion isn't very powerful, its stunning power is commendable.";
 SAYA_INTERTIP8 = "The longer you hold the trigger, the more potentially deadly the Mag Pulsor becomes.";
-SAYA_INTERTIP9 = "AT44 grenades detonate intelligently when near an enemy. Graze this, motherfucker.";
-SAYA_INTERTIP10 = "The Nabikuni is perfect for clearing crowds with ease. Just aim, and unload on them.";
+SAYA_INTERTIP9 = "The Punisher may not have a wide damage radius, but direct hits HURT, A LOT.";
+SAYA_INTERTIP10 = "The Nabikuni unloads a curtain of searing plasma in front of you. Graze this, motherfucker.";
 SAYA_INTERTIP11 = "The Malefactor cuts the middleman in destruction, directly delivering death beams.";
 SAYA_INTERTIP12 = "Kira's hammer has limited mana, but it can be recharged by finding other weapon spawns.";
 SAYA_INTERTIP13 = "Zar bombs will obliterate everything in a considerable radius, so keep your distance.";
@@ -217,6 +173,3 @@ SAYA_INTERTIP24 = "Brass knuckles provide a major boost to your punching damage.
 SAYA_INTERTIP25 = "The Jackhammer is the most overrated gun in existence. It's not even good.";
 SAYA_INTERTIP26 = "The Moon Rabbit homes in on enemies, so don't worry about aiming straight.";
 SAYA_INTERTIP27 = "The IDW is a good gun. Small, fast, and very catty. Don't underestimate it.";
-SAYA_INTERTIP28 = "The Punisher may not have a wide damage radius, but direct hits HURT, A LOT.";
-SAYA_INTERTIP29 = "The Selene hits hard, but it'll also poison any targets it crosses on its path.";
-SAYA_INTERTIP30 = "You can only carry one weapon per slot, so try to pick what's best for each situation.";

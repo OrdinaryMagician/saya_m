@@ -67,16 +67,6 @@ GameInfo
 
 ClearSkills
 
-Skill chill
-{
-	AutoUseHealth
-	DamageFactor = 0.5
-	EasyBossBrain
-	SlowMonsters
-	SpawnFilter = baby
-	ACSReturn = 0
-	Name = "$SAYA_SKCHILL"
-}
 Skill easy
 {
 	DamageFactor = 0.75
@@ -127,7 +117,7 @@ Skill lunatic
 	MustConfirm = "$SAYA_SKLUNATICCONFIRM"
 }
 
-Map TITLEMAP "RED-EYED RAMPAGE Title Map"
+Map TITLEMAP "Title Map"
 {
 	Music = ""
 	EventHandlers = "SayaTitleStuff"

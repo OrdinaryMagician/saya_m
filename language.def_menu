@@ -13,14 +13,13 @@ SAYA_SPELL2 = "Spellcard Slot 2";
 SAYA_SPELL3 = "Spellcard Slot 3";
 SAYA_SPELL4 = "Spellcard Slot 4";
 // skills
-SAYA_SKCHILL="\cvChill Mode\c-";
 SAYA_SKEASY="\cdEasy Mode\c-";
-SAYA_SKNORMAL="\cfNormal Mode\c-";
-SAYA_SKHARD="\ciHard Mode\c-";
+SAYA_SKNORMAL="\ciNormal Mode\c-";
+SAYA_SKHARD="\cgHard Mode\c-";
 SAYA_SKHARDCORE="\crHardcore Mode\c-";
 SAYA_SKHARDCORECONFIRM="\crAre you sure you want to do that?\nYou might get your ass kicked.\c-\n\n\caFast monsters\n1.5x monster health & damage\n25% extra aggressiveness\nCheats are disabled\nCoop monsters will spawn\c-\n\n(Press Y for a challenge)";
 SAYA_SKLUNATIC="\cmLunatic Mode\c-";
-SAYA_SKLUNATICCONFIRM="\cmYou've clearly got a death wish.\nChoose this skill if you dare.\c-\n\n\caAll changes from Hardcore\n+\n2x speedup for all enemy actions\nEnemy projectiles will multiply\nAdditional enemies may spawn\nEnemies react instantly\nEnemies don't flinch\nInfighting is disabled\c-\n\n(Press Y to die instantly)";
+SAYA_SKLUNATICCONFIRM="\cmYou've clearly got a death wish.\nChoose this skill if you dare.\c-\n\n\caAll changes from \crHardcore\ca\n+\n2x speedup for all enemy actions\nEnemy projectiles will multiply\nAdditional enemies may spawn\nEnemies react instantly\nEnemies don't flinch\nInfighting is disabled\c-\n\n(Press Y to die instantly)";
 // mod menu
 SAYA_MTITLE = "RED-EYED RAMPAGE Options";
 SAYA_MCREDS = "RED-EYED RAMPAGE Credits";

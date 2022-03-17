@@ -62,6 +62,18 @@ QUITMSG8 = "Eeeeeh? I don't stink!";
 QUITMSG9 = "If you want EXTREME action,\nyou could play Demo-chan's mod.";
 QUITMSG10 = "What's up, gamers?\nIt's ya girl Saya Miyamoto here.";
 QUITMSG11 = "Stop looking at me like that,\nI was just scratching myself.";
+// startup (don't localize)
+STARTUP1 =
+"\n"
+" \cgHello, gamers, this is Saya.\c-\n"
+" \cgLooks like we're in for a wild ride today.\c-\n"
+" \cgLet's get ready to kick ass and take names.\c-\n"
+" \cgOh yeah, we're gonna have lots of fun.\c-\n"
+"\n";
+STARTUP2 = "";
+STARTUP3 = "";
+STARTUP4 = "";
+STARTUP5 = "";
 // misc
 D_SAYABEPIS = "The energizing effects of Bepis have left your body.";
 D_SAYAMILK = "The effects of Ibuki's milk have worn off.";
@@ -144,7 +156,7 @@ TT_SAYAPOS =
 "Requires disassembly to reload.\n"
 "Just throw it in the trash, it sucks.";
 // intermission tips
-SAYA_NINTERTIP = "25";
+SAYA_NINTERTIP = "30";
 SAYA_INTERTIP = "Tip #%d:";
 SAYA_INTERTIP1 = "You leave your items behind on death, so don't forget to retrieve them.";
 SAYA_INTERTIP2 = "Alternating between guns and spellcasting can help conserve ammo.";
@@ -171,5 +183,8 @@ SAYA_INTERTIP22 = "Hip-firing quickly reduces weapon accuracy, so try to aim dow
 SAYA_INTERTIP23 = "Saya is very short, so she can fit into tight spaces normal people usually couldn't.";
 SAYA_INTERTIP24 = "Brass knuckles provide a major boost to your punching damage. Yes, they're spiked.";
 SAYA_INTERTIP25 = "The Jackhammer is the most overrated gun in existence. It's not even good.";
-SAYA_INTERTIP26 = "The Moon Rabbit homes in on enemies, so don't worry about aiming straight.";
-SAYA_INTERTIP27 = "The IDW is a good gun. Small, fast, and very catty. Don't underestimate it.";
+SAYA_INTERTIP26 = "Saya's surprisingly fast and mobile, so much so that she's capable of dodging in mid-air.";
+SAYA_INTERTIP27 = "As a heir of Houraisan blood, Saya is an expert at obliterating people's... Most fragile parts.";
+SAYA_INTERTIP28 = "Don't pay attention to the hollow words of naysayers on the Internet. It's what they want, and they don't deserve even the time of day.";
+SAYA_INTERTIP29 = "Saya is banned from spellcard duels. She just didn't want to play by the rules.";
+SAYA_INTERTIP30 = "When in doubt, just throw everything you got at it.";

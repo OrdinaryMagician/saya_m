@@ -13,14 +13,13 @@ SAYA_SPELL2 = "Ranura de Hechizo 2";
 SAYA_SPELL3 = "Ranura de Hechizo 3";
 SAYA_SPELL4 = "Ranura de Hechizo 4";
 // skills
-SAYA_SKCHILL="\cvModo Relajado\c-";
 SAYA_SKEASY="\cdModo Fácil\c-";
-SAYA_SKNORMAL="\cfModo Normal\c-";
-SAYA_SKHARD="\ciModo Difícil\c-";
+SAYA_SKNORMAL="\ciModo Normal\c-";
+SAYA_SKHARD="\cgModo Difícil\c-";
 SAYA_SKHARDCORE="\crModo Hardcore\c-";
 SAYA_SKHARDCORECONFIRM="\cr¿Seguro que quieres hacer eso?\nPuede que te pateen el culo.\c-\n\n\caMonstruos rápidos\n1.5x salud y daño de monstruos\n25% de agresividad extra\nTrucos deshabilitados\nMonstruos de cooperativo\c-\n\n(Pulsa Y para un desafío)";
 SAYA_SKLUNATIC="\cmModo Lunático\c-";
-SAYA_SKLUNATICCONFIRM="\cmCiertamente deseas morir.\nElige esta dificultad si te atreves.\c-\n\n\caTodos los cambios de Hardcore\n+\nDoble velocidad de enemigos\nProyectiles enemigos duplicados\nPueden aparecer enemigos extra\nReflejos instantáneos de enemigo\nLos enemigos no se estremecen\nLos enemigos no pelean entre si\c-\n\n(Pulsa Y para morir al instante)";
+SAYA_SKLUNATICCONFIRM="\cmCiertamente deseas morir.\nElige esta dificultad si te atreves.\c-\n\n\caTodos los cambios de \crHardcore\ca\n+\nDoble velocidad de enemigos\nProyectiles enemigos duplicados\nPueden aparecer enemigos extra\nReflejos instantáneos de enemigo\nLos enemigos no se estremecen\nLos enemigos no pelean entre si\c-\n\n(Pulsa Y para morir al instante)";
 // mod menu
 SAYA_MTITLE = "Opciones de RED-EYED RAMPAGE";
 SAYA_MCREDS = "Créditos de RED-EYED RAMPAGE";

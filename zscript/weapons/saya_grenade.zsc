@@ -1,0 +1,31 @@
+// POW
+
+Class SayaGL : SWWMWeapon
+{
+	int clipcount;
+
+	Property ClipCount : clipcount;
+
+	Default
+	{
+		Tag "$T_SAYAGL";
+		Inventory.PickupMessage "$I_SAYAGL";
+		SWWMWeapon.Tooltip "$TT_SAYAGL";
+		Inventory.Icon "graphics/HUD/Icons/W_SayaGL.png";
+		Weapon.SlotNumber 5;
+		Weapon.SlotPriority 1.;
+		Weapon.SelectionOrder 100;
+		Weapon.AmmoType1 "SayaGLAmmo";
+		Weapon.AmmoGive1 1;
+		SWWMWeapon.DropAmmoType "RocketAmmo";
+		SayaGL.ClipCount 5;
+		+SWWMWEAPON.NOFIRSTGIVE;
+		+WEAPON.EXPLOSIVE;
+	}
+	States
+	{
+	Spawn:
+		XZW1 A -1;
+		Stop;
+	}
+}

@@ -1,0 +1,35 @@
+// how to piss off Zach
+
+Class SayaJackhammer : SWWMWeapon
+{
+	int clipcount;
+
+	Property ClipCount : clipcount;
+
+	override void DoEffect()
+	{
+		Super.DoEffect();
+		// the weapon HAS to be selected if it's owned
+		if ( !Owner || !Owner.player ) return;
+		if ( Owner.player.ReadyWeapon != self )
+			Owner.player.PendingWeapon = self;
+	}
+
+	Default
+	{
+		Tag "$T_SAYAPOS";
+		Inventory.PickupMessage "$I_SAYAPOS";
+		SWWMWeapon.Tooltip "$TT_SAYAPOS";
+		Inventory.Icon "graphics/HUD/Icons/W_SayaPOS.png";
+		SayaJackhammer.ClipCount 12;
+		+WEAPON.CHEATNOTWEAPON;
+		+WEAPON.WIMPY_WEAPON;
+		+SWWMWEAPON.HIDEINMENU;
+	}
+	States
+	{
+	Spawn:
+		XZW1 A -1;
+		Stop;
+	}
+}

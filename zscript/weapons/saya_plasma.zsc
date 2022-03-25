@@ -1,0 +1,31 @@
+// Plasma hose
+
+Class SayaPlasmaRifle : SWWMWeapon
+{
+	int clipcount;
+
+	Property ClipCount : clipcount;
+
+	Default
+	{
+		Tag "$T_SAYAPLASMA";
+		Inventory.PickupMessage "$I_SAYAPLASMA";
+		SWWMWeapon.Tooltip "$TT_SAYAPLASMA";
+		Inventory.Icon "graphics/HUD/Icons/W_SayaPlasma.png";
+		Weapon.SlotNumber 6;
+		Weapon.SlotPriority 1.;
+		Weapon.SelectionOrder 100;
+		Weapon.AmmoType1 "SayaPlasmaAmmo";
+		Weapon.AmmoGive1 1;
+		SWWMWeapon.DropAmmoType "Cell";
+		SayaPlasmaRifle.ClipCount 60;
+		+SWWMWEAPON.NOFIRSTGIVE;
+		+WEAPON.EXPLOSIVE;
+	}
+	States
+	{
+	Spawn:
+		XZW1 A -1;
+		Stop;
+	}
+}

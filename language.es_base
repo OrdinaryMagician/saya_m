@@ -1,6 +1,6 @@
 [es]
 // tags, pickups
-T_SAYAFIST = "Mano a Mano";
+T_SAYAUNARMED = "Mano a Mano";
 T_SAYAKNUCKS = "Puño Americano";
 I_SAYAPISTOL = "Arma de Defensa Personal Akari \"Mag Pulsor\"";
 I_SAYARIFLE = "Rifle de Palanca Siesta \"Goldsmith\"";
@@ -74,62 +74,62 @@ SAYA_INTERTIME = "TU TIEMPO:";
 SAYA_INTERPAR = "TIEMPO PAR:";
 SAYA_INTERTOTAL = "TIEMPO TOTAL:";
 // weapon tooltips
-TT_SAYAFIST =
-"\cg\"¿Que? ¿Crees que soy una debilucha?\"\c-\n"
+TT_SAYAUNARMED =
+"\ca\"¿Que? ¿Crees que soy una debilucha?\"\c-\n"
 "\n"
-"Golpea con \cgFuego primario\c-,\n"
-"patea con \cgFuego secundario\c-.\n"
+"Golpea con \caFuego primario\c-,\n"
+"patea con \caFuego secundario\c-.\n"
 "Una patada en los bajos garantiza\n"
 "aturdir cualquier enemigo.";
 TT_SAYAPISTOL =
-"\cg\"Para defensa personal, por supuesto.\"\c-\n"
+"\ca\"Para defensa personal, por supuesto.\"\c-\n"
 "\n"
-"\cgProyectil de Choque de 4mm\c-, 5+1 balas.\n"
+"\caProyectil de Choque de 4mm\c-, 6 balas.\n"
 "No necesita munición para disparar.\n"
 "Un simple aturdidor, el cual puede ser cargado\n"
 "con proyectiles de 4mm para volverse más letal.";
 TT_SAYARIFLE =
-"\cg\"OH DESIRE~!\"\c-\n"
+"\ca\"OH DESIRE~!\"\c-\n"
 "\n"
-"\cg.45 LV\c-, 4+1 balas.\n"
+"\ca.45 LV\c-, 4+1 balas.\n"
 "Recortada para molar más.\n"
 "Muy efectiva contra cabras.";
 TT_SAYAGAUSS =
-"\cg\"Rifle Gauss es jerga de ciencia ficción.\"\c-\n"
+"\ca\"Rifle Gauss es jerga de ciencia ficción.\"\c-\n"
 "\n"
-"\cgProyectil de Choque de 4mm\c-, 50+1 balas.\n"
+"\caProyectil de Choque de 4mm\c-, 50 balas.\n"
 "Unos humeantes 420 RPM.\n"
 "Silencioso, no alerta enemigos.";
 TT_SAYAGL =
-"\cg\"Brillante y cromado...\"\c-"
+"\ca\"Brillante y cromado...\"\c-\n"
 "\n"
-"\cgGranada de plasma de 40mm\c-, 5 disparos.\n"
+"\caGranada de plasma de 40mm\c-, 5 disparos.\n"
 "Disparo automático, 140 RPM (no es mucho).\n"
 "Daño extremo en impacto directo.";
 TT_SAYAPLASMA =
-"\cg\"Invoco el hechizo que te den por culo.\"\c-\n"
+"\ca\"Invoco el hechizo que te den por culo.\"\c-\n"
 "\n"
-"\cgPlasma de Dyratin\c-, 300mL.\n"
+"\caPlasma de Dyratin\c-, 300mL.\n"
 "5mL por disparo a 700 RPM.\n"
 "Básicamente una manguera de plasma.";
 TT_SAYABFG =
-"\cg\"Traga muerte de neón ardiente.\"\c-\n"
+"\ca\"Traga muerte de neón ardiente.\"\c-\n"
 "\n"
-"\cgPlasma de Argón\c-, 8 disparos.\n"
+"\caPlasma de Argón\c-, 8 disparos.\n"
 "Daño repartido entre objetivos.\n"
 "Seguro de disparar a bocajarro.";
 TT_SAYAHAMMER =
-"\cg\"Kira-sama... Gracias.\"\c-\n"
+"\ca\"Kira-sama... Gracias.\"\c-\n"
 "\n"
-"Potenciado por \cgFuria Divina\c-.\n"
-"Ataques laterales con \cgFuego primario\c-,\n"
+"Potenciado por \caFuria Divina\c-.\n"
+"Ataques laterales con \caFuego primario\c-,\n"
 "ataques verticales con \caFuego secundario\c-.\n"
 "Consume energía para causar daño extra,\n"
 "recargable al encontrar otros spawns de arma.";
 TT_SAYAPOS =
-"\cg\"Este arma no tiene derecho a existir.\"\c-"
+"\ca\"Este arma no tiene derecho a existir.\"\c-\n"
 "\n"
-"12 cartuchos, y ya está.\n"
+"\caPerdigones de calibre 12\c-, 12 cartuchos.\n"
 "Requiere desensamblado para recargar.\n"
 "Tú tírala a la basura, apesta.";
 // intermission tips

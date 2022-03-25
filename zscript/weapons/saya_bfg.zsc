@@ -1,0 +1,32 @@
+// The Big Fuck
+
+Class SayaBFG : SWWMWeapon
+{
+	int clipcount;
+
+	Property ClipCount : clipcount;
+
+	Default
+	{
+		Tag "$T_SAYABFG";
+		Inventory.PickupMessage "$I_SAYABFG";
+		SWWMWeapon.Tooltip "$TT_SAYABFG";
+		Inventory.Icon "graphics/HUD/Icons/W_SayaBFG.png";
+		Weapon.SlotNumber 7;
+		Weapon.SlotPriority 1.;
+		Weapon.SelectionOrder 100;
+		Weapon.AmmoType1 "SayaBFGAmmo";
+		Weapon.AmmoGive1 1;
+		SWWMWeapon.DropAmmoType "CellPack";
+		SayaBFG.ClipCount 8;
+		+SWWMWEAPON.NOFIRSTGIVE;
+		+WEAPON.EXPLOSIVE;
+		+WEAPON.BFG;
+	}
+	States
+	{
+	Spawn:
+		XZW1 A -1;
+		Stop;
+	}
+}

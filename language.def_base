@@ -1,6 +1,6 @@
 [default]
 // tags, pickups
-T_SAYAFIST = "Unarmed";
+T_SAYAUNARMED = "Unarmed";
 T_SAYAKNUCKS = "Brass Knuckles";
 T_SAYAPISTOL = "Mag Pulsor";
 I_SAYAPISTOL = "Akari \"Mag Pulsor\" Self-Defense Weapon";
@@ -97,62 +97,62 @@ SAYA_INTERTIME = "YOUR TIME:";
 SAYA_INTERPAR = "PAR TIME:";
 SAYA_INTERTOTAL = "TOTAL TIME:";
 // weapon tooltips
-TT_SAYAFIST =
-"\cg\"What? You think I'm some weakling?\"\c-\n"
+TT_SAYAUNARMED =
+"\ca\"What? You think I'm some weakling?\"\c-\n"
 "\n"
-"Punch with \cgPrimary fire\c-,\n"
-"kick with \cgSecondary fire\c-.\n"
+"Punch with \caPrimary fire\c-,\n"
+"kick with \caSecondary fire\c-.\n"
 "A kick to the nuts is guaranteed\n"
 "to stagger any enemy.";
 TT_SAYAPISTOL =
-"\cg\"For self-defense, of course.\"\c-\n"
+"\ca\"For self-defense, of course.\"\c-\n"
 "\n"
-"\cg4mm Shock Bolt\c-, 5+1 rounds.\n"
+"\ca4mm Shock Bolt\c-, 6 rounds.\n"
 "Can still fire without ammo.\n"
 "A simple zapper, which can be loaded\n"
 "with 4mm bolts to be more lethal.";
 TT_SAYARIFLE =
-"\cg\"OH DESIRE~!\"\c-\n"
+"\ca\"OH DESIRE~!\"\c-\n"
 "\n"
-"\cg.45 LV\c-, 4+1 rounds.\n"
+"\ca.45 LV\c-, 4+1 rounds.\n"
 "Sawed-off for extra coolness.\n"
 "Very effective against goats.";
 TT_SAYAGAUSS =
-"\cg\"Gauss Rifle is sci-fi mumbo jumbo.\"\c-\n"
+"\ca\"Gauss Rifle is sci-fi mumbo jumbo.\"\c-\n"
 "\n"
-"\cg4mm Shock Bolt\c-, 50+1 rounds.\n"
+"\ca4mm Shock Bolt\c-, 50 rounds.\n"
 "Blazing fast 420 RPM.\n"
 "Silent, does not alert enemies.";
 TT_SAYAGL =
-"\cg\"Shiny and chrome...\"\c-"
+"\ca\"Shiny and chrome...\"\c-\n"
 "\n"
-"\cg40mm plasma grenade\c-, 5 rounds.\n"
+"\ca40mm plasma grenade\c-, 5 rounds.\n"
 "Fully automatic, 140 RPM (not much).\n"
 "Deals extreme damage on direct hit.";
 TT_SAYAPLASMA =
-"\cg\"I cast fuck you on your sorry ass.\"\c-\n"
+"\ca\"I cast fuck you on your sorry ass.\"\c-\n"
 "\n"
-"\cgDyratin plasma\c-, 300mL.\n"
+"\caDyratin plasma\c-, 300mL.\n"
 "5mL per shot at 700 RPM.\n"
 "Basically a plasma hose.";
 TT_SAYABFG =
-"\cg\"Eat flaming neon death.\"\c-\n"
+"\ca\"Eat flaming neon death.\"\c-\n"
 "\n"
-"\cgArgon plasma\c-, 8 shots.\n"
+"\caArgon plasma\c-, 8 shots.\n"
 "Damage split between targets.\n"
 "Safe to fire at point blank.";
 TT_SAYAHAMMER =
-"\cg\"Kira-sama... Thank you.\"\c-\n"
+"\ca\"Kira-sama... Thank you.\"\c-\n"
 "\n"
-"Powered by \cgDivine Fury\c-.\n"
-"Side swings with \cgPrimary fire\c-,\n"
-"overhead swings with \cgSecondary fire\c-.\n"
+"Powered by \caDivine Fury\c-.\n"
+"Side swings with \caPrimary fire\c-,\n"
+"overhead swings with \caSecondary fire\c-.\n"
 "Consumes energy to deal extra damage,\n"
 "rechargeable by finding other weapon spawns.";
 TT_SAYAPOS =
-"\cg\"This weapon has no right to exist.\"\c-"
+"\ca\"This weapon has no right to exist.\"\c-\n"
 "\n"
-"12 rounds, and that's it.\n"
+"\ca12 gauge buckshot\c-, 12 rounds.\n"
 "Requires disassembly to reload.\n"
 "Just throw it in the trash, it sucks.";
 // intermission tips

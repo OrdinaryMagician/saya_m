@@ -1,3 +1,18 @@
+// 'splode
+
 Class SayaBomb : SWWMWeapon
 {
+	Default
+	{
+		Weapon.SelectionOrder int.max;
+		Weapon.AmmoType1 "SayaBombAmmo";
+		Weapon.AmmoGive1 0;
+		+WEAPON.CHEATNOTWEAPON;
+		+WEAPON.NO_AUTO_SWITCH;
+		+WEAPON.EXPLOSIVE;
+		+SWWMWEAPON.HIDEINMENU;
+		+INVENTORY.UNDROPPABLE;
+		+INVENTORY.UNTOSSABLE;
+		+INVENTORY.UNCLEARABLE;
+	}
 }

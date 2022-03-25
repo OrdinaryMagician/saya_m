@@ -1,0 +1,30 @@
+// fucking magnets
+
+Class SayaGauss : SWWMWeapon
+{
+	int clipcount;
+
+	Property ClipCount : clipcount;
+
+	Default
+	{
+		Tag "$T_SAYAGAUSS";
+		Inventory.PickupMessage "$I_SAYAGAUSS";
+		SWWMWeapon.Tooltip "$TT_SAYAGAUSS";
+		Inventory.Icon "graphics/HUD/Icons/W_SayaGauss.png";
+		Weapon.SlotNumber 4;
+		Weapon.SlotPriority 1.;
+		Weapon.SelectionOrder 100;
+		Weapon.AmmoType1 "SayaGaussAmmo";
+		Weapon.AmmoGive1 1;
+		SWWMWeapon.DropAmmoType "ClipBox";
+		SayaGauss.ClipCount 50;
+		+SWWMWEAPON.NOFIRSTGIVE;
+	}
+	States
+	{
+	Spawn:
+		XZW1 A -1;
+		Stop;
+	}
+}

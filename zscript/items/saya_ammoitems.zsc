@@ -52,6 +52,33 @@ Class SayaRifleAmmo : SWWMAmmo
 		SWWMAmmo.EmbiggenMaxAmount4 50;
 		Ammo.DropAmount 2;
 	}
+	States
+	{
+	Spawn:
+		XZW1 A -1;
+		Stop;
+	}
+}
+Class SayaRifleAmmo_2 : SayaRifleAmmo
+{
+	Default
+	{
+		Inventory.Amount 2;
+	}
+}
+Class SayaRifleAmmo_3 : SayaRifleAmmo
+{
+	Default
+	{
+		Inventory.Amount 3;
+	}
+}
+Class SayaRifleAmmo_5 : SayaRifleAmmo
+{
+	Default
+	{
+		Inventory.Amount 5;
+	}
 }
 
 Class SayaGaussAmmo : SWWMAmmo
@@ -70,6 +97,12 @@ Class SayaGaussAmmo : SWWMAmmo
 		SWWMAmmo.MagAmmoType "SayaGaussRound";
 		Ammo.DropAmount 1;
 	}
+	States
+	{
+	Spawn:
+		XZW1 A -1;
+		Stop;
+	}
 }
 Class SayaGaussRound : MagAmmo
 {
@@ -82,6 +115,33 @@ Class SayaGaussRound : MagAmmo
 		MagAmmo.ParentAmmo "SayaGaussAmmo";
 		MagAmmo.ClipSize 50;
 		MagAmmo.BackpackAmount 20;
+	}
+	States
+	{
+	Spawn:
+		XZW1 A -1;
+		Stop;
+	}
+}
+Class SayaGaussRound_5 : SayaGaussRound
+{
+	Default
+	{
+		Inventory.Amount 5;
+	}
+}
+Class SayaGaussRound_10 : SayaGaussRound
+{
+	Default
+	{
+		Inventory.Amount 10;
+	}
+}
+Class SayaGaussRound_20 : SayaGaussRound
+{
+	Default
+	{
+		Inventory.Amount 20;
 	}
 }
 
@@ -101,6 +161,12 @@ Class SayaGLAmmo : SWWMAmmo
 		SWWMAmmo.MagAmmoType "SayaGLRound";
 		Ammo.DropAmount 1;
 	}
+	States
+	{
+	Spawn:
+		XZW1 A -1;
+		Stop;
+	}
 }
 Class SayaGLRound : MagAmmo
 {
@@ -113,6 +179,12 @@ Class SayaGLRound : MagAmmo
 		MagAmmo.ParentAmmo "SayaGLAmmo";
 		MagAmmo.ClipSize 5;
 		MagAmmo.BackpackAmount 1;
+	}
+	States
+	{
+	Spawn:
+		XZW1 A -1;
+		Stop;
 	}
 }
 
@@ -131,6 +203,19 @@ Class SayaPlasmaAmmo : SWWMAmmo
 		SWWMAmmo.EmbiggenMaxAmount4 7;
 		SWWMAmmo.MagAmmoType "SayaPlasmaRound";
 		Ammo.DropAmount 1;
+	}
+	States
+	{
+	Spawn:
+		XZW1 A -1;
+		Stop;
+	}
+}
+Class SayaPlasmaAmmo_2 : SayaPlasmaAmmo
+{
+	Default
+	{
+		Inventory.Amount 2;
 	}
 }
 Class SayaPlasmaRound : MagAmmo
@@ -164,6 +249,12 @@ Class SayaBFGAmmo : SWWMAmmo
 		SWWMAmmo.MagAmmoType "SayaBFGRound";
 		Ammo.DropAmount 1;
 	}
+	States
+	{
+	Spawn:
+		XZW1 A -1;
+		Stop;
+	}
 }
 Class SayaBFGRound : MagAmmo
 {
@@ -194,5 +285,11 @@ Class SayaBombAmmo : SWWMAmmo
 		SWWMAmmo.EmbiggenMaxAmount3 12;
 		SWWMAmmo.EmbiggenMaxAmount4 15;
 		Ammo.DropAmount 1;
+	}
+	States
+	{
+	Spawn:
+		XZW1 A -1;
+		Stop;
 	}
 }

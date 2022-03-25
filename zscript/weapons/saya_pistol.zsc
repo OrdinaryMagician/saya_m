@@ -2,4 +2,30 @@
 
 Class SayaPistol : SWWMWeapon
 {
+	int clipcount;
+
+	Property ClipCount : clipcount;
+
+	Default
+	{
+		Tag "$T_SAYAPISTOL";
+		Inventory.PickupMessage "$I_SAYAPISTOL";
+		SWWMWeapon.Tooltip "$TT_SAYAPISTOL";
+		Inventory.Icon "graphics/HUD/Icons/W_SayaPistol.png";
+		Weapon.SlotNumber 2;
+		Weapon.SlotPriority 1.;
+		Weapon.SelectionOrder 100;
+		Weapon.AmmoType1 "SayaPistolAmmo";
+		Weapon.AmmoGive1 100;
+		SWWMWeapon.DropAmmoType "Clip";
+		SayaPistol.ClipCount 5;
+		+WEAPON.WIMPY_WEAPON;
+		+WEAPON.AMMO_OPTIONAL;
+	}
+	States
+	{
+	Spawn:
+		XZW1 A -1;
+		Stop;
+	}
 }

@@ -2,4 +2,18 @@
 
 Class SayaUnarmed : SWWMWeapon
 {
+	bool bBrassKnuckles;
+
+	Default
+	{
+		Tag "$T_SAYAUNARMED";
+		Inventory.PickupMessage "$T_SAYAUNARMED";
+		SWWMWeapon.Tooltip "$TT_SAYAUNARMED";
+		Inventory.Icon "graphics/HUD/Icons/W_SayaUnarmed.png";
+		Weapon.SlotNumber 1;
+		Weapon.SlotPriority 1.;
+		Weapon.SelectionOrder 1000;
+		+WEAPON.MELEEWEAPON;
+		+WEAPON.WIMPY_WEAPON;
+	}
 }

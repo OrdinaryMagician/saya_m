@@ -1,0 +1,31 @@
+// gorudosmith
+
+Class SayaRifle : SWWMWeapon
+{
+	int clipcount;
+	bool chambered;
+
+	Property ClipCount : clipcount;
+
+	Default
+	{
+		Tag "$T_SAYARIFLE";
+		Inventory.PickupMessage "$I_SAYARIFLE";
+		SWWMWeapon.Tooltip "$TT_SAYARIFLE";
+		Inventory.Icon "graphics/HUD/Icons/W_SayaRifle.png";
+		Weapon.SlotNumber 3;
+		Weapon.SlotPriority 1.;
+		Weapon.SelectionOrder 100;
+		Weapon.AmmoType1 "SayaRifleAmmo";
+		Weapon.AmmoGive1 4;
+		SWWMWeapon.DropAmmoType "Shell";
+		SayaRifle.ClipCount 4;
+		+SWWMWEAPON.NOFIRSTGIVE;
+	}
+	States
+	{
+	Spawn:
+		XZW1 A -1;
+		Stop;
+	}
+}

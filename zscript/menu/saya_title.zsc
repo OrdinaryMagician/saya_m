@@ -20,6 +20,7 @@ Class SayaTitleStuff : EventHandler
 	ui int rss;
 	int titletimer;
 	bool bFadeFromBlack;
+	ui Font mSmallFont;
 
 	private ui int GetUIRandom()
 	{
@@ -133,6 +134,7 @@ Class SayaTitleStuff : EventHandler
 		if ( !logotex[0] ) logotex[0] = TexMan.CheckForTexture("graphics/SayaLogo.png",TexMan.Type_Any);
 		if ( !logotex[1] ) logotex[1] = TexMan.CheckForTexture("graphics/SayaLogo_Glow.png",TexMan.Type_Any);
 		if ( !gradtex ) gradtex = TexMan.CheckForTexture("graphics/title_grad.png",TexMan.Type_Any);
+		if ( !mSmallFont ) mSmallFont = Font.GetFont('TewiFont');
 		double GameSecs = (titletimer+e.FracTic)/GameTicRate;
 		if ( swwm_fuzz )
 		{
@@ -162,39 +164,39 @@ Class SayaTitleStuff : EventHandler
 			alf = clamp(GameSecs-1,0.,1.);
 			alf *= 1.-clamp(GameSecs-6,0.,1.);
 			String str = StringTable.Localize("$SAYA_TITLEPRESENTSA");
-			Screen.DrawText(smallfont,Font.CR_RED,(Screen.GetWidth()-smallfont.StringWidth(str)*CleanXFac)/2,(Screen.GetHeight()/2)-(smallfont.GetHeight()*CleanYFac),str,DTA_CleanNoMove,true,DTA_Alpha,alf);
+			Screen.DrawText(mSmallFont,Font.CR_RED,(Screen.GetWidth()-mSmallFont.StringWidth(str)*CleanXFac)/2,(Screen.GetHeight()/2)-(mSmallFont.GetHeight()*CleanYFac),str,DTA_CleanNoMove,true,DTA_Alpha,alf);
 			str = StringTable.Localize("$SAYA_TITLEPRESENTSB");
-			Screen.DrawText(smallfont,Font.CR_WHITE,(Screen.GetWidth()-smallfont.StringWidth(str)*CleanXFac)/2,(Screen.GetHeight()/2),str,DTA_CleanNoMove,true,DTA_Alpha,alf);
+			Screen.DrawText(mSmallFont,Font.CR_WHITE,(Screen.GetWidth()-mSmallFont.StringWidth(str)*CleanXFac)/2,(Screen.GetHeight()/2),str,DTA_CleanNoMove,true,DTA_Alpha,alf);
 			alf = clamp(GameSecs-8,0.,1.);
 			alf *= 1.-clamp(GameSecs-13,0.,1.);
 			str = StringTable.Localize("$SAYA_TITLEMODBYA");
-			Screen.DrawText(smallfont,Font.CR_WHITE,(Screen.GetWidth()-smallfont.StringWidth(str)*CleanXFac)/2,(Screen.GetHeight()/2)-(smallfont.GetHeight()*CleanYFac),str,DTA_CleanNoMove,true,DTA_Alpha,alf);
+			Screen.DrawText(mSmallFont,Font.CR_WHITE,(Screen.GetWidth()-mSmallFont.StringWidth(str)*CleanXFac)/2,(Screen.GetHeight()/2)-(mSmallFont.GetHeight()*CleanYFac),str,DTA_CleanNoMove,true,DTA_Alpha,alf);
 			str = StringTable.Localize("$SAYA_TITLEMODBYB");
-			Screen.DrawText(smallfont,Font.CR_RED,(Screen.GetWidth()-smallfont.StringWidth(str)*CleanXFac)/2,(Screen.GetHeight()/2),str,DTA_CleanNoMove,true,DTA_Alpha,alf);
+			Screen.DrawText(mSmallFont,Font.CR_RED,(Screen.GetWidth()-mSmallFont.StringWidth(str)*CleanXFac)/2,(Screen.GetHeight()/2),str,DTA_CleanNoMove,true,DTA_Alpha,alf);
 			alf = clamp(GameSecs-14,0.,1.);
 			alf *= 1.-clamp(GameSecs-19,0.,1.);
 			str = StringTable.Localize("$SAYA_TITLEINTROA");
-			Screen.DrawTexture(gradtex,false,Screen.GetWidth()/2,Screen.GetHeight()*.75,DTA_DestWidth,Screen.GetWidth()/2,DTA_DestHeight,(smallfont.GetHeight()+4)*CleanYFac,DTA_LegacyRenderStyle,STYLE_Shaded,DTA_FillColor,Color(0,0,0),DTA_Alpha,alf*.5,DTA_TopOffset,256,DTA_LeftOffset,128,DTA_Rotate,90);
-			Screen.DrawTexture(gradtex,false,Screen.GetWidth()/2,Screen.GetHeight()*.75,DTA_DestWidth,Screen.GetWidth()/2,DTA_DestHeight,(smallfont.GetHeight()+4)*CleanYFac,DTA_LegacyRenderStyle,STYLE_Shaded,DTA_FillColor,Color(0,0,0),DTA_Alpha,alf*.5,DTA_TopOffset,256,DTA_LeftOffset,128,DTA_Rotate,270);
-			Screen.DrawText(smallfont,Font.CR_WHITE,(Screen.GetWidth()-smallfont.StringWidth(str)*CleanXFac)/2,(Screen.GetHeight()*.75)-(smallfont.GetHeight()*CleanYFac)/2,str,DTA_CleanNoMove,true,DTA_Alpha,alf);
+			Screen.DrawTexture(gradtex,false,Screen.GetWidth()/2,Screen.GetHeight()*.75,DTA_DestWidth,Screen.GetWidth()/2,DTA_DestHeight,(mSmallFont.GetHeight()+4)*CleanYFac,DTA_LegacyRenderStyle,STYLE_Shaded,DTA_FillColor,Color(0,0,0),DTA_Alpha,alf*.5,DTA_TopOffset,256,DTA_LeftOffset,128,DTA_Rotate,90);
+			Screen.DrawTexture(gradtex,false,Screen.GetWidth()/2,Screen.GetHeight()*.75,DTA_DestWidth,Screen.GetWidth()/2,DTA_DestHeight,(mSmallFont.GetHeight()+4)*CleanYFac,DTA_LegacyRenderStyle,STYLE_Shaded,DTA_FillColor,Color(0,0,0),DTA_Alpha,alf*.5,DTA_TopOffset,256,DTA_LeftOffset,128,DTA_Rotate,270);
+			Screen.DrawText(mSmallFont,Font.CR_WHITE,(Screen.GetWidth()-mSmallFont.StringWidth(str)*CleanXFac)/2,(Screen.GetHeight()*.75)-(mSmallFont.GetHeight()*CleanYFac)/2,str,DTA_CleanNoMove,true,DTA_Alpha,alf);
 			alf = clamp(GameSecs-20,0.,1.);
 			alf *= 1.-clamp(GameSecs-25,0.,1.);
 			str = StringTable.Localize("$SAYA_TITLEINTROB");
-			Screen.DrawTexture(gradtex,false,Screen.GetWidth()/2,Screen.GetHeight()*.75,DTA_DestWidth,Screen.GetWidth()/2,DTA_DestHeight,(smallfont.GetHeight()+4)*CleanYFac,DTA_LegacyRenderStyle,STYLE_Shaded,DTA_FillColor,Color(0,0,0),DTA_Alpha,alf*.5,DTA_TopOffset,256,DTA_LeftOffset,128,DTA_Rotate,90);
-			Screen.DrawTexture(gradtex,false,Screen.GetWidth()/2,Screen.GetHeight()*.75,DTA_DestWidth,Screen.GetWidth()/2,DTA_DestHeight,(smallfont.GetHeight()+4)*CleanYFac,DTA_LegacyRenderStyle,STYLE_Shaded,DTA_FillColor,Color(0,0,0),DTA_Alpha,alf*.5,DTA_TopOffset,256,DTA_LeftOffset,128,DTA_Rotate,270);
-			Screen.DrawText(smallfont,Font.CR_WHITE,(Screen.GetWidth()-smallfont.StringWidth(str)*CleanXFac)/2,(Screen.GetHeight()*.75)-(smallfont.GetHeight()*CleanYFac)/2,str,DTA_CleanNoMove,true,DTA_Alpha,alf);
+			Screen.DrawTexture(gradtex,false,Screen.GetWidth()/2,Screen.GetHeight()*.75,DTA_DestWidth,Screen.GetWidth()/2,DTA_DestHeight,(mSmallFont.GetHeight()+4)*CleanYFac,DTA_LegacyRenderStyle,STYLE_Shaded,DTA_FillColor,Color(0,0,0),DTA_Alpha,alf*.5,DTA_TopOffset,256,DTA_LeftOffset,128,DTA_Rotate,90);
+			Screen.DrawTexture(gradtex,false,Screen.GetWidth()/2,Screen.GetHeight()*.75,DTA_DestWidth,Screen.GetWidth()/2,DTA_DestHeight,(mSmallFont.GetHeight()+4)*CleanYFac,DTA_LegacyRenderStyle,STYLE_Shaded,DTA_FillColor,Color(0,0,0),DTA_Alpha,alf*.5,DTA_TopOffset,256,DTA_LeftOffset,128,DTA_Rotate,270);
+			Screen.DrawText(mSmallFont,Font.CR_WHITE,(Screen.GetWidth()-mSmallFont.StringWidth(str)*CleanXFac)/2,(Screen.GetHeight()*.75)-(mSmallFont.GetHeight()*CleanYFac)/2,str,DTA_CleanNoMove,true,DTA_Alpha,alf);
 			alf = clamp(GameSecs-26,0.,1.);
 			alf *= 1.-clamp(GameSecs-31,0.,1.);
 			str = StringTable.Localize("$SAYA_TITLEINTROC");
-			Screen.DrawTexture(gradtex,false,Screen.GetWidth()/2,Screen.GetHeight()*.75,DTA_DestWidth,Screen.GetWidth()/2,DTA_DestHeight,(smallfont.GetHeight()+4)*CleanYFac,DTA_LegacyRenderStyle,STYLE_Shaded,DTA_FillColor,Color(0,0,0),DTA_Alpha,alf*.5,DTA_TopOffset,256,DTA_LeftOffset,128,DTA_Rotate,90);
-			Screen.DrawTexture(gradtex,false,Screen.GetWidth()/2,Screen.GetHeight()*.75,DTA_DestWidth,Screen.GetWidth()/2,DTA_DestHeight,(smallfont.GetHeight()+4)*CleanYFac,DTA_LegacyRenderStyle,STYLE_Shaded,DTA_FillColor,Color(0,0,0),DTA_Alpha,alf*.5,DTA_TopOffset,256,DTA_LeftOffset,128,DTA_Rotate,270);
-			Screen.DrawText(smallfont,Font.CR_WHITE,(Screen.GetWidth()-smallfont.StringWidth(str)*CleanXFac)/2,(Screen.GetHeight()*.75)-(smallfont.GetHeight()*CleanYFac)/2,str,DTA_CleanNoMove,true,DTA_Alpha,alf);
+			Screen.DrawTexture(gradtex,false,Screen.GetWidth()/2,Screen.GetHeight()*.75,DTA_DestWidth,Screen.GetWidth()/2,DTA_DestHeight,(mSmallFont.GetHeight()+4)*CleanYFac,DTA_LegacyRenderStyle,STYLE_Shaded,DTA_FillColor,Color(0,0,0),DTA_Alpha,alf*.5,DTA_TopOffset,256,DTA_LeftOffset,128,DTA_Rotate,90);
+			Screen.DrawTexture(gradtex,false,Screen.GetWidth()/2,Screen.GetHeight()*.75,DTA_DestWidth,Screen.GetWidth()/2,DTA_DestHeight,(mSmallFont.GetHeight()+4)*CleanYFac,DTA_LegacyRenderStyle,STYLE_Shaded,DTA_FillColor,Color(0,0,0),DTA_Alpha,alf*.5,DTA_TopOffset,256,DTA_LeftOffset,128,DTA_Rotate,270);
+			Screen.DrawText(mSmallFont,Font.CR_WHITE,(Screen.GetWidth()-mSmallFont.StringWidth(str)*CleanXFac)/2,(Screen.GetHeight()*.75)-(mSmallFont.GetHeight()*CleanYFac)/2,str,DTA_CleanNoMove,true,DTA_Alpha,alf);
 			alf = clamp(GameSecs-32,0.,1.);
 			alf *= 1.-clamp(GameSecs-37,0.,1.);
 			str = StringTable.Localize("$SAYA_TITLEINTROD");
-			Screen.DrawTexture(gradtex,false,Screen.GetWidth()/2,Screen.GetHeight()*.75,DTA_DestWidth,Screen.GetWidth()/2,DTA_DestHeight,(smallfont.GetHeight()+4)*CleanYFac,DTA_LegacyRenderStyle,STYLE_Shaded,DTA_FillColor,Color(0,0,0),DTA_Alpha,alf*.5,DTA_TopOffset,256,DTA_LeftOffset,128,DTA_Rotate,90);
-			Screen.DrawTexture(gradtex,false,Screen.GetWidth()/2,Screen.GetHeight()*.75,DTA_DestWidth,Screen.GetWidth()/2,DTA_DestHeight,(smallfont.GetHeight()+4)*CleanYFac,DTA_LegacyRenderStyle,STYLE_Shaded,DTA_FillColor,Color(0,0,0),DTA_Alpha,alf*.5,DTA_TopOffset,256,DTA_LeftOffset,128,DTA_Rotate,270);
-			Screen.DrawText(smallfont,Font.CR_WHITE,(Screen.GetWidth()-smallfont.StringWidth(str)*CleanXFac)/2,(Screen.GetHeight()*.75)-(smallfont.GetHeight()*CleanYFac)/2,str,DTA_CleanNoMove,true,DTA_Alpha,alf);
+			Screen.DrawTexture(gradtex,false,Screen.GetWidth()/2,Screen.GetHeight()*.75,DTA_DestWidth,Screen.GetWidth()/2,DTA_DestHeight,(mSmallFont.GetHeight()+4)*CleanYFac,DTA_LegacyRenderStyle,STYLE_Shaded,DTA_FillColor,Color(0,0,0),DTA_Alpha,alf*.5,DTA_TopOffset,256,DTA_LeftOffset,128,DTA_Rotate,90);
+			Screen.DrawTexture(gradtex,false,Screen.GetWidth()/2,Screen.GetHeight()*.75,DTA_DestWidth,Screen.GetWidth()/2,DTA_DestHeight,(mSmallFont.GetHeight()+4)*CleanYFac,DTA_LegacyRenderStyle,STYLE_Shaded,DTA_FillColor,Color(0,0,0),DTA_Alpha,alf*.5,DTA_TopOffset,256,DTA_LeftOffset,128,DTA_Rotate,270);
+			Screen.DrawText(mSmallFont,Font.CR_WHITE,(Screen.GetWidth()-mSmallFont.StringWidth(str)*CleanXFac)/2,(Screen.GetHeight()*.75)-(mSmallFont.GetHeight()*CleanYFac)/2,str,DTA_CleanNoMove,true,DTA_Alpha,alf);
 		}
 		// 38 seconds in: eye glow
 		else if ( titletimer < (40*GameTicRate) )

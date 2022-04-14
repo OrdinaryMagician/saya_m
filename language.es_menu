@@ -16,8 +16,9 @@ SAYA_SPELL4 = "Ranura de Hechizo 4";
 SAYA_SKEASY="\cdModo Fácil\c-";
 SAYA_SKNORMAL="\ciModo Normal\c-";
 SAYA_SKHARD="\cgModo Difícil\c-";
+SAYA_SKHARDCONFIRM="\cgEste es el modo difícil, ya sabes.\nLas cosas se pondrán duras.\c-\n\n\ca1.25x salud y daño de monstruos\n25% extra aggressiveness\c-\n\n(Pulsa Y para luchar)";
 SAYA_SKHARDCORE="\crModo Hardcore\c-";
-SAYA_SKHARDCORECONFIRM="\cr¿Seguro que quieres hacer eso?\nPuede que te pateen el culo.\c-\n\n\caMonstruos rápidos\n1.5x salud y daño de monstruos\n25% de agresividad extra\nTrucos deshabilitados\nMonstruos de cooperativo\c-\n\n(Pulsa Y para un desafío)";
+SAYA_SKHARDCORECONFIRM="\cr¿Seguro que quieres hacer eso?\nPuede que te pateen el culo.\c-\n\n\caMonstruos rápidos\n1.5x salud y daño de monstruos\n50% de agresividad extra\nTrucos deshabilitados\nMonstruos de cooperativo\c-\n\n(Pulsa Y para un desafío)";
 SAYA_SKLUNATIC="\cmModo Lunático\c-";
 SAYA_SKLUNATICCONFIRM="\cmCiertamente deseas morir.\nElige esta dificultad si te atreves.\c-\n\n\caTodos los cambios de \crHardcore\ca\n+\nDoble velocidad de enemigos\nProyectiles enemigos duplicados\nPueden aparecer enemigos extra\nReflejos instantáneos de enemigo\nLos enemigos no se estremecen\nLos enemigos no pelean entre si\c-\n\n(Pulsa Y para morir al instante)";
 // mod menu

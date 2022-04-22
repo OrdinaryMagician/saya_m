@@ -2,15 +2,16 @@
 
 Class SayaStatusBar : SWWMStatusBar
 {
-	TextureID StatusTex[3], StatusIcon[6], InvTex, WeaponTex, MeleeTex, AmmoBar[3], GenTex, SpellTex, SpellIcon[4], SpellBar[2];
+	TextureID StatusTex[3], StatusIcon[6], InvTex, WeaponTex, MeleeTex, AmmoBar[3], GenTex, SpellTex, SpellIcon[4], SpellBar[3];
 	int AmmoFlash[8];	// flash when new ammo is received
 	int AmmoOldAmounts[8];	// to detect when to flash
 	int StatusFlash[3];	// flash when healing or gaining armor
 	int LastStatus[3];	// to detect when to flash
 	int StatusCol[3];	// text colors for each status box, simplifies things
 	Class<SWWMAmmo> AmmoSlots[8];	// ammo type on each slot + mana
+	int LagMana[10];	// for the delayed bar
 
-	DynamicValueInterpolator StatusInter[3], AmmoInter[8];
+	DynamicValueInterpolator StatusInter[3], AmmoInter[8], LagInter;
 
 	override void FlushNotify()
 	{
@@ -39,6 +40,9 @@ Class SayaStatusBar : SWWMStatusBar
 			}
 			AmmoInter[i].Reset(amt);
 		}
+		LagInter.Reset(CPlayer.mo.CountInv("SayaMana"));
+		for ( int i=9; i>0; i-- )
+			LagMana[i] = CPlayer.mo.CountInv("SayaMana");
 	}
 	override void UpdateInterpolators()
 	{
@@ -71,6 +75,18 @@ Class SayaStatusBar : SWWMStatusBar
 			}
 			AmmoInter[i].Update(amt);
 			if ( amt > AmmoOldAmounts[i] ) AmmoFlash[i] = gametic+25;
+			if ( i == 0 )
+			{
+				if ( amt > AmmoOldAmounts[0] )
+				{
+					for ( int i=9; i>0; i-- )
+						LagMana[i] = amt;
+				}
+				LagMana[0] = amt;
+				LagInter.Update(LagMana[9]);
+				for ( int i=9; i>0; i-- )
+					LagMana[i] = LagMana[i-1];
+			}
 			AmmoOldAmounts[i] = amt;
 		}
 	}
@@ -114,6 +130,7 @@ Class SayaStatusBar : SWWMStatusBar
 		SpellIcon[3] = TexMan.CheckForTexture("graphics/HUD/SpellcardSel4.png",TexMan.Type_Any);
 		SpellBar[0] = TexMan.CheckForTexture("graphics/HUD/SpellcardBar.png",TexMan.Type_Any);
 		SpellBar[1] = TexMan.CheckForTexture("graphics/HUD/SpellcardBarFlash.png",TexMan.Type_Any);
+		SpellBar[2] = TexMan.CheckForTexture("graphics/HUD/SpellcardBarLag.png",TexMan.Type_Any);
 		tclabel = Font.CR_BRICK;
 		tcvalue = Font.CR_WHITE;
 		tcextra = Font.CR_DARKGRAY;
@@ -125,7 +142,7 @@ Class SayaStatusBar : SWWMStatusBar
 		LastStatus[0] = CPlayer?CPlayer.health:100;
 		LastStatus[1] = (CPlayer&&CPlayer.mo)?CPlayer.mo.CountInv("SayaLightArmor"):0;
 		LastStatus[2] = (CPlayer&&CPlayer.mo)?CPlayer.mo.CountInv("SayaHeavyArmor"):0;
-		for ( int i=0; i<3; i++ ) StatusInter[i] = DynamicValueInterpolator.Create(LastStatus[i],.1,1,100);
+		for ( int i=0; i<3; i++ ) StatusInter[i] = DynamicValueInterpolator.Create(LastStatus[i],.5,1,100);
 		AmmoSlots[0] = "SayaMana";
 		AmmoSlots[1] = "SayaPistolAmmo";
 		AmmoSlots[2] = "SayaRifleAmmo";
@@ -138,7 +155,12 @@ Class SayaStatusBar : SWWMStatusBar
 		{
 			if ( !CPlayer || !CPlayer.mo )
 			{
-				AmmoInter[i] = DynamicValueInterpolator.Create(0,.1,1,100);
+				AmmoInter[i] = DynamicValueInterpolator.Create(0,.5,1,100);
+				if ( i == 0 )
+				{
+					LagInter = DynamicValueInterpolator.Create(0,.1,1,5);
+					for ( int j=0; j<10; j++ ) LagMana[j] = 0;
+				}
 				continue;
 			}
 			let a = SWWMAmmo((CPlayer&&CPlayer.mo)?CPlayer.mo.FindInventory(AmmoSlots[i]):null);
@@ -155,8 +177,14 @@ Class SayaStatusBar : SWWMStatusBar
 						amt += m.Amount;
 					}
 				}
+				if ( i == 0 )
+				{
+					LagInter = DynamicValueInterpolator.Create(amt,.1,1,5);
+					for ( int j=0; j<10; j++ ) LagMana[j] = amt;
+
+				}
 			}
-			AmmoInter[i] = DynamicValueInterpolator.Create(amt,.1,1,100);
+			AmmoInter[i] = DynamicValueInterpolator.Create(amt,.5,1,100);
 		}
 	}
 	override void GetMinimapColors()
@@ -328,6 +356,12 @@ Class SayaStatusBar : SWWMStatusBar
 		double mh = clamp(AmmoInter[0].GetValue(),0,100)/2.;
 		int selslot = -1;
 		if ( SayaPlayer(CPlayer.mo) ) selslot = SayaPlayer(CPlayer.mo).SpellSel;
+		double lmh = clamp(LagInter.GetValue(),0,100)/2.;
+		if ( lmh > mh )
+		{
+			Screen.DrawTexture(SpellBar[2],false,xx+17,yy+54-lmh,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_DestHeightF,lmh-mh,DTA_ColorOverlay,Color(255,0,0,0));
+			Screen.DrawTexture(SpellBar[2],false,xx+16,yy+53-lmh,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_DestHeightF,lmh-mh);
+		}
 		if ( mh )
 		{
 			Screen.DrawTexture(SpellBar[0],false,xx+17,yy+54-mh,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_DestHeightF,mh,DTA_ColorOverlay,Color(255,0,0,0));

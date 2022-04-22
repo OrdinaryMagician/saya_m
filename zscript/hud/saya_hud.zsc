@@ -11,7 +11,8 @@ Class SayaStatusBar : SWWMStatusBar
 	Class<SWWMAmmo> AmmoSlots[8];	// ammo type on each slot + mana
 	int LagMana[10];	// for the delayed bar
 
-	DynamicValueInterpolator StatusInter[3], AmmoInter[8], LagInter;
+	SmoothDynamicValueInterpolator StatusInter[3], AmmoInter[8];
+	SmoothLinearValueInterpolator LagInter;
 
 	override void FlushNotify()
 	{
@@ -142,7 +143,7 @@ Class SayaStatusBar : SWWMStatusBar
 		LastStatus[0] = CPlayer?CPlayer.health:100;
 		LastStatus[1] = (CPlayer&&CPlayer.mo)?CPlayer.mo.CountInv("SayaLightArmor"):0;
 		LastStatus[2] = (CPlayer&&CPlayer.mo)?CPlayer.mo.CountInv("SayaHeavyArmor"):0;
-		for ( int i=0; i<3; i++ ) StatusInter[i] = DynamicValueInterpolator.Create(LastStatus[i],.5,1,100);
+		for ( int i=0; i<3; i++ ) StatusInter[i] = SmoothDynamicValueInterpolator.Create(LastStatus[i],.5,1,100);
 		AmmoSlots[0] = "SayaMana";
 		AmmoSlots[1] = "SayaPistolAmmo";
 		AmmoSlots[2] = "SayaRifleAmmo";
@@ -155,10 +156,10 @@ Class SayaStatusBar : SWWMStatusBar
 		{
 			if ( !CPlayer || !CPlayer.mo )
 			{
-				AmmoInter[i] = DynamicValueInterpolator.Create(0,.5,1,100);
+				AmmoInter[i] = SmoothDynamicValueInterpolator.Create(0,.5,1,100);
 				if ( i == 0 )
 				{
-					LagInter = DynamicValueInterpolator.Create(0,.1,1,5);
+					LagInter = SmoothLinearValueInterpolator.Create(0,2);
 					for ( int j=0; j<10; j++ ) LagMana[j] = 0;
 				}
 				continue;
@@ -179,12 +180,11 @@ Class SayaStatusBar : SWWMStatusBar
 				}
 				if ( i == 0 )
 				{
-					LagInter = DynamicValueInterpolator.Create(amt,.1,1,5);
+					LagInter = SmoothLinearValueInterpolator.Create(amt,2);
 					for ( int j=0; j<10; j++ ) LagMana[j] = amt;
-
 				}
 			}
-			AmmoInter[i] = DynamicValueInterpolator.Create(amt,.5,1,100);
+			AmmoInter[i] = SmoothDynamicValueInterpolator.Create(amt,.5,1,100);
 		}
 	}
 	override void GetMinimapColors()
@@ -285,7 +285,7 @@ Class SayaStatusBar : SWWMStatusBar
 				if ( !hasammo ) ncolor = mhudfontcol[MCR_RED];
 			}
 			if ( inslot ) Screen.DrawText(MiniHUDFont,ncolor,xx+2,yy+2,String.Format("%d",slot),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
-			int amt = AmmoInter[i].GetValue(), maxamt = 0;
+			double amt = AmmoInter[i].GetValue(fractic), maxamt = 0;
 			let a = SWWMAmmo(CPlayer.mo.FindInventory(AmmoSlots[i]));
 			// special: don't show these ammo types if we down own their weapon
 			if ( ((i==1) && !CPlayer.mo.FindInventory('SayaPistol')) || ((i==7) && !CPlayer.mo.FindInventory('SayaHammer')) )
@@ -312,7 +312,7 @@ Class SayaStatusBar : SWWMStatusBar
 				Screen.DrawTexture(AmmoBar[selected],false,xx+11,yy+3,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_WindowRightF,aw,DTA_ColorOverlay,Color(255,0,0,0));
 				Screen.DrawTexture(AmmoBar[selected],false,xx+10,yy+2,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_WindowRightF,aw);
 			}
-			if ( a ) Screen.DrawText(MiniHUDFont,acolor,xx+50,yy+2,String.Format("%3d",amt),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
+			if ( a ) Screen.DrawText(MiniHUDFont,acolor,xx+50,yy+2,String.Format("%3d",round(amt)),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
 			int f = hnd.WeaponFlash[slot];
 			if ( f && (gametic < f) )
 			{
@@ -324,7 +324,7 @@ Class SayaStatusBar : SWWMStatusBar
 			{
 				double alph = max((f-(gametic+FracTic))/25.,0.)**1.5;
 				if ( aw ) Screen.DrawTexture(AmmoBar[2],false,xx+10,yy+2,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_WindowRightF,aw,DTA_Alpha,alph,DTA_LegacyRenderStyle,STYLE_Add);
-				if ( a ) Screen.DrawText(MiniHUDFont,mhudfontcol[MCR_FLASH],xx+50,yy+2,String.Format("%3d",amt),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_Alpha,alph,DTA_LegacyRenderStyle,STYLE_Add);
+				if ( a ) Screen.DrawText(MiniHUDFont,mhudfontcol[MCR_FLASH],xx+50,yy+2,String.Format("%3d",round(amt)),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_Alpha,alph,DTA_LegacyRenderStyle,STYLE_Add);
 			}
 			// draw weapon-specific display
 			if ( !w ) continue;
@@ -353,10 +353,10 @@ Class SayaStatusBar : SWWMStatusBar
 		xx = ss.x-(margin+24);
 		yy = ss.y-(margin+56);
 		Screen.DrawTexture(SpellTex,false,xx,yy,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
-		double mh = clamp(AmmoInter[0].GetValue(),0,100)/2.;
+		double mh = clamp(AmmoInter[0].GetValue(fractic),0,100)/2.;
 		int selslot = -1;
 		if ( SayaPlayer(CPlayer.mo) ) selslot = SayaPlayer(CPlayer.mo).SpellSel;
-		double lmh = clamp(LagInter.GetValue(),0,100)/2.;
+		double lmh = clamp(LagInter.GetValue(fractic),0,100)/2.;
 		if ( lmh > mh )
 		{
 			Screen.DrawTexture(SpellBar[2],false,xx+17,yy+54-lmh,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_DestHeightF,lmh-mh,DTA_ColorOverlay,Color(255,0,0,0));
@@ -383,7 +383,7 @@ Class SayaStatusBar : SWWMStatusBar
 		int ofs = 26;
 		for ( int i=0; i<3; i++ )
 		{
-			int st = StatusInter[i].GetValue();
+			double st = StatusInter[i].GetValue(fractic);
 			if ( (i > 0) && (st <= 0) ) continue;
 			Screen.DrawTexture(StatusTex[i],false,xx,yy,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
 			int ncolor = StatusCol[i];
@@ -392,20 +392,20 @@ Class SayaStatusBar : SWWMStatusBar
 				ncolor = MCR_WHITE;
 				Screen.DrawTexture(StatusIcon[5],false,xx+2,yy+2,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
 			}
-			Screen.DrawText(MiniHUDFont,mhudfontcol[ncolor],xx+12,yy+2,String.Format("%3d",clamp(st,0,999)),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
+			Screen.DrawText(MiniHUDFont,mhudfontcol[ncolor],xx+12,yy+2,String.Format("%3d",clamp(round(st),0,999)),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true);
 			if ( (i == 0) && (ncolor != MCR_WHITE) )
 			{
 				if ( st > 100 )
 				{
 					double alph = max((st-100)/900.,0.)**.5;
 					Screen.DrawTexture(StatusIcon[4],false,xx+2,yy+2,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_Alpha,alph);
-					Screen.DrawText(MiniHUDFont,mhudfontcol[MCR_BLUE],xx+12,yy+2,String.Format("%3d",clamp(st,0,999)),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_Alpha,alph);
+					Screen.DrawText(MiniHUDFont,mhudfontcol[MCR_BLUE],xx+12,yy+2,String.Format("%3d",clamp(round(st),0,999)),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_Alpha,alph);
 				}
 				if ( (CPlayer.Health > 0) && (CPlayer.Health <= 25) && (PulsePhase <= 15) )
 				{
 					double alph = clamp(sin((PulsePhase-FracTic)*12.),0.,1.);
 					Screen.DrawTexture(StatusIcon[3],false,xx+2,yy+2,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_Alpha,alph,DTA_LegacyRenderStyle,STYLE_Add);
-					Screen.DrawText(MiniHUDFont,mhudfontcol[MCR_REDFLASH],xx+12,yy+2,String.Format("%3d",clamp(st,0,999)),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_Alpha,alph,DTA_LegacyRenderStyle,STYLE_Add);
+					Screen.DrawText(MiniHUDFont,mhudfontcol[MCR_REDFLASH],xx+12,yy+2,String.Format("%3d",clamp(round(st),0,999)),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_Alpha,alph,DTA_LegacyRenderStyle,STYLE_Add);
 				}
 			}
 			int f = StatusFlash[i];
@@ -413,7 +413,7 @@ Class SayaStatusBar : SWWMStatusBar
 			{
 				double alph = max((f-(gametic+FracTic))/25.,0.)**1.5;
 				Screen.DrawTexture(StatusIcon[i],false,xx+2,yy+2,DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_Alpha,alph,DTA_LegacyRenderStyle,STYLE_Add);
-				Screen.DrawText(MiniHUDFont,mhudfontcol[MCR_FLASH],xx+12,yy+2,String.Format("%3d",clamp(st,0,999)),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_Alpha,alph,DTA_LegacyRenderStyle,STYLE_Add);
+				Screen.DrawText(MiniHUDFont,mhudfontcol[MCR_FLASH],xx+12,yy+2,String.Format("%3d",clamp(round(st),0,999)),DTA_VirtualWidthF,ss.x,DTA_VirtualHeightF,ss.y,DTA_KeepRatio,true,DTA_Alpha,alph,DTA_LegacyRenderStyle,STYLE_Add);
 			}
 			yy -= 10;
 			ofs += 10;

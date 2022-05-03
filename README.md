@@ -200,7 +200,7 @@ A boost of 100 HP with each use. There is no upper cap to how much you can get o
 
 *"Don't wanna have no accidents, you know..."*
 
-Protection for your head and your joints. The usual stuff you'd wear for a bike ride, basically. 100 points of armor, absorbing one third of all damage, plus an extra 15 points from any fall damage. Can only hold one spare.
+Protection for your head and your joints. The usual stuff you'd wear for a bike ride, basically. 100 points of armor, absorbing one third of all damage. Can only hold one spare.
 
 ### Shielded Vest *[Blue Armor]*
 

@@ -10,6 +10,7 @@ Struct TitleSmoke
 
 Class SayaTitleStuff : EventHandler
 {
+	ui bool bInitialized;
 	ui TextureID bgtex;
 	ui TextureID bdtex;
 	ui TextureID sayatex[4];
@@ -19,8 +20,8 @@ Class SayaTitleStuff : EventHandler
 	ui TextureID gradtex;
 	ui int quakestr;
 	ui int rss;
-	int titletimer;
-	bool bFadeFromBlack;
+	ui int titletimer;
+	ui bool bFadeFromBlack;
 	ui Font mSmallFont, mBigFont;
 
 	private ui int GetUIRandom()
@@ -61,39 +62,30 @@ Class SayaTitleStuff : EventHandler
 		}
 	}
 
-	override void WorldTick()
-	{
-		titletimer++;
-	}
-
-	override void WorldLoaded( WorldEvent e )
-	{
-		titletimer = 0;
-		let shnd = SWWMStaticHandler(StaticEventHandler.Find("SWWMStaticHandler"));
-		if ( !shnd ) return;
-		if ( shnd.titlefirst )
-		{
-			titletimer = GameTicRate*40+1;	// skip to logo (also skip the fire sound)
-			bFadeFromBlack = true;	// fade from black instead of white
-			S_ChangeMusic("music/saya_titlemus_skipahead.ogg");
-		}
-		shnd.titlefirst = true;
-	}
-
-	// GROSS HACK, GROSS HACK
-	static ui bool IsBirthday()
-	{
-		return (SystemTime.Format("%d%m",SystemTime.Now()) == "2003");
-	}
-	static play void SetBirthday()
-	{
-		let hnd = SayaTitleStuff(EventHandler.Find("SayaTitleStuff"));
-		if ( !hnd.bFadeFromBlack )
-			hnd.titletimer = -200;
-	}
-
 	override void UiTick()
 	{
+		// you're not supposed to be here
+		if ( gamestate == GS_LEVEL )
+			ThrowAbortException("Attempted to warp into TITLEMAP");
+		if ( !bInitialized )
+		{
+			bInitialized = true;
+			titletimer = 0;
+			// birthday event
+			if ( SystemTime.Format("%d%m",SystemTime.Now()) == "2003" )
+				titletimer = -200;
+			let shnd = SWWMStaticHandler(StaticEventHandler.Find("SWWMStaticHandler"));
+			if ( shnd )
+			{
+				if ( shnd.titlefirst )
+				{
+					titletimer = GameTicRate*40+1;	// skip to logo (also skip the fire sound)
+					bFadeFromBlack = true;	// fade from black instead of white
+					S_ChangeMusic("music/saya_titlemus_skipahead.ogg");
+				}
+				shnd.titlefirst = true;
+			}
+		}
 		quakestr = max(quakestr-1,0);
 		if ( titletimer == 1 ) S_StartSound("title/wind",CHAN_VOICE,CHANF_OVERLAP|CHANF_UI,1.,0.);
 		else if ( titletimer == (21*GameTicRate) ) S_ChangeMusic("music/saya_titlemus.ogg");
@@ -105,12 +97,7 @@ Class SayaTitleStuff : EventHandler
 			S_StartSound("title/thump",CHAN_BODY,CHANF_OVERLAP|CHANF_UI,1.,0.);
 		}
 		TickSmokeLayers();
-		if ( gamestate != GS_LEVEL ) return;
-		// you're not supposed to be here
-		Menu.SetMenu('EndGameMenu');
-		let m = MessageBoxMenu(Menu.GetCurrentMenu());
-		if ( m ) m.HandleResult(true);
-		// special thanks to marrub for this absolute crime
+		titletimer++;
 	}
 
 	// heh

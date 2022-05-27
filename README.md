@@ -28,15 +28,17 @@ Do note that you are very squishy, but you can try again and again no matter how
 
 As a civilian, **Saya** shouldn't be carrying any weapons, but who's going to stop her when there's still demons out there left to kill? All that time playing games, watching videos, and even toying with some guns at the range should definitely pay off in being able to wield any weapon she can find lying out there. And of course, she's also not afraid to punch and kick her way to victory. She may not look like much, but she can kick very hard *(something that appears to run in the family)*.
 
-The operation of all weapons is fairly simple: Primary fire shoots, secondary fire aims down the sights, and reload... reloads. **Saya** managed to strike a special deal in the last second to have an autoloader in her hammerspace *(which is normally exclusive to military models)*, so don't worry, no manual mag management will be involved here either.
+The operation of all weapons is fairly simple: Primary fire shoots and reload... reloads. **Saya** managed to strike a special deal in the last second to have an autoloader in her hammerspace *(which is normally exclusive to military models)*, so don't worry, no manual mag management will be involved here either.
 
 Of course, having a smaller hammerspace also means she can't hold as many weapons as she'd like, so you'll notice a bit of a size reduction in the available weapon slots.
+
+As per usual, with any weapon out, there is a dedicated *"quick kick"* button, so you can showcase the mighty power of your bloodline on some poor saps *(aiming at center of gravity for a guaranteed stun)*.
 
 ### Slot 1 - Unarmed *[Fist, Chainsaw]*
 
 *"What? You think I'm some sort of weakling?"*
 
-Raise up your fists to attack the opponent. It may not be very effective, usually, but even the mightiest tree can be felled with enough perseverance. Primary fire alternates between quick jabs of each hand. Secondary fire performs a kick, with really potent knockback, useful to make some space between you and the enemy. This kick can also be performed while using other weapons through a dedicated keybind.
+Raise up your fists to attack the opponent. It may not be very effective, usually, but even the mightiest tree can be felled with enough perseverance.
 
 Note: Taking the place of the **Chainsaw** are a pair of **Brass Knuckles**, which will permanently enhance your punching damage.
 
@@ -52,7 +54,7 @@ A simple self-defense weapon that releases potent, disrupting electromagnetic pu
 
 Chambered for .45LV, this *"relic"* has been in **Saya**'s private collection since the early days. She likes taking it to the range and attempting to cycle it *"the cool way"* while she pretends to shoot down *"goat servants"* or something. Well, now she can definitely shoot some goats with it, for sure.
 
-Can hold 4 rounds plus one in the chamber. Fairly useful for stopping hell nobles in their tracks. **Saya** will spin it when hip-firing.
+Can hold 4 rounds plus one in the chamber. Fairly useful for stopping hell nobles in their tracks. Timing your shooting and cycling adequately will cause **Saya** to spin the gun, for increased coolness.
 
 #### .45LV Rounds *[Shells, Shell Box]*
 
@@ -112,7 +114,7 @@ You'd be lucky to find extra ammo around, unless it's from another BFG spawn.
 
 A gift from the **God of Fury** himself, who values **Saya** greatly as a friend. It is his very own weapon that he employs to defend the **Votrexxian** people. Even in the hands of a puny human, its strength will remain the same as if it were wielded by its own creator.
 
-Primary fire performs side swings, while secondary is a strong overhead attack, capable of crushing even the beefiest of enemies. These attacks are heavily strengthened provided the weapon has energy, but even without a charge they're still fairly potent.
+Attack with a strong overhead swing, capable of crushing even the beefiest of enemies. This action is heavily strengthened provided the weapon has energy, but even without a charge it's still fairly potent.
 
 Energy for this weapon is limited when not wielded by its rightful owner, and once it fully drains, the weapon must be recharged by **Kira** himself. It will start replacing the **Chainsaw** once the **Brass Knuckles** have been obtained. Once the hammer is within your grasp, any further pickups will be replaced by small shrines where you can recharge it.
 
@@ -126,15 +128,13 @@ The weapon that brought **Ninnacht Armaments** to ruin, the most disastrous thin
 
 ## Spellcasting
 
-As someone of such an upbringing as she is, **Saya** is no stranger to magic, and her specialty lies in so-called ***"Spellcards"***: Specialized spells with limited use but quite mighty potential. Each is selected through a dedicated key, independent from whichever weapon you're using, after which you can opt for either a primary or secondary cast with it, with varying effects. Afterwards you will have to wait for your mana to replenish in order to use another one. Note that each of these requires increasingly more mana then the previous (and their altfires require even more), so the strongest attacks will take much longer to become available once again.
+As someone of such an upbringing as she is, **Saya** is no stranger to magic, and her specialty lies in so-called ***"Spellcards"***: Specialized spells with limited use but quite mighty potential. Each is selected independently from whichever weapon you're using, and they can cast at any time. After use, you will have to wait for your mana to replenish in order to use another one. Note that each of these requires increasingly more mana then the previous, so the strongest attacks will take much longer to become available once again.
 
 ### Spellcard: Reviled Sign "Igneous Lexicon"
 
 *"Words that kill..."*
 
 Blinding trails of hateful energy that burst into very, VERY painful words.
-
-Primary fire will release feeble words for less mana and wider coverage, while secondary fire reserves the nastiest words for really tearing through foes.
 
 All the words seem to be in **English**.
 
@@ -144,8 +144,6 @@ All the words seem to be in **English**.
 
 A steady burst of seeking beams of fiery energy that explode on impact, bursting into deadly heat. Each beam deals exactly 1% of the enemy's total health pool in damage, making this especially effective against heavy targets.
 
-Primary fire shoots them out at a slower pace, while secondary fire does it much faster, but consuming far more mana.
-
 The beams appear to make motorbike revving noises as they travel.
 
 ### Spellcard: Rude Sign "Saturation Barrage"
@@ -154,8 +152,6 @@ The beams appear to make motorbike revving noises as they travel.
 
 One of the spellcards that got **Saya** banned from duels. The amount of projectiles on display is said to be so dense it's practically impossible to avoid without extreme luck.
 
-Primary fire directs the barrage towards everything in front of you, while secondary fire, will instead cause the barrage to swirl in every direction.
-
 It really is just too much, no wonder people refuse to duel her.
 
 ### Spellcard: Radiant Sign "Aureous Flare"
@@ -163,8 +159,6 @@ It really is just too much, no wonder people refuse to duel her.
 *"Hey, check out how hard I can pee!"*
 
 **Saya**'s most powerful spellcard, and one entirely of her own creation. She claims this rivals even the mighty **Master Spark** in potency. Whether using primary or secondary fire, the effect is all but the same: Upon being charged, a swirling mass of incandescent tendrils will be released in a wide arc, penetrating even the thickest walls, stopping at nothing in their path of destruction.
-
-The main difference between fire modes is that with secondary fire, you can release them in a steady stream, rather than all at once in a deafening blast.
 
 **Saya** seems to always cast this one with both hands at her crotch, index fingers extended, as if mimicking the act of urinating with a penis.
 

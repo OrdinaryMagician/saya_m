@@ -1,12 +1,10 @@
 [default]
 // keybinds
 SAYA_KEYS = "RED-EYED RAMPAGE Bindings";
-SAYA_PRIMARYFIRE = "Primary Fire";
-SAYA_SECONDARYFIRE = "Aim / Secondary Fire";
+SAYA_PRIMARYFIRE = "Fire";
 SAYA_RELOADFIRE = "Reload";
 SAYA_MELEE = "Quick Kick";
-SAYA_PRIMARYCAST = "Primary Cast";
-SAYA_SECONDARYCAST = "Secondary Cast";
+SAYA_SPELLCAST = "Cast Spell";
 SAYA_EXTRAFIRE = "Grenade";
 SAYA_SPELL1 = "Spellcard Slot 1";
 SAYA_SPELL2 = "Spellcard Slot 2";
@@ -51,7 +49,7 @@ SAYA_HELP_PAGE3 = "Saya's Arsenal (Part 1: Weapons)";
 SAYA_HELP_PAGE3_TXT =
 "Guns are important, guns are good. We all know that, yes. And \caSaya\c- has quite a collection, which is surprising considering she's just a civilian. Well, her dealings with several arms manufacturers through the \caDemolitionist\c- definitely help, I suppose.\n"
 "\n"
-"Unlike the other mods, in here guns have just one fire mode, so the complexity is definitely reduced. There's also a smaller number of weapons, too, occupying just 8 slots. This lower number is mostly due to the fact she can't use those fancy military-grade \caHammerspace\c- containers, so she's left with just the civilian version, which in addition is tied to her own backpack (more on that later).\n"
+"Guns have just one fire mode, so the complexity is definitely reduced. There's also a smaller number of weapons, too, occupying just 8 slots. This lower number is mostly due to the fact she can't use those fancy military-grade \caHammerspace\c- containers, so she's left with just the civilian version, which in addition is tied to her own backpack (more on that later).\n"
 "\n"
 "\caSaya\c- fortunately managed to have an autoloader installed, so you won't have to do any sort of manual mag management. \caEmbiggeners\c- of course still work just the same, increasing your ammo capacity, but you can only do this four times, rather than the usual eight.\n"
 "\n"
@@ -74,7 +72,7 @@ SAYA_HELP_PAGE6 = "Saya's Arsenal (Part 4: Spellcards)";
 SAYA_HELP_PAGE6_TXT =
 "As someone who has spent many holidays in \caGensokyo\c-, \caSaya\c- is no stranger to spellcard duels... Which she's banned from. Some of her own custom crafted spells are apparently too ludicrous, it seems.\n"
 "\n"
-"For this adventure, she's picked four of her best ones to make use of. Each spellcard can be selected through a dedicated key, and then cast at any moment with any weapon out. Each of the two cast buttons triggers a slightly different behavior, and once that cast begins... It won't stop until it's all done, or you run out of mana.\n"
+"For this adventure, she's picked four of her best ones to make use of. Each spellcard can be selected through a dedicated key, and then cast at any moment with any weapon out.\n"
 "\n"
 "All of these use the same ammunition: your own mana pool. Mana is just a natural energy, absorbed from the environment, so it recovers on its own. There are other ways to replenish it much faster, of course.";
 SAYA_HELP_PAGE7 = "Additional Tips";

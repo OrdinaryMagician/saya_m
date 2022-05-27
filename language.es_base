@@ -77,10 +77,9 @@ SAYA_INTERTOTAL = "TIEMPO TOTAL:";
 TT_SAYAUNARMED =
 "\ca\"¿Que? ¿Crees que soy una debilucha?\"\c-\n"
 "\n"
-"Golpea con \caFuego primario\c-,\n"
-"patea con \caFuego secundario\c-.\n"
-"Una patada en los bajos garantiza\n"
-"aturdir cualquier enemigo.";
+"A hostias con tus propias manos.\n"
+"Si encuentras un puño americano,\n"
+"mejorarás tu potencial de daño.";
 TT_SAYAPISTOL =
 "\ca\"Para defensa personal, por supuesto.\"\c-\n"
 "\n"
@@ -122,8 +121,6 @@ TT_SAYAHAMMER =
 "\ca\"Kira-sama... Gracias.\"\c-\n"
 "\n"
 "Potenciado por \caFuria Divina\c-.\n"
-"Ataques laterales con \caFuego primario\c-,\n"
-"ataques verticales con \caFuego secundario\c-.\n"
 "Consume energía para causar daño extra,\n"
 "recargable al encontrar otros spawns de arma.";
 TT_SAYAPOS =

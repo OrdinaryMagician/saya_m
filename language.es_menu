@@ -1,12 +1,10 @@
 [es]
 // keybinds
 SAYA_KEYS = "Teclas de RED-EYED RAMPAGE";
-SAYA_PRIMARYFIRE = "Fuego Primario";
-SAYA_SECONDARYFIRE = "Apuntar / Fuego Secundario";
+SAYA_PRIMARYFIRE = "Fuego";
 SAYA_RELOADFIRE = "Recargar";
 SAYA_MELEE = "Patada Rápida";
-SAYA_PRIMARYCAST = "Hechizo Primario";
-SAYA_SECONDARYCAST = "Hechizo Secundario";
+SAYA_SPELLCAST = "Invocar Hechizo";
 SAYA_EXTRAFIRE = "Granada";
 SAYA_SPELL1 = "Ranura de Hechizo 1";
 SAYA_SPELL2 = "Ranura de Hechizo 2";
@@ -47,7 +45,7 @@ SAYA_HELP_PAGE3 = "Arsenal de Saya (Parte 1: Armas)";
 SAYA_HELP_PAGE3_TXT =
 "Las armas son importantes, las  armas son buenas. Todos lo sabemos, sí. Y \caSaya\c- tiene toda una colección, lo cual sorprende considerando que es solo una civil. Bueno, sus tratos con fabricantes de armas por medio de la \caDemolicionista\c- definitivamente ayudan, supongo.\n"
 "\n"
-"A diferencia de otros mods, aquí las armas solo tienen un modo de disparo, así que la complejidad está definitivamente reducida. Hay también un número menor de armas, ocupando solo 8 ranuras. Este número es menor dado principalmente al hecho de que no puede usar esos contenedores de \caHammerspace\c- militares tan buenos, así que solo puede usar la versión para civiles, la cual está adicionalmente enlazada a su mochila (más sobre esto luego).\n"
+"Las armas solo tienen un modo de disparo, así que la complejidad está definitivamente reducida. Hay también un número menor de armas, ocupando solo 8 ranuras. Este número es menor dado principalmente al hecho de que no puede usar esos contenedores de \caHammerspace\c- militares tan buenos, así que solo puede usar la versión para civiles, la cual está adicionalmente enlazada a su mochila (más sobre esto luego).\n"
 "\n"
 "Por suerte \caSaya\c- consiguió que le instalaran un cargador automático, así que no tendrás que ponerte a manejar cargadores a mano. Los \caEnsanchecedores\c- por supuesto siguen funcionando igual, incrementando la capacidad de munición, pero solo puedes hacer esto cuatro veces, en lugar de las ocho normales.\n"
 "\n"
@@ -70,7 +68,7 @@ SAYA_HELP_PAGE6 = "Arsenal de Saya (Parte 4: Hechizos)";
 SAYA_HELP_PAGE6_TXT =
 "Siendo alguien que ha tenido muchas vacaciones en \caGensokyo\c-, \caSaya\c- está acostumbrada a los duelos de hechizos... De los cuales ha sido expulsada. Algunos de sus hechizos personalizados son aparentemente excesivos, según parece.\n"
 "\n"
-"Para esta aventura, ha elegido cuatro de sus mejores para usar. Cada hechizo puede seleccionarse por medio de una tecla dedicada, y luego ser invocado en cualquier momento con cualquier otra arma. Cada uno de los dos botones de invocación causa un comportamiento distinto, y una vez comience la invocación... No parará hasta que acabe, o te quedes sin maná.\n"
+"Para esta aventura, ha elegido cuatro de sus mejores para usar. Cada hechizo puede seleccionarse por medio de una tecla dedicada, y luego ser invocado en cualquier momento con cualquier otra arma.\n"
 "\n"
 "Todos ellos usan la misma munición: tu propia reserva de maná. El maná es simplemente energía natural, absorbida del entorno, así que se recupera por su cuenta. Hay otras formas de recargar más rápidamente, por supuesto.";
 SAYA_HELP_PAGE7 = "Consejos Adicionales";

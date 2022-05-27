@@ -100,10 +100,9 @@ SAYA_INTERTOTAL = "TOTAL TIME:";
 TT_SAYAUNARMED =
 "\ca\"What? You think I'm some weakling?\"\c-\n"
 "\n"
-"Punch with \caPrimary fire\c-,\n"
-"kick with \caSecondary fire\c-.\n"
-"A kick to the nuts is guaranteed\n"
-"to stagger any enemy.";
+"Beat 'em up with your bare hands.\n"
+"If you come across brass knuckles,\n"
+"you can enhance your attack power.";
 TT_SAYAPISTOL =
 "\ca\"For self-defense, of course.\"\c-\n"
 "\n"
@@ -145,8 +144,6 @@ TT_SAYAHAMMER =
 "\ca\"Kira-sama... Thank you.\"\c-\n"
 "\n"
 "Powered by \caDivine Fury\c-.\n"
-"Side swings with \caPrimary fire\c-,\n"
-"overhead swings with \caSecondary fire\c-.\n"
 "Consumes energy to deal extra damage,\n"
 "rechargeable by finding other weapon spawns.";
 TT_SAYAPOS =

@@ -25,6 +25,7 @@ Class SayaPlayer : SWWMPlayer
 		SWWMPlayer.ResurrectType RT_RESPAWN;
 		SWWMPlayer.PainThresholds 0, 10, 30, 50;
 		SWWMPlayer.HealthDecay 100;
+		SWWMPlayer.DodgeIFrames 12;
 		+SWWMPLAYER.CANDODGE;
 		+SWWMPLAYER.CANAIRDODGE;
 		+SWWMPLAYER.CANBUNNYHOP;

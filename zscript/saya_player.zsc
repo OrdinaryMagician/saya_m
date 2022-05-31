@@ -21,11 +21,11 @@ Class SayaPlayer : SWWMPlayer
 		Player.SoundClass "saya";
 		Player.ViewBob .8;
 		SWWMPlayer.MoveSpeed .4, 1.3;
-		SWWMPlayer.DodgeSpeed 15;
+		SWWMPlayer.DodgeSpeed 16;
 		SWWMPlayer.ResurrectType RT_RESPAWN;
 		SWWMPlayer.PainThresholds 0, 10, 30, 50;
 		SWWMPlayer.HealthDecay 100;
-		SWWMPlayer.DodgeIFrames 12;
+		SWWMPlayer.DodgeIFrames 10;
 		+SWWMPLAYER.CANDODGE;
 		+SWWMPLAYER.CANAIRDODGE;
 		+SWWMPLAYER.CANBUNNYHOP;

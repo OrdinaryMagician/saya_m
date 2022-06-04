@@ -46,7 +46,7 @@ Note: Taking the place of the **Chainsaw** are a pair of **Brass Knuckles**, whi
 
 *"Hey, it's for self-defense, you know..."*
 
-A simple self-defense weapon that releases potent, disrupting electromagnetic pulses. The potency of the pulse can be increased by holding down the trigger for a longer time. The specific model that **Saya** uses can be loaded with 4mm bolts to further increase the lethality of its shots by actually having a solid payload. Up to 6 of them fit inside the internal magazine.
+A simple weapon that releases potent, disrupting electromagnetic pulses. The potency of the pulse can be increased by holding down the trigger for a longer time. The specific model that **Saya** uses can be loaded with 4mm bolts to further increase the lethality of its shots by actually having a solid payload. Up to 6 of them fit inside the internal magazine.
 
 ### Slot 3 - Siesta "Goldsmith" Sawed off *[Shotgun, Super Shotgun]*
 

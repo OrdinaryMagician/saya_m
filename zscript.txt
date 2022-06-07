@@ -67,6 +67,7 @@ const SWWMMAXAMOUNT = 1;
 #include "zscript/weapons/swwm_baseweapon.zsc"
 #include "zscript/weapons/swwm_baseweapon_fx.zsc"
 #include "zscript/weapons/swwm_baseweapon_melee.zsc"
+#include "zscript/weapons/swwm_baseweapon_ammobuffer.zsc"
 // monsters
 #include "zscript/swwm_monsters.zsc"
 

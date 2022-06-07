@@ -187,6 +187,20 @@ Class SayaGLRound : MagAmmo
 		Stop;
 	}
 }
+Class SayaGLRound_2 : SayaGLRound
+{
+	Default
+	{
+		Inventory.Amount 2;
+	}
+}
+Class SayaGLRound_3 : SayaGLRound
+{
+	Default
+	{
+		Inventory.Amount 3;
+	}
+}
 
 Class SayaPlasmaAmmo : SWWMAmmo
 {

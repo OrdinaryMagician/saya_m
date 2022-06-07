@@ -10,5 +10,39 @@ extend Class SWWMUtility
 		return false;
 	}
 
-	// TODO slot replacers
+	static Class<Inventory> PickSayaSlot1()
+	{
+		//if ( CheckNeedsItem('SayaKnuckles') ) return 'SayaKnuckles';
+		return 'SayaHammer';	// TODO hammer spawner
+	}
+	static Class<Inventory> PickSayaSlot2()
+	{
+		if ( !ItemExists('SayaPistol') ) return 'SayaPistol';
+		return 'SayaGaussRound_5';
+	}
+	static Class<Inventory> PickSayaSlot3()
+	{
+		if ( !ItemExists('SayaRifle') ) return 'SayaRifle';
+		return 'SayaRifleAmmo_5';
+	}
+	static Class<Inventory> PickSayaSlot4()
+	{
+		if ( !ItemExists('SayaGauss') ) return 'SayaGauss';
+		return 'SayaGaussAmmo';
+	}
+	static Class<Inventory> PickSayaSlot5()
+	{
+		if ( !ItemExists('SayaGL') ) return 'SayaGL';
+		return 'SayaGLAmmo';
+	}
+	static Class<Inventory> PickSayaSlot6()
+	{
+		if ( !ItemExists('SayaPlasmaRifle') ) return 'SayaPlasmaRifle';
+		return 'SayaPlasmaAmmo';
+	}
+	static Class<Inventory> PickSayaSlot7()
+	{
+		if ( !ItemExists('SayaBFG') ) return 'SayaBFG';
+		return 'SayaBFGAmmo';
+	}
 }

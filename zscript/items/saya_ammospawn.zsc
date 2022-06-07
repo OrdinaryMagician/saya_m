@@ -1,0 +1,76 @@
+// ammo spawners for Saya mod
+
+Class SayaBulletAmmoSmall : SWWMAmmoSpawner
+{
+	Mixin SWWMOndemandAmmoSpawner;
+
+	static Class<Actor> PickAmmo()
+	{
+		return Random[Replacements](0,2)?'SayaGaussRound_5':'SayaGaussRound_10';
+	}
+}
+Class SayaBulletAmmoBig : SWWMAmmoSpawner
+{
+	Mixin SWWMOndemandAmmoSpawner;
+
+	static Class<Actor> PickAmmo()
+	{
+		return Random[Replacements](0,2)?'SayaGaussRound_20':'SayaGaussAmmo';
+	}
+}
+Class SayaShellAmmoSmall : SWWMAmmoSpawner
+{
+	Mixin SWWMOndemandAmmoSpawner;
+
+	static Class<Actor> PickAmmo()
+	{
+		return Random[Replacements](0,2)?'SayaRifleAmmo':'SayaRifleAmmo_2';
+	}
+}
+Class SayaShellAmmoBig : SWWMAmmoSpawner
+{
+	Mixin SWWMOndemandAmmoSpawner;
+
+	static Class<Actor> PickAmmo()
+	{
+		return Random[Replacements](0,2)?'SayaRifleAmmo_3':'SayaRifleAmmo_5';
+	}
+}
+Class SayaRocketAmmoSmall : SWWMAmmoSpawner
+{
+	Mixin SWWMOndemandAmmoSpawner;
+
+	static Class<Actor> PickAmmo()
+	{
+		return 'SayaGLRound';
+	}
+}
+Class SayaRocketAmmoBig : SWWMAmmoSpawner
+{
+	Mixin SWWMOndemandAmmoSpawner;
+
+	static Class<Actor> PickAmmo()
+	{
+		return Random[Replacements](0,2)?'SayaGLRound_2':'SayaGLRound_3';
+	}
+}
+Class SayaCellAmmoSmall : SWWMAmmoSpawner
+{
+	Mixin SWWMOndemandAmmoSpawner;
+
+	static Class<Actor> PickAmmo()
+	{
+		return 'SayaPlasmaAmmo';
+	}
+}
+Class SayaCellAmmoBig : SWWMAmmoSpawner
+{
+	Mixin SWWMOndemandAmmoSpawner;
+
+	static Class<Actor> PickAmmo()
+	{
+		if ( !Random[Replacements](0,3) && SWWMUtility.ItemExists('SayaBFG') && SWWMUtility.CheckNeedsItem('SayaBFGAmmo',true) && !SWWMUtility.ItemExists('SayaBFG',worldonly:true) )
+			return 'SayaBFGAmmo';
+		return 'SayaPlasmaAmmo_2';
+	}
+}

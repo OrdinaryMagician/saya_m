@@ -1,10 +1,58 @@
 // Red-Eyed Rampage replacements
 
+// the presence of this thinker indicates that the Jackhammer has been picked up
+Class SayaShitMarker : Thinker
+{
+	static bool JackhammerIsMarked()
+	{
+		let sm = SayaShitMarker(ThinkerIterator.Create("SayaShitMarker",STAT_STATIC).Next());
+		if ( sm ) return true;
+		return false;
+	}
+
+	static void JackhammerMark()
+	{
+		let sm = SayaShitMarker(ThinkerIterator.Create("SayaShitMarker",STAT_STATIC).Next());
+		if ( sm ) return;
+		sm = new("SayaShitMarker");
+		sm.ChangeStatNum(STAT_STATIC);
+	}
+}
+
 extend Class SWWMHandler
 {
 	private bool ModReplacement( ReplaceEvent e )
 	{
-		// nothing here yet
+		if ( e.Replacee is 'Chainsaw' ) e.Replacement = SWWMUtility.PickSayaSlot1();
+		else if ( e.Replacee is 'Fist' ) e.Replacement = 'SayaUnarmed';
+		else if ( e.Replacee is 'Pistol' ) e.Replacement = SWWMUtility.PickSayaSlot2();
+		else if ( (e.Replacee is 'Shotgun') || (e.Replacee is 'SuperShotgun') ) e.Replacement = SWWMUtility.PickSayaSlot3();
+		else if ( e.Replacee is 'Chaingun' ) e.Replacement = SWWMUtility.PickSayaSlot4();
+		else if ( e.Replacee is 'RocketLauncher' ) e.Replacement = SWWMUtility.PickSayaSlot5();
+		else if ( e.Replacee is 'PlasmaRifle' ) e.Replacement = SWWMUtility.PickSayaSlot6();
+		else if ( e.Replacee is 'BFG9000' ) e.Replacement = SWWMUtility.PickSayaSlot7();
+		else if ( e.Replacee is 'ClipBox' ) e.Replacement = 'SayaBulletAmmoBig';
+		else if ( e.Replacee is 'Clip' ) e.Replacement = 'SayaBulletAmmoSmall';
+		else if ( e.Replacee is 'ShellBox' ) e.Replacement = 'SayaShellAmmoBig';
+		else if ( e.Replacee is 'Shell' ) e.Replacement = 'SayaShellAmmoSmall';
+		else if ( e.Replacee is 'RocketBox' ) e.Replacement = 'SayaRocketAmmoBig';
+		else if ( e.Replacee is 'RocketAmmo' ) e.Replacement = 'SayaRocketAmmoSmall';
+		else if ( e.Replacee is 'CellPack' ) e.Replacement = 'SayaCellAmmoBig';
+		else if ( e.Replacee is 'Cell' ) e.Replacement = 'SayaCellAmmoSmall';
+		//else if ( (e.Replacee is 'ArmorBonus') || (e.Replacee is 'HealthBonus') ) e.Replacement = 'SayaCookie';
+		//else if ( e.Replacee is 'Stimpack' ) e.Replacement = 'SayaStimmyPack';
+		//else if ( e.Replacee is 'Medikit' ) e.Replacement = 'SayaBigStimmyPack';
+		//else if ( e.Replacee is 'Soulsphere' ) e.Replacement = 'SayaSpiritualStimulant';
+		//else if ( e.Replacee is 'GreenArmor' ) e.Replacement = 'SayaArmorPadding';
+		//else if ( e.Replacee is 'BlueArmor' ) e.Replacement = 'SayaShieldedVest';
+		//else if ( e.Replacee is 'Megasphere' ) e.Replacement = 'SayaShieldOrb';
+		else if ( e.Replacee is 'Backpack' ) e.Replacement = 'HammerspaceEmbiggener';
+		//else if ( e.Replacee is 'Blursphere' ) e.Replacement = (SWWMUtility.ItemExists('SayaJackhammer')||SayaShitMarker.JackhammerIsMarked())?'SayaZarBomb':'SayaJackhammer';
+		//else if ( e.Replacee is 'Berserk' ) e.Replacement = 'SayaBepis';
+		else if ( e.Replacee is 'AllMap' ) e.Replacement = 'Omnisight';
+		//else if ( e.Replacee is 'InvulnerabilitySphere' ) e.Replacement = 'SayaMilkJug';
+		//else if ( e.Replacee is 'Infrared' ) e.Replacement = 'SayaVisor';
+		else if ( e.Replacee is 'Radsuit' ) e.Replacement = 'EBarrier';
 		return false;
 	}
 }

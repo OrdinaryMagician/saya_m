@@ -75,7 +75,7 @@ Class SayaStatusBar : SWWMStatusBar
 				}
 			}
 			AmmoInter[i].Update(amt);
-			if ( amt > AmmoOldAmounts[i] ) AmmoFlash[i] = gametic+25;
+			if ( (amt > AmmoOldAmounts[i]) && (AmmoOldAmounts[i] != int.min) ) AmmoFlash[i] = gametic+25;
 			if ( i == 0 )
 			{
 				if ( amt > AmmoOldAmounts[0] )
@@ -154,6 +154,7 @@ Class SayaStatusBar : SWWMStatusBar
 		AmmoSlots[7] = "SayaKiraMana";
 		for ( int i=0; i<8; i++ )
 		{
+			AmmoOldAmounts[i] = int.min;
 			if ( !CPlayer || !CPlayer.mo )
 			{
 				AmmoInter[i] = SmoothDynamicValueInterpolator.Create(0,.5,1,100);

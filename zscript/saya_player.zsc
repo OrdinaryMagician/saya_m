@@ -26,6 +26,7 @@ Class SayaPlayer : SWWMPlayer
 		SWWMPlayer.PainThresholds 0, 10, 30, 50;
 		SWWMPlayer.HealthDecay 100;
 		SWWMPlayer.DodgeIFrames 10;
+		SWWMPlayer.MinCrouch .3;
 		+SWWMPLAYER.CANDODGE;
 		+SWWMPLAYER.CANAIRDODGE;
 		+SWWMPLAYER.CANBUNNYHOP;

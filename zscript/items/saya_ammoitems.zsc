@@ -291,6 +291,7 @@ Class SayaBombAmmo : SWWMAmmo
 	{
 		Tag "$T_SAYAZBOMB";
 		SWWMAmmo.PickupTag "SAYAZBOMB";
+		Inventory.Icon "graphics/HUD/Icons/A_SayaBombAmmo.png";
 		Inventory.Amount 1;
 		Inventory.MaxAmount 4;
 		Ammo.BackpackAmount 0;

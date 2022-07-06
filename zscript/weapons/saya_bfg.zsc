@@ -11,7 +11,6 @@ Class SayaBFG : SWWMWeapon
 		Tag "$T_SAYABFG";
 		Inventory.PickupMessage "$I_SAYABFG";
 		SWWMWeapon.Tooltip "$TT_SAYABFG";
-		Inventory.Icon "graphics/HUD/Icons/W_SayaBFG.png";
 		Weapon.SlotNumber 7;
 		Weapon.SlotPriority 1.;
 		Weapon.SelectionOrder 100;

@@ -20,7 +20,6 @@ Class SayaJackhammer : SWWMWeapon
 		Tag "$T_SAYAPOS";
 		Inventory.PickupMessage "$I_SAYAPOS";
 		SWWMWeapon.Tooltip "$TT_SAYAPOS";
-		Inventory.Icon "graphics/HUD/Icons/W_SayaPOS.png";
 		SayaJackhammer.ClipCount 12;
 		+WEAPON.CHEATNOTWEAPON;
 		+WEAPON.WIMPY_WEAPON;

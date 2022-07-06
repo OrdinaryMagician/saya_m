@@ -7,7 +7,6 @@ Class SayaHammer : SWWMWeapon
 		Tag "$T_SAYAHAMMER";
 		Inventory.PickupMessage "$I_SAYAHAMMER";
 		SWWMWeapon.Tooltip "$TT_SAYAHAMMER";
-		Inventory.Icon "graphics/HUD/Icons/W_SayaHammer.png";
 		Weapon.SlotNumber 8;
 		Weapon.SlotPriority 1.;
 		Weapon.SelectionOrder 100;

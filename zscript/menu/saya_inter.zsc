@@ -91,11 +91,6 @@ Class SayaStatScreen : SWWMStatScreen
 			Screen.DrawTexture(smk_tex[i%8],false,pos.x,pos.y,DTA_CenterOffset,true,DTA_Rotate,ang,DTA_ScaleX,scl,DTA_ScaleY,scl,DTA_Alpha,alf,DTA_LegacyRenderStyle,STYLE_AddShaded,DTA_FillColor,Color(64,16,4));
 		}
 	}
-	// heh
-	private clearscope double smerp( double a ) const
-	{
-		return (sin((a-.5)*180.)+1.)/2.;
-	}
 	override void drawSWWMBg()
 	{
 		double GameSecs = (bcnt+fractic)/double(GameTicRate);
@@ -118,7 +113,7 @@ Class SayaStatScreen : SWWMStatScreen
 		if ( !sayatex[2] ) sayatex[2] = TexMan.CheckForTexture("graphics/title_saya_eye.png",TexMan.Type_Any);
 		double ofs;
 		if ( sp_state >= 2 ) ofs = 120;
-		else ofs = 120*smerp(clamp(GameSecs,0.,1.));
+		else ofs = 120*SWWMUtility.smerp(clamp(GameSecs,0.,1.));
 		Screen.DrawTexture(sayatex[0],false,Screen.GetWidth()/2+ofs*CleanXFac_1,Screen.GetHeight()+700*texscl,DTA_ScaleX,texscl,DTA_ScaleY,texscl);
 		Screen.DrawTexture(sayatex[1],false,Screen.GetWidth()/2+ofs*CleanXFac_1,Screen.GetHeight()+700*texscl,DTA_ScaleX,texscl,DTA_ScaleY,texscl,DTA_LegacyRenderStyle,STYLE_Add);
 		Screen.DrawTexture(sayatex[2],false,Screen.GetWidth()/2+ofs*CleanXFac_1,Screen.GetHeight()+700*texscl,DTA_ScaleX,texscl,DTA_ScaleY,texscl,DTA_LegacyRenderStyle,STYLE_Add);

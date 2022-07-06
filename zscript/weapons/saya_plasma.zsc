@@ -11,7 +11,6 @@ Class SayaPlasmaRifle : SWWMWeapon
 		Tag "$T_SAYAPLASMA";
 		Inventory.PickupMessage "$I_SAYAPLASMA";
 		SWWMWeapon.Tooltip "$TT_SAYAPLASMA";
-		Inventory.Icon "graphics/HUD/Icons/W_SayaPlasma.png";
 		Weapon.SlotNumber 6;
 		Weapon.SlotPriority 1.;
 		Weapon.SelectionOrder 100;

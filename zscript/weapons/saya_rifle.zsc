@@ -12,7 +12,6 @@ Class SayaRifle : SWWMWeapon
 		Tag "$T_SAYARIFLE";
 		Inventory.PickupMessage "$I_SAYARIFLE";
 		SWWMWeapon.Tooltip "$TT_SAYARIFLE";
-		Inventory.Icon "graphics/HUD/Icons/W_SayaRifle.png";
 		Weapon.SlotNumber 3;
 		Weapon.SlotPriority 1.;
 		Weapon.SelectionOrder 100;

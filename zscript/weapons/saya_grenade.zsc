@@ -1,4 +1,4 @@
-// POW
+// shiny and chrome
 
 Class SayaGL : SWWMWeapon
 {
@@ -11,7 +11,6 @@ Class SayaGL : SWWMWeapon
 		Tag "$T_SAYAGL";
 		Inventory.PickupMessage "$I_SAYAGL";
 		SWWMWeapon.Tooltip "$TT_SAYAGL";
-		Inventory.Icon "graphics/HUD/Icons/W_SayaGL.png";
 		Weapon.SlotNumber 5;
 		Weapon.SlotPriority 1.;
 		Weapon.SelectionOrder 100;

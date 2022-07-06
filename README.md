@@ -158,7 +158,7 @@ It really is just too much, no wonder people refuse to duel her.
 
 *"Hey, check out how hard I can pee!"*
 
-**Saya**'s most powerful spellcard, and one entirely of her own creation. She claims this rivals even the mighty **Master Spark** in potency. Whether using primary or secondary fire, the effect is all but the same: Upon being charged, a swirling mass of incandescent tendrils will be released in a wide arc, penetrating even the thickest walls, stopping at nothing in their path of destruction.
+**Saya**'s most powerful spellcard, and one entirely of her own creation. She claims this rivals even the mighty **Master Spark** in potency. Upon being charged, a swirling mass of incandescent tendrils will be released in a wide arc, penetrating even the thickest walls, stopping at nothing in their path of destruction.
 
 **Saya** seems to always cast this one with both hands at her crotch, index fingers extended, as if mimicking the act of urinating with a penis.
 
